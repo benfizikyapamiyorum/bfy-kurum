@@ -19,6 +19,10 @@ export function Duzen() {
             <Simge ad="tahta" />
             Tahta modu
           </NavLink>
+          <NavLink to="/icerik/ice-aktar" className="dugme sade">
+            <Simge ad="yukle" />
+            <span className="dar-gizle">Kit içe aktar</span>
+          </NavLink>
           <NavLink to="/ayarlar" className="dugme sade" aria-label="Ayarlar">
             <Simge ad="ayarlar" />
           </NavLink>

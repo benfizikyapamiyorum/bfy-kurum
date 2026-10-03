@@ -61,8 +61,11 @@ async function olarak<T>(kullanici: string | null, is: (c: pg.PoolClient) => Pro
 const say = async (c: pg.PoolClient, sql: string, p: unknown[] = []) =>
   Number((await c.query(`select count(*)::int as n from (${sql}) x`, p)).rows[0].n)
 
+// Test verisi 00000000-0000-4000-a000-... kimliklerini kullanır; örnek içerik gibi başka satırlar yok sayılır.
 const kimlikler = async (c: pg.PoolClient, tablo: string) =>
-  (await c.query(`select id from public.${tablo} order by id`)).rows.map((r) => r.id as string)
+  (
+    await c.query(`select id from public.${tablo} where id::text like '00000000-0000-4000-a000-%' order by id`)
+  ).rows.map((r) => r.id as string)
 
 d('RLS ve bütünlük kuralları', () => {
   beforeAll(async () => {
@@ -163,6 +166,15 @@ d('RLS ve bütünlük kuralları', () => {
       olarak(null, async (c) => {
         expect(await say(c, 'select * from public.kazanim')).toBeGreaterThan(0)
         expect(await kimlikler(c, 'soru')).toEqual([SORU_ORNEK])
+      }))
+
+    it('tohum dosyasındaki örnek soruları, kitleri ve etiketlerini görür (tahta modu denemesi)', () =>
+      olarak(null, async (c) => {
+        const ornek = await say(c, 'select * from public.soru where ornek')
+        expect(ornek).toBeGreaterThanOrEqual(1)
+        expect(await say(c, 'select * from public.soru where not ornek')).toBe(0)
+        expect(await say(c, 'select * from public.icerik where ornek')).toBeGreaterThanOrEqual(1)
+        expect(await say(c, 'select * from public.soru_kazanim')).toBeGreaterThanOrEqual(ornek)
       }))
 
     it('kurum ve kullanıcı verisini göremez', () =>

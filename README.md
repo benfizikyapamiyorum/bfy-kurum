@@ -13,6 +13,17 @@ Tek şubeli özel öğretim kursları için fizik eğitim platformu: akıllı ta
 
 Uygulama, Supabase bilgileri girilmeden de açılır. Bu durumda **yerel deneme modunda** çalışır: örnek sorular ve bu tarayıcıya yüklediğiniz HTML kitler kullanılır. Tahta modunu denemek için yeterlidir. Giriş, kurum, test ve rapor özellikleri Supabase bağlandıktan sonra çalışır.
 
+### Tahta modunu deneme listesi
+
+1. Ana sayfada **Tahta modunu aç** düğmesine dokunun. Sınıf, ünite ve soru seçin. 9, 10 ve 11. sınıfta "ÖRNEK" rozetli 10 soru var.
+2. Soru ekranında cevap gizlidir. **Cevabı göster** ile açın. Bir şıkka dokunursanız sınıfın tahmini işaretlenir; cevap açılınca doğru şık yeşil olur.
+3. **Çözümü başlat** ve **Sonraki adım** ile çözümü adım adım açın. Şekilli sorularda her adım şekildeki ilgili çizimi canlandırır. En iyi örnekler: 9. sınıf vektör sorusu, 10. sınıf hız-zaman grafiği, 11. sınıf serbest düşme ve yatay atış.
+4. Üst çubuktaki **kalem** ile soru üzerine çizin; silgi, geri al ve temizle düğmeleri alttaki çubuktadır.
+5. **Yüksek kontrast** ve **tam ekran** düğmeleri de üst çubuktadır. Sayaç her soruda sıfırdan başlar.
+6. Kurum logosunu denemek için **Ayarlar** → **Kurum logosu** ile bir resim seçin. Logo tahtanın sağ üst köşesinde görünür.
+7. **Kit içe aktar** ekranından kendi tek dosyalık HTML kitlerinizi yükleyin, sınıf, ünite ve haftaya bağlayın. Tahtada ilgili ünitede açılır. 9. sınıf, Kuvvet ve Hareket ünitesinde örnek bir kit de var.
+8. **Tahtaya indir** ekranında haftaları ve soru setlerini seçip indirin. Ardından interneti kesin: indirilenler açılmaya devam eder. (Çevrimdışı çalışma yayınlanmış sürümde ya da `npm run build && npm run preview` ile denenir.)
+
 ---
 
 ## 1. Supabase kurulumu (veritabanı, giriş, dosya deposu)
@@ -120,7 +131,7 @@ Akıllı tahtadan denemek için aynı ağdaki tahtanın tarayıcısında `npm ru
 | `npm run test:db` | Veritabanı ve RLS testleri. Önce `bash scripts/yerel-db.sh` ile yerel Postgres başlatılır, ardından `DATABASE_URL=postgresql://postgres@localhost:54329/postgres npm run test:db`. |
 | `npm run test:e2e` | Tahta modu uçtan uca testleri (1920×1080, dokunmatik). |
 | `npm run lint` | Kod denetimi. |
-| `npm run seed:uret` | `src/veri/` altındaki kataloğu SQL tohum dosyasına dönüştürür. |
+| `npm run seed:uret` | `src/veri/` altındaki kataloğu ve örnek içeriği SQL tohum dosyalarına dönüştürür. |
 
 ---
 
@@ -140,7 +151,7 @@ Tam liste `.env.example` dosyasındadır.
 | Aşama | İçerik | Durum |
 |---|---|---|
 | M0 | Proje iskeleti, kurulum rehberi, mimari, veritabanı şeması ve RLS. | Tamamlandı. |
-| M1 | Tahta modu, örnek içerik, HTML kit içe aktarma, çevrimdışı önbellek. | Sırada. |
+| M1 | Tahta modu, örnek içerik, HTML kit içe aktarma, çevrimdışı önbellek. | Tamamlandı, tasarım onayı bekleniyor. |
 | M2 | Giriş sistemi, roller, çok kiracılı yapı, kurum paneli. | Bekliyor. |
 | M3 | Test/deneme oluşturucu, PDF çıktıları, online çözüm, elle sonuç girişi, net hesabı. | Bekliyor. |
 | M4 | Raporlar ve telafi testi. | Bekliyor. |

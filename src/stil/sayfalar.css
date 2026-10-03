@@ -88,3 +88,148 @@
   accent-color: var(--ana);
   flex: none;
 }
+
+/* İçe aktarma */
+.dosya-alani {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px;
+  border: 2px dashed var(--cizgi);
+  border-radius: var(--yaricap);
+  background: var(--yuzey);
+  cursor: pointer;
+  margin: 20px 0;
+}
+.dosya-alani input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.dosya-alani:focus-within {
+  box-shadow: var(--odak);
+}
+.taslaklar {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.taslak {
+  display: grid;
+  gap: 14px;
+}
+.taslak-ust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.taslak-ust strong {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.form-izgara {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+.form-izgara label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--yazi-soluk);
+}
+.form-izgara input,
+.form-izgara select {
+  width: 100%;
+  min-width: 0;
+  min-height: var(--dokunma);
+  border-radius: 10px;
+  border: 1.5px solid var(--cizgi);
+  background: var(--yuzey);
+  color: var(--yazi);
+  font: inherit;
+  font-weight: 500;
+  padding: 0 12px;
+}
+.kazanim-secimi {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.kazanim-secimi legend {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--yazi-soluk);
+  margin-bottom: 6px;
+}
+.kazanim-cipi {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1.5px solid var(--cizgi);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.kazanim-cipi:has(input:checked) {
+  border-color: var(--ana);
+  background: var(--ana-acik);
+}
+.kayitli-kitler ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.kayitli-kit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--yuzey);
+  border: 1px solid var(--cizgi);
+  border-radius: 12px;
+  padding: 8px 8px 8px 16px;
+}
+.kayitli-kit .bosluk {
+  flex: 1;
+}
+.logo-onizleme {
+  display: flex;
+  padding: 12px;
+  background: var(--yuzey-2);
+  border-radius: 12px;
+  width: fit-content;
+}
+.logo-onizleme .kurum-logosu {
+  height: 64px;
+  max-width: 240px;
+}
+.logo-onizleme .kurum-logosu img {
+  max-height: 64px;
+  max-width: 240px;
+}
+.logo-onizleme .kurum-logosu span {
+  font-weight: 800;
+  color: var(--ana);
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.hata-metni {
+  color: var(--hata);
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .dar-gizle {
+    display: none;
+  }
+}

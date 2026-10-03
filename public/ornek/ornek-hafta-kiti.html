@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Örnek hafta kiti: Vektörler ve yer değiştirme</title>
+<style>
+  :root { --ana: #1f5fae; --zemin: #f6f8fb; --yazi: #18202b; --soluk: #5a6676; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif; background: var(--zemin); color: var(--yazi); }
+  header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 16px 24px; background: #fff; border-bottom: 1px solid #dde3ea; }
+  header h1 { font-size: 1.4rem; margin: 0; flex: 1; }
+  .rozet { background: #fff4d9; color: #8a5a00; border: 1px solid #e8c983; border-radius: 999px; padding: 2px 10px; font-size: .8rem; font-weight: 700; letter-spacing: .04em; }
+  .modlar { display: flex; gap: 6px; }
+  .modlar button, .ac { min-height: 56px; min-width: 56px; padding: 0 18px; border-radius: 12px; border: 1.5px solid #cfd7e2; background: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+  .modlar button[aria-pressed="true"] { background: var(--ana); border-color: var(--ana); color: #fff; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px; display: grid; gap: 20px; }
+  .kart { background: #fff; border: 1px solid #dde3ea; border-radius: 16px; padding: 24px; }
+  .kart h2 { margin: 0 0 12px; font-size: 1.3rem; }
+  .soru { font-size: 1.35rem; line-height: 1.5; }
+  .cevap { margin-top: 16px; padding: 16px; border-radius: 12px; background: #e5f4ec; border: 1px solid #a9d8bd; font-size: 1.2rem; }
+  .cevap[hidden] { display: none; }
+  .hoca-notu { border-left: 5px solid #d9611c; background: #fff3ea; padding: 12px 16px; border-radius: 8px; }
+  body[data-mod="ogrenci"] .hoca-notu, body[data-mod="tahta"] .hoca-notu { display: none; }
+  body[data-mod="tahta"] .soru { font-size: 1.7rem; }
+  footer { text-align: center; color: var(--soluk); font-size: .85rem; padding: 24px; }
+</style>
+</head>
+<body data-mod="tahta">
+<header>
+  <h1>Hafta 1: Vektörler ve yer değiştirme</h1>
+  <span class="rozet">ÖRNEK</span>
+  <div class="modlar" role="group" aria-label="Görünüm modu">
+    <button type="button" data-mod="tahta">Tahta</button>
+    <button type="button" data-mod="hoca">Hoca</button>
+    <button type="button" data-mod="ogrenci">Öğrenci</button>
+  </div>
+</header>
+<main>
+  <section class="kart">
+    <p class="hoca-notu">Hoca notu: Bu kit yalnızca sistemin tek dosyalık HTML kitleri nasıl açtığını göstermek içindir. Gerçek haftalık kitler içe aktarılınca bu örnek kaldırılabilir.</p>
+  </section>
+  <section class="kart">
+    <h2>Soru 1</h2>
+    <p class="soru">Bir koşucu, 400 m uzunluğundaki kapalı bir pistte başlangıç çizgisinden koşmaya başlıyor ve bir tur atarak aynı çizgide duruyor. Koşucunun aldığı yol ve yer değiştirmesinin büyüklüğü nedir?</p>
+    <button type="button" class="ac" data-hedef="c1">Cevabı göster</button>
+    <div class="cevap" id="c1" hidden>Alınan yol 400 m, yer değiştirme 0 m. Koşucu başladığı noktada durduğu için yer değiştirme sıfırdır.</div>
+  </section>
+  <section class="kart">
+    <h2>Soru 2</h2>
+    <p class="soru">Aynı doğrultuda, sağa doğru 4 birimlik K vektörü ile sola doğru 6 birimlik L vektörü veriliyor. K + L + M = 0 olması için M vektörü ne olmalıdır?</p>
+    <button type="button" class="ac" data-hedef="c2">Cevabı göster</button>
+    <div class="cevap" id="c2" hidden>K + L, 2 birim sola doğrudur. M bunun tersi olmalıdır: 2 birim, sağa doğru.</div>
+  </section>
+</main>
+<footer>Örnek içerik. Seçilen mod tarayıcıda hatırlanır.</footer>
+<script>
+  // Kitin kendi kaydı: seçilen modu hatırlar. Tahta modunda iframe içinde de çalışmalı.
+  var kayitliMod = null;
+  try { kayitliMod = localStorage.getItem('ornek-kit-mod'); } catch (e) {}
+  function modSec(mod) {
+    document.body.dataset.mod = mod;
+    document.querySelectorAll('.modlar button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.mod === mod));
+    });
+    try { localStorage.setItem('ornek-kit-mod', mod); } catch (e) {}
+  }
+  modSec(kayitliMod || 'tahta');
+  document.querySelectorAll('.modlar button').forEach(function (b) {
+    b.addEventListener('click', function () { modSec(b.dataset.mod); });
+  });
+  document.querySelectorAll('.ac').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var c = document.getElementById(b.dataset.hedef);
+      c.hidden = !c.hidden;
+      b.textContent = c.hidden ? 'Cevabı göster' : 'Cevabı gizle';
+    });
+  });
+</script>
+</body>
+</html>

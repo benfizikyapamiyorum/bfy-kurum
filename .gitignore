@@ -11,3 +11,4 @@ playwright-report
 /tmp
 .DS_Store
 .netlify
+*-tmp.*

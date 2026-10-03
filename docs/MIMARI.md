@@ -103,21 +103,73 @@ Yardımcı fonksiyonlar `ozel` şemasındadır. Bu şema Supabase Data API'ye a�
 - **İçerik:** HTML kitler ve sorular uygulama kabuğuna girmez. Öğretmen "Tahtaya indir" ekranında haftaları seçer; seçilen içerik IndexedDB'ye yazılır. Veri katmanı önce ağı dener, ağ yoksa IndexedDB'deki kopyayı kullanır.
 - **Senkronizasyon:** Çevrimdışıyken yapılan yazma işlemleri IndexedDB'deki bir kuyruğa eklenir ve internet gelince sırayla gönderilir. Her işlemin tekil kimliği vardır; sunucuda `upsert` ile yazıldığı için iki kez gönderilse de çift kayıt oluşmaz.
 
-## 7. Marka ve yapılandırma
+## 7. Tahta modu
+
+| Adres | Ekran |
+|---|---|
+| `/tahta` | Sınıf seçimi. |
+| `/tahta/:seviye` | Ünite seçimi. |
+| `/tahta/:seviye/:unite` | Ünitenin kitleri ve kazanıma göre gruplanmış soruları. |
+| `/tahta/:seviye/:unite/soru/:soru` | Soru ekranı. |
+| `/tahta/kit/:icerik` | HTML kit, tam ekran iframe. |
+| `/tahta/indir` | "Tahtaya indir": çevrimdışı kullanım için içerik seçimi. |
+
+- **Ölçekleme:** Tahta modunun yazı boyutu ekran genişliğinin %1,6'sıdır (en az 17, en çok 52 piksel). Dokunma hedefleri en az 56 pikseldir ve genişlikle büyür. Böylece 1920×1080 ve 4K tahtada aynı düzen görünür.
+- **Hover yok:** Hiçbir bilgi ya da işlem fareyle üzerine gelmeye bağlı değildir. Her şey dokunarak açılır.
+- **Soru ekranı:** Cevap varsayılan olarak gizlidir. Öğretmen sınıfın tahminini bir şıkka dokunarak işaretleyebilir; cevap açılınca doğru şık yeşil, işaretlenen yanlış şık kırmızı görünür. Çözüm adımları tek tek açılır ve geri kapatılabilir.
+- **Çizim katmanı:** Soru ve kit ekranlarının üzerinde bir `<canvas>` vardır. Kalem açıkken dokunuşları çizgiye çevirir, kapalıyken dokunuşlar alttaki içeriğe geçer. Çizgiler vektör olarak saklanır, ekran boyutu değişince yeniden çizilir. Birden çok parmak aynı anda çizebilir. Kalemin silgi ucu otomatik olarak silgi olur. Soru değişince çizim temizlenir.
+- **Sayaç:** Soru açılınca başlar, durdurulabilir, sıfırlanabilir; sonraki soruda sıfırdan başlar.
+- **Kurum logosu:** Üst çubuğun sağ köşesindedir. M2'ye kadar Ayarlar ekranından bu tarayıcı için denenebilir.
+
+### 7.1. Şekil animasyonu kancası
+
+Soru şekli tek bir SVG'dir. Şekildeki öğeler `data-ciz-*` öznitelikleriyle işaretlenir; `src/tahta/animasyon.ts` içindeki `SekilAnimatoru` bunları okur.
+
+| Öznitelik | Anlamı |
+|---|---|
+| `data-ciz-adim="n"` | Öğenin görüneceği adım. `0`: soru açılınca; `k`: k. çözüm adımı açılınca. İşaretsiz öğeler hep görünür. Adım geri alınınca öğe yeniden gizlenir. |
+| `data-ciz-tur` | `ciz`: çizgi uçtan uca çizilir (vektör, ışın, grafik). `belir`: saydamlıktan belirir. `hareket`: öğe `data-ciz-yol` ile verilen yol boyunca ilerler. `kinematik`: öğe `x = x0 + ϑt + ½at²` ile hareket eder (serbest düşme, atış). Belirtilmezse çizgi öğeleri `ciz`, diğerleri `belir` olur. |
+| `data-ciz-sure`, `data-ciz-gecikme` | Milisaniye. |
+| `data-ciz-p0`, `data-ciz-v`, `data-ciz-a`, `data-ciz-t` | Yalnızca `kinematik`: başlangıç konumu, hız, ivme (SVG birimi/s, birim/s²) ve modeldeki süre (s). |
+
+Bir grup (`<g>`) işaretlenirse içindeki çizgiler birlikte çizilir, ok uçları ve yazılar sonda belirir. Hareketli öğeler adımından önce de başlangıç konumunda görünür. Cihazda "hareketi azalt" tercihi açıksa her şey animasyonsuz gösterilir.
+
+Yeni bir animasyon türü kod içinden eklenebilir (ör. ışığın kırılması):
+
+```ts
+import { animasyonTuruKaydet } from './tahta/animasyon'
+
+animasyonTuruKaydet('isin-kirilma', (oge, { sure, gecikme }) => [
+  oge.animate([{ opacity: 0 }, { opacity: 1 }], { duration: sure, delay: gecikme, fill: 'backwards' }),
+])
+// Şekilde: <path data-ciz-adim="2" data-ciz-tur="isin-kirilma" d="..."/>
+```
+
+Örnek sorulardaki şekiller (`src/veri/ornekSorular.ts`) bu kancanın tüm türlerini kullanır: vektörlerin çizilmesi, grafik alanlarının belirmesi, koşucunun pist boyunca ilerlemesi, taşın serbest düşmesi ve topun yatay atışı.
+
+### 7.2. HTML kitler
+
+- Kit, `sandbox="allow-scripts allow-forms allow-popups allow-modals allow-downloads"` olan bir iframe içinde `srcdoc` ile açılır. `allow-same-origin` verilmez: kitin betikleri çalışır, ama uygulamanın oturum anahtarına, çerezlerine ve IndexedDB'sine erişemez.
+- Bu yalıtımda tarayıcı kitin `localStorage` erişimini engeller. Kit bozulmasın diye kitin başına bellekte çalışan bir `localStorage`/`sessionStorage` eklenir (`src/tahta/kitHtml.ts`). Kitin kaydettiği tercihler o oturum boyunca geçerlidir.
+- Kitler tek dosya olmalıdır. Dış dosyaya göreli bağlantı (`resim.png`) iframe içinde çözülemez; resimler dosyanın içine gömülmelidir (data URI ya da satır içi SVG).
+- İçe aktarma (M1): `/icerik/ice-aktar` ekranında seçilen HTML dosyaları bu tarayıcının IndexedDB'sine kaydedilir ve seçilen ünitede görünür. M5'te süper admin aynı ekrandan Supabase Storage'a yükleyecek ve kitler tüm kurumlara açılacak.
+
+## 8. Marka ve yapılandırma
 
 Ürün adı, sahip adı, web adresi, sosyal medya hesabı ve ana renk `src/yapilandirma/marka.json` içindedir. Kodda marka adı sabit yazılmaz. `index.html` başlığı ve PWA manifest'i de derleme sırasında bu dosyadan doldurulur.
 
-## 8. Türkçe
+## 9. Türkçe
 
 - Sıralama `Intl.Collator('tr', { numeric: true })` ile yapılır: ç, ğ, ı, ö, ş, ü doğru yerde, "9-A" "10-A"dan önce gelir.
 - Büyük/küçük harf dönüşümü `toLocaleUpperCase('tr-TR')` ile yapılır: i → İ, ı → I.
 - Sayılar ondalık virgülle yazılır.
 - Yazı tipi Inter. Latin ve Latin genişletilmiş alt kümeleri birlikte tüm Türkçe karakterleri içerir (fontTools ile denetlendi). Çevrimdışı önbelleğe yalnızca bu iki alt küme alınır.
 
-## 9. Testler
+## 10. Testler
 
 | Komut | Kapsam |
 |---|---|
 | `npm test` | `src/**/*.test.ts`: net hesabı, cevap dizisi, soru tekrar etmeme ve otomatik test oluşturma, Türkçe sıralama. |
 | `npm run test:db` | `testler/db/`: migration'lar gerçek bir Postgres'e uygulanır, Supabase'in `auth` ve `storage` şemaları taklit edilir, her rol için RLS davranışı denetlenir. |
-| `npm run test:e2e` | `testler/e2e/`: tahta modu 1920×1080 ve dokunmatik ekranda (M1). |
+| `npm run test:e2e` | `testler/e2e/`: üretim derlemesi üzerinde, 1920×1080 dokunmatik ekranda tahta akışı, cevabın gizli başlaması, adım adım çözüm ve şekil animasyonu, kalem, sayaç, 56 piksel dokunma hedefi, HTML kit açma ve içe aktarma, internet kesikken çalışma; ayrıca 4K ve telefon genişliği. |
+| `src/veri/ornekSorular.test.ts` | Örnek soruların biçim kuralları ve her sayısal sonucun kodla yeniden hesaplanması. |
