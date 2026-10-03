@@ -1,0 +1,90 @@
+/* Tahta modu dışındaki sayfalar. */
+
+.duzen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.duzen > main {
+  flex: 1;
+}
+
+.ust-menu {
+  display: flex;
+  gap: 4px;
+}
+.ust-menu .active {
+  color: var(--ana);
+}
+
+.mod-seridi {
+  background: var(--uyari-acik);
+  color: var(--uyari);
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 6px 16px;
+  border-bottom: 1px solid color-mix(in srgb, var(--uyari) 25%, transparent);
+}
+
+.sayfa.dar {
+  max-width: 760px;
+}
+
+.giris {
+  padding: 48px 0 32px;
+  max-width: 760px;
+}
+.giris h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.giris-metni {
+  font-size: 1.2rem;
+  color: var(--yazi-soluk);
+  margin: 0 0 28px;
+}
+.giris-dugmeleri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.dugme.buyuk {
+  min-height: 64px;
+  font-size: 1.15rem;
+  padding: 0 1.75em;
+}
+
+.ozellikler h2 {
+  font-size: 1.15rem;
+}
+.ozellikler p {
+  margin: 0;
+}
+
+.ayar-bolumu {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.ayar-bolumu h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.secim-grubu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.anahtar-satiri {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  min-height: var(--dokunma);
+  cursor: pointer;
+}
+.anahtar-satiri input {
+  width: 28px;
+  height: 28px;
+  margin: 2px 0 0;
+  accent-color: var(--ana);
+  flex: none;
+}

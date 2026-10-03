@@ -1,0 +1,299 @@
+/* Temel stil: renk belirteçleri, açık/koyu tema, yüksek kontrast, ortak bileşenler.
+   Hover'a bağlı hiçbir etkileşim yoktur; :hover yalnızca görsel ipucudur. */
+
+@import '@fontsource-variable/inter/wght.css';
+
+:root {
+  --font: 'Inter Variable', 'Segoe UI', Roboto, 'Noto Sans', Arial, sans-serif;
+
+  --ana: #1f5fae;
+  --ana-koyu: #174a89;
+  --ana-acik: #e7eff9;
+  --ana-yazi: #ffffff;
+  --vurgu: #c0561b;
+  --basari: #1d7a46;
+  --basari-acik: #e5f4ec;
+  --uyari: #8a5a00;
+  --uyari-acik: #fff4d9;
+  --hata: #b42318;
+
+  --zemin: #f5f7fa;
+  --yuzey: #ffffff;
+  --yuzey-2: #eef1f5;
+  --cizgi: #d9dee6;
+  --yazi: #18202b;
+  --yazi-soluk: #5a6676;
+
+  --golge: 0 1px 2px rgb(16 24 40 / 6%), 0 4px 12px rgb(16 24 40 / 6%);
+  --yaricap: 14px;
+  --dokunma: 56px;
+  --odak: 0 0 0 3px rgb(31 95 174 / 40%);
+
+  color-scheme: light;
+  font-family: var(--font);
+  color: var(--yazi);
+  background: var(--zemin);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root[data-tema='koyu'] {
+  --ana: #6aa5f0;
+  --ana-koyu: #8bb9f4;
+  --ana-acik: #1b2a40;
+  --ana-yazi: #0b1220;
+  --vurgu: #f0975e;
+  --basari: #5cc98b;
+  --basari-acik: #15301f;
+  --uyari: #f2c35b;
+  --uyari-acik: #33290f;
+  --hata: #f97066;
+
+  --zemin: #0e131a;
+  --yuzey: #161d27;
+  --yuzey-2: #1e2734;
+  --cizgi: #2c3746;
+  --yazi: #e9eef5;
+  --yazi-soluk: #9aa7b8;
+  --golge: 0 1px 2px rgb(0 0 0 / 40%), 0 6px 16px rgb(0 0 0 / 30%);
+  --odak: 0 0 0 3px rgb(106 165 240 / 50%);
+  color-scheme: dark;
+}
+
+/* Yüksek kontrast: akıllı tahtada, güneş alan sınıfta okunurluk için. */
+:root[data-kontrast='yuksek'] {
+  --ana: #ffd400;
+  --ana-koyu: #ffe14d;
+  --ana-acik: #2a2400;
+  --ana-yazi: #000000;
+  --vurgu: #00e5ff;
+  --basari: #4dff88;
+  --basari-acik: #002b12;
+  --uyari: #ffd400;
+  --uyari-acik: #2a2400;
+  --hata: #ff6b6b;
+  --zemin: #000000;
+  --yuzey: #000000;
+  --yuzey-2: #111111;
+  --cizgi: #ffffff;
+  --yazi: #ffffff;
+  --yazi-soluk: #e6e6e6;
+  --golge: none;
+  --odak: 0 0 0 4px #00e5ff;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#kok {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--zemin);
+  color: var(--yazi);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--ana);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--odak);
+}
+
+/* ---------------------------------------------------------------- */
+/* Düğmeler                                                          */
+/* ---------------------------------------------------------------- */
+.dugme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: var(--dokunma);
+  min-width: var(--dokunma);
+  padding: 0 1.25em;
+  border-radius: 12px;
+  border: 1.5px solid var(--cizgi);
+  background: var(--yuzey);
+  color: var(--yazi);
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    transform 0.05s;
+}
+.dugme:active {
+  transform: scale(0.98);
+}
+.dugme:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.dugme.ana {
+  background: var(--ana);
+  border-color: var(--ana);
+  color: var(--ana-yazi);
+}
+.dugme.ana:active {
+  background: var(--ana-koyu);
+}
+.dugme.sade {
+  background: transparent;
+  border-color: transparent;
+}
+.dugme.secili {
+  background: var(--ana-acik);
+  border-color: var(--ana);
+  color: var(--yazi);
+}
+.dugme svg {
+  width: 1.4em;
+  height: 1.4em;
+  flex: none;
+}
+
+/* ---------------------------------------------------------------- */
+/* Sayfa düzeni                                                      */
+/* ---------------------------------------------------------------- */
+.sayfa {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+.ust-serit {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--yuzey);
+  border-bottom: 1px solid var(--cizgi);
+}
+.ust-serit .urun {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--yazi);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--dokunma);
+}
+.ust-serit .bosluk {
+  flex: 1;
+}
+
+.alt-bilgi {
+  border-top: 1px solid var(--cizgi);
+  color: var(--yazi-soluk);
+  font-size: 0.9rem;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: center;
+}
+.alt-bilgi a {
+  color: var(--yazi-soluk);
+}
+
+.kart {
+  background: var(--yuzey);
+  border: 1px solid var(--cizgi);
+  border-radius: var(--yaricap);
+  box-shadow: var(--golge);
+  padding: 24px;
+}
+
+.izgara {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.soluk {
+  color: var(--yazi-soluk);
+}
+
+.rozet {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--yuzey-2);
+  color: var(--yazi-soluk);
+  border: 1px solid var(--cizgi);
+  white-space: nowrap;
+}
+.rozet.ornek {
+  background: var(--uyari-acik);
+  color: var(--uyari);
+  border-color: color-mix(in srgb, var(--uyari) 40%, transparent);
+}
+
+.bilgi-kutusu {
+  border-radius: 12px;
+  padding: 14px 18px;
+  background: var(--ana-acik);
+  border: 1px solid color-mix(in srgb, var(--ana) 30%, transparent);
+}
+.bilgi-kutusu.uyari {
+  background: var(--uyari-acik);
+  border-color: color-mix(in srgb, var(--uyari) 35%, transparent);
+}
+
+.yer-tutucu {
+  border: 2px dashed var(--cizgi);
+  border-radius: var(--yaricap);
+  padding: 32px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--yazi-soluk);
+}
+
+.gizli-erisilebilir {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
