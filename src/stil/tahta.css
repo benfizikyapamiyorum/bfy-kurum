@@ -1,0 +1,733 @@
+/* Tahta modu. Akıllı tahta (1920×1080, 4K), dokunmatik. Yazı ve dokunma hedefleri ekran genişliğiyle ölçeklenir.
+   Hover'a bağlı etkileşim yoktur. */
+
+.tahta {
+  --dokunma: clamp(56px, 3.5vw, 112px);
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  font-size: clamp(17px, 1.6vw, 52px);
+  background: var(--zemin);
+  color: var(--yazi);
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.tahta .dugme {
+  font-size: 0.78em;
+  border-radius: 0.55em;
+  padding: 0 0.9em;
+}
+.tahta .dugme svg {
+  width: 1.35em;
+  height: 1.35em;
+}
+.tahta .dugme.genis {
+  min-width: 9em;
+}
+
+/* ---------------- Üst çubuk ---------------- */
+.tahta-ust {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.45em 0.8em;
+  background: var(--yuzey);
+  border-bottom: 1px solid var(--cizgi);
+  min-height: calc(var(--dokunma) + 0.9em);
+}
+.tahta-baslik {
+  flex: 1;
+  min-width: 0;
+}
+.tahta-baslik-ana {
+  font-weight: 700;
+  font-size: 0.95em;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.tahta-baslik-alt {
+  color: var(--yazi-soluk);
+  font-size: 0.66em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tahta-araclar {
+  display: flex;
+  gap: 0.35em;
+}
+.cevrimdisi-rozeti {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: 0.66em;
+  font-weight: 700;
+  color: var(--uyari);
+  background: var(--uyari-acik);
+  border-radius: 999px;
+  padding: 0.3em 0.8em;
+}
+.cevrimdisi-rozeti svg {
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.kurum-logosu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--dokunma);
+  min-width: var(--dokunma);
+  max-width: 7em;
+  padding: 0 0.3em;
+}
+.kurum-logosu img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+.kurum-logosu span {
+  font-weight: 800;
+  font-size: 0.66em;
+  letter-spacing: 0.02em;
+  color: var(--ana);
+  border: 2px solid currentColor;
+  border-radius: 0.5em;
+  padding: 0.35em 0.6em;
+  white-space: nowrap;
+}
+.tahta-logo {
+  border-left: 1px solid var(--cizgi);
+  padding-left: 0.7em;
+}
+
+/* Süre sayacı */
+.sayac {
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+  background: var(--yuzey-2);
+  border-radius: 0.6em;
+  padding: 0 0.2em 0 0.7em;
+}
+.sayac-deger {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 1.05em;
+  min-width: 3.2em;
+}
+.sayac.durdu .sayac-deger {
+  color: var(--yazi-soluk);
+}
+
+/* ---------------- Gövde ve çizim ---------------- */
+.tahta-govde {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+.tahta-icerik {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.tahta-icerik.kaydirilabilir {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.cizim-katmani {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+.cizim-katmani.etkin {
+  pointer-events: auto;
+  touch-action: none;
+  cursor: crosshair;
+}
+.cizim-katmani.etkin.silgi {
+  cursor: cell;
+}
+
+.kalem-araclari {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--dokunma) + 1.5em);
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35em;
+  max-width: calc(100vw - 1em);
+  padding: 0.45em;
+  background: var(--yuzey);
+  border: 1px solid var(--cizgi);
+  border-radius: 0.8em;
+  box-shadow: var(--golge), 0 8px 30px rgb(0 0 0 / 18%);
+}
+.kalem-araclari .ayirac {
+  width: 1px;
+  align-self: stretch;
+  background: var(--cizgi);
+  margin: 0 0.15em;
+}
+.renk-dugmesi {
+  width: var(--dokunma);
+  height: var(--dokunma);
+  border-radius: 50%;
+  border: 3px solid var(--yuzey);
+  box-shadow: 0 0 0 2px var(--cizgi);
+  cursor: pointer;
+}
+.renk-dugmesi.secili {
+  box-shadow: 0 0 0 4px var(--ana);
+}
+.uc-onizleme {
+  display: block;
+  width: 1.1em;
+  height: 0.16em;
+  border-radius: 1em;
+  background: currentColor;
+}
+.uc-onizleme.kalin {
+  height: 0.38em;
+}
+
+/* ---------------- Alt çubuk ---------------- */
+.tahta-alt {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.45em 0.8em;
+  background: var(--yuzey);
+  border-top: 1px solid var(--cizgi);
+}
+.tahta-alt .bosluk {
+  flex: 1;
+}
+.alt-bilgi-metni {
+  font-size: 0.7em;
+  color: var(--yazi-soluk);
+}
+.adim-sayaci {
+  font-size: 0.8em;
+  font-variant-numeric: tabular-nums;
+  background: var(--yuzey-2);
+  color: var(--yazi-soluk);
+  border-radius: 999px;
+  padding: 0.1em 0.55em;
+}
+.dugme.ana .adim-sayaci {
+  background: rgb(255 255 255 / 20%);
+  color: inherit;
+}
+
+/* ---------------- Liste ekranları ---------------- */
+.tahta-sayfa {
+  padding: 1.1em 1.4em 2em;
+  max-width: 64em;
+  margin: 0 auto;
+}
+.tahta-durum {
+  padding: 2em;
+  text-align: center;
+  font-size: 0.9em;
+}
+.tahta-durum.hata p {
+  max-width: 30em;
+  margin: 0 auto 1em;
+}
+.dugme-satiri {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tahta-bolum {
+  margin-bottom: 1.6em;
+}
+.tahta-bolum h2 {
+  font-size: 0.85em;
+  text-transform: none;
+  color: var(--yazi-soluk);
+  margin-bottom: 0.6em;
+}
+.buyuk-izgara {
+  display: grid;
+  gap: 0.7em;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11em), 1fr));
+}
+.buyuk-kutu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  min-height: 4.6em;
+  padding: 0.8em 0.9em;
+  background: var(--yuzey);
+  border: 1.5px solid var(--cizgi);
+  border-radius: 0.7em;
+  box-shadow: var(--golge);
+  color: var(--yazi);
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.buyuk-kutu:active {
+  border-color: var(--ana);
+  background: var(--ana-acik);
+}
+.buyuk-kutu.pasif {
+  opacity: 0.5;
+  box-shadow: none;
+}
+.buyuk-kutu-ust {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.62em;
+  font-weight: 700;
+  color: var(--yazi-soluk);
+}
+.buyuk-kutu-baslik {
+  font-size: 0.95em;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.buyuk-kutu-alt {
+  margin-top: auto;
+  font-size: 0.62em;
+  color: var(--yazi-soluk);
+}
+.durum-cipi {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.durum-cipi svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+.durum-cipi.tamam {
+  color: var(--basari);
+  font-weight: 600;
+}
+.tahta-alt-baglantilar {
+  display: flex;
+  gap: 0.6em;
+  flex-wrap: wrap;
+  margin-top: 1.4em;
+}
+.tahta .rozet {
+  font-size: 0.55em;
+}
+
+.kazanim-grubu {
+  margin-bottom: 1.1em;
+}
+.kazanim-grubu h3 {
+  font-size: 0.68em;
+  font-weight: 500;
+  color: var(--yazi-soluk);
+  margin-bottom: 0.5em;
+}
+.kazanim-kodu {
+  font-weight: 800;
+  color: var(--ana);
+  margin-right: 0.3em;
+}
+.soru-kartlari {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20em), 1fr));
+}
+.soru-karti {
+  display: flex;
+  gap: 0.7em;
+  align-items: flex-start;
+  padding: 0.7em 0.8em;
+  min-height: var(--dokunma);
+  background: var(--yuzey);
+  border: 1.5px solid var(--cizgi);
+  border-radius: 0.6em;
+  color: var(--yazi);
+  text-decoration: none;
+  touch-action: manipulation;
+}
+.soru-karti:active {
+  border-color: var(--ana);
+}
+.soru-karti-no {
+  flex: none;
+  width: 1.9em;
+  height: 1.9em;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.8em;
+  background: var(--ana-acik);
+  color: var(--ana);
+}
+.soru-karti-govde {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  min-width: 0;
+}
+.soru-karti-metin {
+  font-size: 0.7em;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.soru-karti-bilgi {
+  display: flex;
+  gap: 0.4em;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.zorluk {
+  display: inline-flex;
+  gap: 0.15em;
+}
+.zorluk i {
+  width: 0.36em;
+  height: 0.36em;
+  border-radius: 50%;
+  background: var(--cizgi);
+}
+.zorluk i.dolu {
+  background: var(--vurgu);
+}
+
+/* ---------------- Soru ekranı ---------------- */
+.soru-ekrani {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.6em;
+  padding: 1em 1.6em;
+  max-width: 52em;
+  margin: 0 auto;
+}
+.soru-ekrani.sekilli {
+  max-width: none;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+}
+.soru-sol {
+  overflow-y: auto;
+  padding-right: 0.3em;
+  min-height: 0;
+}
+.soru-rozetleri {
+  margin-bottom: 0.4em;
+}
+.soru-govde {
+  font-size: 1.15em;
+  line-height: 1.5;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.soru-govde .katex {
+  font-size: 1.05em;
+}
+
+.secenekler {
+  display: grid;
+  gap: 0.45em;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5em), 1fr));
+  margin: 0.9em 0;
+}
+.secenekler:has(.secenek-metin:not(:empty)) {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5em), 1fr));
+}
+.secenek {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  min-height: var(--dokunma);
+  padding: 0.35em 0.7em 0.35em 0.4em;
+  background: var(--yuzey);
+  border: 2px solid var(--cizgi);
+  border-radius: 0.6em;
+  color: var(--yazi);
+  font: inherit;
+  font-size: 0.95em;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.secenek-harf {
+  flex: none;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  background: var(--yuzey-2);
+}
+.secenek.isaretli {
+  border-color: var(--ana);
+  box-shadow: inset 0 0 0 1px var(--ana);
+}
+.secenek.isaretli .secenek-harf {
+  background: var(--ana);
+  color: var(--ana-yazi);
+}
+.secenek.dogru {
+  border-color: var(--basari);
+  background: var(--basari-acik);
+}
+.secenek.dogru .secenek-harf {
+  background: var(--basari);
+  color: #fff;
+}
+.secenek.yanlis {
+  border-color: var(--hata);
+}
+.secenek.yanlis .secenek-harf {
+  background: var(--hata);
+  color: #fff;
+}
+.secenekler.dy {
+  grid-template-columns: repeat(2, minmax(0, 12em));
+}
+
+.cevap-kutusu {
+  margin: 0.6em 0;
+  padding: 0.6em 0.9em;
+  border-radius: 0.6em;
+  background: var(--basari-acik);
+  border: 2px solid var(--basari);
+  font-size: 1em;
+  animation: belir 0.25s ease-out;
+}
+.cozum-adimlari {
+  list-style: none;
+  counter-reset: adim;
+  padding: 0;
+  margin: 0.8em 0 0;
+  display: grid;
+  gap: 0.5em;
+}
+.cozum-adimi {
+  counter-increment: adim;
+  position: relative;
+  padding: 0.55em 0.8em 0.55em 2.6em;
+  background: var(--yuzey);
+  border: 1px solid var(--cizgi);
+  border-left: 0.3em solid var(--ana);
+  border-radius: 0.5em;
+  font-size: 0.92em;
+  line-height: 1.5;
+  animation: belir 0.3s ease-out;
+}
+.cozum-adimi::before {
+  content: counter(adim);
+  position: absolute;
+  left: 0.7em;
+  top: 0.55em;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background: var(--ana);
+  color: var(--ana-yazi);
+  font-size: 0.85em;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+@keyframes belir {
+  from {
+    opacity: 0;
+    transform: translateY(0.3em);
+  }
+}
+
+.soru-sag {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  min-height: 0;
+}
+.soru-sekli {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid var(--cizgi);
+  border-radius: 0.8em;
+  padding: 0.8em;
+  box-shadow: var(--golge);
+}
+.soru-sekli svg {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  font-family: var(--font);
+}
+.sekil-yeniden {
+  align-self: flex-end;
+}
+
+/* ---------------- Kit ---------------- */
+.kit-cercevesi {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #ffffff;
+}
+
+/* ---------------- Tahtaya indir ---------------- */
+.indirme-unitesi {
+  margin-bottom: 1.2em;
+}
+.indirme-unitesi h2 {
+  font-size: 0.8em;
+  margin-bottom: 0.4em;
+}
+.indirme-listesi {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4em;
+}
+.indirme-satiri {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  background: var(--yuzey);
+  border: 1.5px solid var(--cizgi);
+  border-radius: 0.6em;
+  padding: 0.2em 0.5em;
+}
+.indirme-satiri.secili {
+  border-color: var(--ana);
+  background: var(--ana-acik);
+}
+.indirme-secim {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  min-height: var(--dokunma);
+  cursor: pointer;
+}
+.indirme-secim input {
+  width: 1.2em;
+  height: 1.2em;
+  accent-color: var(--ana);
+  flex: none;
+}
+.indirme-secim > span {
+  display: flex;
+  flex-direction: column;
+}
+.indirme-baslik {
+  font-weight: 600;
+  font-size: 0.8em;
+}
+.indirme-durum {
+  font-size: 0.62em;
+  color: var(--yazi-soluk);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.indirme-durum.tamam {
+  color: var(--basari);
+}
+.indirme-durum svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+.indirme-sayfasi .bilgi-kutusu,
+.indirme-sayfasi > .soluk {
+  font-size: 0.7em;
+}
+
+/* Yüksek kontrastta şekil kâğıt gibi beyaz kalır, kalın çerçeve alır. */
+:root[data-kontrast='yuksek'] .soru-sekli {
+  border: 3px solid #ffffff;
+}
+:root[data-kontrast='yuksek'] .secenek.dogru,
+:root[data-kontrast='yuksek'] .cevap-kutusu {
+  color: #ffffff;
+}
+
+/* Dar ekran (tablet dikey, telefon): şekil sorunun altına iner. */
+@media (max-width: 900px) {
+  .tahta {
+    font-size: 17px;
+  }
+  .tahta-ust,
+  .tahta-alt {
+    flex-wrap: wrap;
+  }
+  .tahta-baslik {
+    flex-basis: calc(100% - var(--dokunma) - 1em);
+  }
+  .tahta .dugme.genis {
+    min-width: 0;
+    flex: 1;
+  }
+  .tahta .dugme.genis svg,
+  .tahta .dugme.genis .adim-sayaci {
+    display: none;
+  }
+  .tahta-alt .bosluk {
+    display: none;
+  }
+  .soru-ekrani {
+    padding: 0.8em;
+  }
+  .secenekler.dy {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .soru-ekrani,
+  .soru-ekrani.sekilli {
+    display: block;
+    overflow-y: auto;
+  }
+  .soru-sol {
+    overflow: visible;
+    padding-right: 0;
+  }
+  .soru-sag {
+    margin-top: 1em;
+  }
+  .soru-sekli {
+    flex: none;
+  }
+  .soru-sekli {
+    min-height: 240px;
+  }
+  .dar-gizle {
+    display: none;
+  }
+  .tahta-logo {
+    display: none;
+  }
+}

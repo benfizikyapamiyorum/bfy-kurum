@@ -1,4 +1,5 @@
 import { useTema, type TemaSecimi } from '../tema'
+import { LogoAyari } from './LogoAyari'
 
 const temalar: [TemaSecimi, string][] = [
   ['sistem', 'Cihaza göre'],
@@ -34,6 +35,7 @@ export function Ayarlar() {
           </span>
         </label>
       </section>
+      <LogoAyari />
     </div>
   )
 }

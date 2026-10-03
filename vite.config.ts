@@ -34,7 +34,7 @@ export default defineConfig({
       },
       workbox: {
         // Uygulama kabuğu her zaman önbellekte. Yalnızca Türkçe için gereken yazı tipi dosyaları alınır.
-        globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}', '**/inter-latin*.woff2', '**/KaTeX_*.woff2'],
+        globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}', '**/inter-latin*.woff2', '**/inter-greek-wght*.woff2', '**/KaTeX_*.woff2'],
         // İçerik dosyaları (HTML kitler) kabuğa girmez; öğretmen "Tahtaya indir" ile kendisi seçer.
         globIgnores: ['ornek/**'],
         navigateFallback: '/index.html',

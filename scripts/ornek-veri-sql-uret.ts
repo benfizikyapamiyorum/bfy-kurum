@@ -5,6 +5,8 @@
 import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { katalog } from '../src/veri/katalog'
+import { ornekIcerikler } from '../src/veri/ornekIcerik'
+import { ornekSorular } from '../src/veri/ornekSorular'
 
 const kok = resolve(import.meta.dirname, '..')
 const goc = (ad: string) => resolve(kok, 'supabase/migrations', ad)
@@ -51,5 +53,47 @@ function katalogSql(): string {
   return satirlar.join('\n') + '\n'
 }
 
+const json = (v: unknown) => (v === null || v === undefined ? 'null' : `${metin(JSON.stringify(v))}::jsonb`)
+
+function ornekSql(): string {
+  const satirlar: string[] = [
+    ust('0006: ÖRNEK içerik. Sistemi göstermek için 10 soru ve 1 HTML kit; hepsi ornek = true.'),
+    '-- Gerçek içerik aktarıldıktan sonra istenirse silinebilir:',
+    '--   delete from public.soru where ornek; delete from public.icerik where ornek;',
+    '',
+  ]
+  for (const s of ornekSorular) {
+    satirlar.push(
+      `insert into public.soru (id, tur, govde, sekil_svg, secenekler, dogru_cevap, cozum_adimlari, zorluk, baglam_temelli, kaynak_notu, ornek)\n` +
+        `values (${metin(s.id)}, ${metin(s.tur)}, ${metin(s.govde)}, ${metin(s.sekil_svg)}, ${json(s.secenekler)}, ${metin(s.dogru_cevap)},\n` +
+        `  ${json(s.cozum_adimlari)}, ${s.zorluk}, ${s.baglam_temelli}, ${metin(s.kaynak_notu)}, ${s.ornek})\n` +
+        `on conflict (id) do update set tur = excluded.tur, govde = excluded.govde, sekil_svg = excluded.sekil_svg,\n` +
+        `  secenekler = excluded.secenekler, dogru_cevap = excluded.dogru_cevap, cozum_adimlari = excluded.cozum_adimlari,\n` +
+        `  zorluk = excluded.zorluk, baglam_temelli = excluded.baglam_temelli, kaynak_notu = excluded.kaynak_notu, ornek = excluded.ornek;`,
+    )
+    for (const k of s.kazanim_idleri) {
+      satirlar.push(
+        `insert into public.soru_kazanim (soru_id, kazanim_id) values (${metin(s.id)}, ${metin(k)}) on conflict do nothing;`,
+      )
+    }
+    satirlar.push('')
+  }
+  for (const i of ornekIcerikler) {
+    satirlar.push(
+      `insert into public.icerik (id, tur, baslik, aciklama, unite_id, hafta, sira, html_yolu, meb_baglanti, ornek)\n` +
+        `values (${metin(i.id)}, ${metin(i.tur)}, ${metin(i.baslik)}, ${metin(i.aciklama)}, ${metin(i.unite_id)}, ${i.hafta ?? 'null'}, ${i.sira}, ${metin(i.html_yolu)}, ${metin(i.meb_baglanti)}, ${i.ornek})\n` +
+        `on conflict (id) do update set baslik = excluded.baslik, aciklama = excluded.aciklama, unite_id = excluded.unite_id,\n` +
+        `  hafta = excluded.hafta, html_yolu = excluded.html_yolu, ornek = excluded.ornek;`,
+    )
+    for (const k of i.kazanim_idleri) {
+      satirlar.push(
+        `insert into public.icerik_kazanim (icerik_id, kazanim_id) values (${metin(i.id)}, ${metin(k)}) on conflict do nothing;`,
+      )
+    }
+  }
+  return satirlar.join('\n') + '\n'
+}
+
 writeFileSync(goc('20261003000500_katalog.sql'), katalogSql())
-console.log('Katalog SQL dosyası üretildi.')
+writeFileSync(goc('20261003000600_ornek_icerik.sql'), ornekSql())
+console.log('Katalog ve örnek içerik SQL dosyaları üretildi.')

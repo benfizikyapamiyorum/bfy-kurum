@@ -16,6 +16,10 @@ export function AnaSayfa() {
             <Simge ad="tahta" />
             Tahta modunu aç
           </Link>
+          <Link to="/tahta/indir" className="dugme buyuk">
+            <Simge ad="indir" />
+            Tahtaya indir
+          </Link>
         </div>
       </section>
 
