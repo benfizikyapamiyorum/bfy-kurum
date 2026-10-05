@@ -1,0 +1,679 @@
+{
+  "surum": 1,
+  "kaynak": "Fizik Atölye pilotu: Kaldırma kuvveti (9. sınıf).",
+  "katalog": {
+    "uniteler": [
+      {
+        "ders": "FIZ",
+        "seviye": "9",
+        "no": 3,
+        "ad": "Akışkanlar"
+      }
+    ],
+    "kazanimlar": [
+      {
+        "kod": "FİZ.9.3.5",
+        "metin": "Kaldırma kuvvetini etkileyen değişkenleri belirlemeye yönelik deney yapabilme",
+        "unite": {
+          "seviye": "9",
+          "no": 3
+        },
+        "sira": 5
+      },
+      {
+        "kod": "FİZ.9.3.6",
+        "metin": "Kaldırma kuvveti ile sıvılardaki basınca neden olan kuvvet arasındaki ilişkiye yönelik çıkarım yapabilme",
+        "unite": {
+          "seviye": "9",
+          "no": 3
+        },
+        "sira": 6
+      }
+    ]
+  },
+  "sorular": [
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S1",
+      "tur": "coktan_secmeli",
+      "govde": "Bir ekip, tamamen su içindeki rijit bir küpü farklı derinliklerde sabit tutuyor. Su homojen; küpün hacmi ve yer çekimi değişmiyor. Atmosfer katkısı çıkarılmış yüzey kuvvetleri aşağıda verilmiştir. Verilerin desteklediği yorum hangisidir?<table><thead><tr><th>Üst yüzey derinliği</th><th>Üst kuvvet (aşağı)</th><th>Alt kuvvet (yukarı)</th></tr></thead><tbody><tr><td>20 cm</td><td>80 N</td><td>160 N</td></tr><tr><td>50 cm</td><td>200 N</td><td>280 N</td></tr></tbody></table>",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Aynı küp iki derinlikte iple tutuluyor; üstte aşağı, altta yukarı basınç kuvvetleri verilmiştir.\"><defs><linearGradient id=\"aks1-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks1-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks1-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"101\" y1=\"29\" x2=\"139\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"29\" x2=\"106\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"109\" y1=\"29\" x2=\"113\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"29\" x2=\"120\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"123\" y1=\"29\" x2=\"127\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"130\" y1=\"29\" x2=\"134\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"137\" y1=\"29\" x2=\"141\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"29\" x2=\"120\" y2=\"89\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><rect x=\"101\" y=\"89\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks1-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"93\" x2=\"135\" y2=\"93\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"65\" x2=\"55\" y2=\"89\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-dasharray=\"5 4\"/><line x1=\"50\" y1=\"65\" x2=\"60\" y2=\"65\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"89\" x2=\"60\" y2=\"89\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><text x=\"5\" y=\"81\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">20 cm</text><line x1=\"110\" y1=\"71\" x2=\"110\" y2=\"84\" stroke=\"#1d2733\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"110,89 113,82 107,82\" fill=\"#1d2733\" stroke=\"#1d2733\" stroke-width=\"1\"/><text x=\"145\" y=\"82\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">80 N</text><line x1=\"130\" y1=\"136\" x2=\"130\" y2=\"122\" stroke=\"#1d2733\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"130,117 127,124 133,124\" fill=\"#1d2733\" stroke=\"#1d2733\" stroke-width=\"1\"/><text x=\"145\" y=\"123\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">160 N</text><text x=\"120\" y=\"180\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Aynı rijit küp</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">I. konum</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks1-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"101\" y1=\"29\" x2=\"139\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"29\" x2=\"106\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"109\" y1=\"29\" x2=\"113\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"29\" x2=\"120\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"123\" y1=\"29\" x2=\"127\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"130\" y1=\"29\" x2=\"134\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"137\" y1=\"29\" x2=\"141\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"29\" x2=\"120\" y2=\"113\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><rect x=\"101\" y=\"113\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks1-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"117\" x2=\"135\" y2=\"117\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"65\" x2=\"55\" y2=\"113\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-dasharray=\"5 4\"/><line x1=\"50\" y1=\"65\" x2=\"60\" y2=\"65\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"113\" x2=\"60\" y2=\"113\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><text x=\"5\" y=\"93\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">50 cm</text><line x1=\"110\" y1=\"95\" x2=\"110\" y2=\"108\" stroke=\"#1d2733\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"110,113 113,106 107,106\" fill=\"#1d2733\" stroke=\"#1d2733\" stroke-width=\"1\"/><text x=\"145\" y=\"106\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">200 N</text><line x1=\"130\" y1=\"160\" x2=\"130\" y2=\"146\" stroke=\"#1d2733\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"130,141 127,148 133,148\" fill=\"#1d2733\" stroke=\"#1d2733\" stroke-width=\"1\"/><text x=\"145\" y=\"147\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">280 N</text><text x=\"120\" y=\"180\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Aynı rijit küp</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">II. konum</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "Derinlik arttıkça kaldırma kuvveti 120 N artmıştır.",
+          "gerekce": "120 N, her bir yüzey kuvvetindeki artıştır. Kaldırma kuvveti bu kuvvetlerin farkıdır; fark iki durumda da 80 N kalır."
+        },
+        {
+          "harf": "B",
+          "metin": "İki yüzey kuvveti artmış; kaldırma kuvveti aynı kalmıştır."
+        },
+        {
+          "harf": "C",
+          "metin": "Alt yüzey kuvveti arttığı için cismin ağırlığı artmıştır.",
+          "gerekce": "Alt yüzeydeki sıvı kuvveti cismin ağırlığı değildir. Cismin kütlesi ve yer çekimi değişmediğinden ağırlığı da değişmez."
+        },
+        {
+          "harf": "D",
+          "metin": "Üst ve alt kuvvet eşit miktarda arttığından kaldırma kuvveti sıfırdır.",
+          "gerekce": "Artışların eşit olması, kuvvetlerin kendilerinin eşit olduğu anlamına gelmez. 160 − 80 ve 280 − 200 farkları sıfır değil 80 N’dur."
+        },
+        {
+          "harf": "E",
+          "metin": "Kaldırma kuvveti, her durumda alt yüzey kuvvetine eşittir.",
+          "gerekce": "Üst yüzeyde aşağı yönlü bir sıvı kuvveti de vardır. Alt kuvvetten bu katkı çıkarılmadan kaldırma kuvveti bulunamaz."
+        }
+      ],
+      "dogru_cevap": "B",
+      "cozum_adimlari": [
+        "<strong>Veriyi fark et.</strong> Üst yüzeydeki sıvı kuvveti aşağı, alt yüzeydeki yukarı yönlüdür. Derinlik değişirken küpün batan hacmi ve suyun yoğunluğu sabit kalır.<br><span class=\"denklem\">I: 80 N ↓ / 160 N ↑     II: 200 N ↓ / 280 N ↑</span><br><em>Sınıfa sor: Kaldırma kuvvetini tek bir yüzey kuvvetinden bulabilir miyiz?</em>",
+        "<strong>İlişkiyi kur.</strong> Yan yüzeylerin yatay kuvvetleri birbirini dengeler. Sıvının düşey bileşkesi, alt ve üst yüzey kuvvetlerinin farkıdır. İki derinliği aynı ilişkiyle karşılaştırın.<br><span class=\"denklem\">Fₖ = Falt − Füst</span><br><em>Sınıfa sor: İki kuvvete de aynı miktar eklenirse aralarındaki fark değişir mi?</em>",
+        "<strong>Sonucu göster.</strong> Her iki yüzey kuvveti 120 N artar. Kaldırma kuvveti ise iki durumda da 80 N’dur. Bu sonuç, homojen sıvıda sabit batan hacim koşuluna aittir.<br><span class=\"denklem\">160 − 80 = 80 N     280 − 200 = 80 N</span><br><em>Kontrol: Yüzey kuvvetlerinin artması, bileşkenin de artmasını gerektirir mi?</em>"
+      ],
+      "zorluk": 2,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S1: Su altı sensörünün verileri.",
+      "beceri": "Veriden çıkarım",
+      "kavram_yanilgisi": "Alt yüzey kuvvetini doğrudan kaldırma kuvveti sayma.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S2",
+      "tur": "coktan_secmeli",
+      "govde": "Toplam kütlesi 200 g olan bir maket tekne, önce yoğunluğu 1,00 g/cm³ olan A sıvısında, sonra 1,25 g/cm³ olan B sıvısında serbestçe yüzüyor. Tekne su almıyor; yükü ve yer çekimi değişmiyor. Her iki durumda da teknenin bir bölümü sıvı dışında. B'de teknenin batan hacmi ve kaldırma kuvveti, A'ya göre nasıldır?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"A sıvısında yüzen tekne ve B sıvısında bulunması istenen yeni yüzme durumu.\"><defs><linearGradient id=\"aks2-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks2-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"75\" width=\"170\" height=\"80\" rx=\"0\" fill=\"url(#aks2-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"120\" y=\"20\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Yoğunluk: 1,00 g/cm³</text><polygon points=\"77,59 163,59 153,86 145,94 95,94 87,86\" fill=\"url(#aks2-cisim)\" stroke=\"none\" stroke-width=\"1\"/><rect x=\"104\" y=\"40\" width=\"32\" height=\"19\" rx=\"2.5\" fill=\"#ffffff\"/><rect x=\"110\" y=\"44\" width=\"7\" height=\"8\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><rect x=\"121\" y=\"44\" width=\"7\" height=\"8\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><line x1=\"83\" y1=\"67\" x2=\"157\" y2=\"67\" stroke=\"#ffffff\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"82\" y2=\"75\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"158\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><text x=\"120\" y=\"177\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Toplam kütle: 200 g</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">A sıvısı</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"75\" width=\"170\" height=\"80\" rx=\"0\" fill=\"url(#aks2-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"120\" y=\"20\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Yoğunluk: 1,25 g/cm³</text><text x=\"70\" y=\"110\" font-size=\"15\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Yeni denge?</text><text x=\"49\" y=\"138\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Batan hacim: ?</text><text x=\"120\" y=\"177\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Toplam kütle: 200 g</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">B sıvısı</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "Batan hacim artar; kaldırma kuvveti artar."
+        },
+        {
+          "harf": "B",
+          "metin": "Batan hacim değişmez; kaldırma kuvveti artar."
+        },
+        {
+          "harf": "C",
+          "metin": "Batan hacim azalır; kaldırma kuvveti değişmez."
+        },
+        {
+          "harf": "D",
+          "metin": "Batan hacim azalır; kaldırma kuvveti azalır."
+        },
+        {
+          "harf": "E",
+          "metin": "Batan hacim artar; kaldırma kuvveti değişmez."
+        }
+      ],
+      "dogru_cevap": "C",
+      "cozum_adimlari": [
+        "Yüzme dengesi sürdüğünden kaldırma kuvveti her iki sıvıda da teknenin ağırlığına eşittir. Batan hacim A'da 200 cm³, B'de 160 cm³ olur. Yoğunluk artarken hacim azalır; yoğunluk ile batan hacmin çarpımı sabit kalır."
+      ],
+      "zorluk": 3,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S2: Maket teknenin iki sıvıdaki duruşu.",
+      "beceri": "Koşullu karşılaştırma",
+      "kavram_yanilgisi": "Yoğunluk artınca yüzen her cisme etki eden kaldırma kuvvetinin artacağını düşünme.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S3",
+      "tur": "coktan_secmeli",
+      "govde": "Bir laboratuvarda rijit bir metal parça, yoğunluğu 1,00 g/cm³ olan A ve 1,25 g/cm³ olan B sıvılarında sırayla, tamamen batmış olarak bir iple tutuluyor. Parça kaplara değmiyor; hacmi ve yer çekimi değişmiyor. A'da kaldırma kuvveti F ise B'de kaç F olur?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Aynı metal parça farklı yoğunluktaki iki sıvıda tamamen batmış ve iple tutuluyor.\"><defs><linearGradient id=\"aks3-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks3-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks3-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"101\" y1=\"29\" x2=\"139\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"29\" x2=\"106\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"109\" y1=\"29\" x2=\"113\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"29\" x2=\"120\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"123\" y1=\"29\" x2=\"127\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"130\" y1=\"29\" x2=\"134\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"137\" y1=\"29\" x2=\"141\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"29\" x2=\"120\" y2=\"105\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><rect x=\"101\" y=\"105\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks3-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"109\" x2=\"135\" y2=\"109\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Yoğunluk: 1,00 g/cm³</text><text x=\"120\" y=\"20\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Kaldırma kuvveti: F</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">A sıvısı</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks3-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"101\" y1=\"29\" x2=\"139\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"29\" x2=\"106\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"109\" y1=\"29\" x2=\"113\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"29\" x2=\"120\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"123\" y1=\"29\" x2=\"127\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"130\" y1=\"29\" x2=\"134\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"137\" y1=\"29\" x2=\"141\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"29\" x2=\"120\" y2=\"105\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><rect x=\"101\" y=\"105\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks3-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"109\" x2=\"135\" y2=\"109\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Yoğunluk: 1,25 g/cm³</text><text x=\"120\" y=\"20\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Kaldırma kuvveti: ?</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">B sıvısı</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "0,80 F"
+        },
+        {
+          "harf": "B",
+          "metin": "F"
+        },
+        {
+          "harf": "C",
+          "metin": "1,25 F"
+        },
+        {
+          "harf": "D",
+          "metin": "1,50 F"
+        },
+        {
+          "harf": "E",
+          "metin": "2,25 F"
+        }
+      ],
+      "dogru_cevap": "C",
+      "cozum_adimlari": [
+        "Tam batmış rijit cismin batan hacmi değişmez. Yer çekimi de sabit olduğundan kaldırma kuvveti sıvı yoğunluğu ile aynı oranda değişir: 1,25 / 1,00 = 1,25. Cisim ip ile tam batmış tutulduğundan batan hacim sabittir."
+      ],
+      "zorluk": 3,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.5"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S3: Aynı sıvılar, farklı deney koşulu.",
+      "beceri": "Değişken kontrolü",
+      "kavram_yanilgisi": "Yüzme dengesindeki sonucu, ip ile tutulan tam batmış cisme genelleme.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S4",
+      "tur": "coktan_secmeli",
+      "govde": "Bir malzeme atölyesinde X ve Y parçalarının dış hacimleri 100'er cm³, kütleleri sırasıyla 150 g ve 300 g'dır. Her ikisi de aynı homojen suda tamamen batmış ve iple sabit tutuluyor. Parçalar su almıyor, şekil değiştirmiyor ve kaba değmiyor. Kaldırma kuvvetleri nasıl karşılaştırılır?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Aynı suda eşit dış hacimli X ve Y parçaları, farklı kütlelerine rağmen tamamen batmış durumda.\"><defs><linearGradient id=\"aks4-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks4-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks4-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"101\" y1=\"29\" x2=\"139\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"29\" x2=\"106\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"109\" y1=\"29\" x2=\"113\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"29\" x2=\"120\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"123\" y1=\"29\" x2=\"127\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"130\" y1=\"29\" x2=\"134\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"137\" y1=\"29\" x2=\"141\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"29\" x2=\"120\" y2=\"105\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><rect x=\"101\" y=\"105\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks4-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"109\" x2=\"135\" y2=\"109\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"114\" y=\"124\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">X</text><text x=\"120\" y=\"20\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Kütle: 150 g</text><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Dış hacim: 100 cm³</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">X parçası</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks4-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"101\" y1=\"29\" x2=\"139\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"29\" x2=\"106\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"109\" y1=\"29\" x2=\"113\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"29\" x2=\"120\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"123\" y1=\"29\" x2=\"127\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"130\" y1=\"29\" x2=\"134\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"137\" y1=\"29\" x2=\"141\" y2=\"25\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"29\" x2=\"120\" y2=\"105\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><rect x=\"101\" y=\"105\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks4-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"109\" x2=\"135\" y2=\"109\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"114\" y=\"124\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Y</text><text x=\"120\" y=\"20\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Kütle: 300 g</text><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Dış hacim: 100 cm³</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Y parçası</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "Y'ye etki eden kaldırma kuvveti X'e etki edenin iki katıdır."
+        },
+        {
+          "harf": "B",
+          "metin": "İkisine etki eden kaldırma kuvveti eşittir."
+        },
+        {
+          "harf": "C",
+          "metin": "X'e etki eden kaldırma kuvveti Y'ye etki edenin iki katıdır."
+        },
+        {
+          "harf": "D",
+          "metin": "Kütleler farklı olduğu için karşılaştırma yapılamaz."
+        },
+        {
+          "harf": "E",
+          "metin": "Parçalar sudan yoğun olduğu için kaldırma kuvveti sıfırdır."
+        }
+      ],
+      "dogru_cevap": "B",
+      "cozum_adimlari": [
+        "Aynı sıvı, aynı yer çekimi ve eşit batan hacim eşit kaldırma kuvveti verir. Parçaların ağırlıkları farklıdır; bu nedenle onları sabit tutan iplerin gerilmeleri farklı olabilir."
+      ],
+      "zorluk": 2,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.5"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S4: Farklı malzeme, eşit dış hacim.",
+      "beceri": "İlgili değişkeni seçme",
+      "kavram_yanilgisi": "Cismin kütlesini kaldırma kuvvetinin doğrudan belirleyicisi sayma.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S5",
+      "tur": "coktan_secmeli",
+      "govde": "Tamamen suya batırılmış kapalı, esnek bir balon daha derine indirilirken ölçülen hacmi 200 cm³'ten 120 cm³'e düşüyor. Su homojen, yer çekimi sabit ve balon kaba değmiyor. Yeni kaldırma kuvveti ilk değerin hangi oranındadır?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Tamamen batmış esnek balonun derine indikçe küçülen hacmi.\"><defs><linearGradient id=\"aks5-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks5-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks5-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"94\" rx=\"21\" ry=\"17.85\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><polygon points=\"117,111.85 123,111.85 120,117.85\" fill=\"#ffffff\" stroke=\"none\" stroke-width=\"1\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Hacim: 200 cm³</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">İlk konum</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks5-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"119\" rx=\"18\" ry=\"15.3\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><polygon points=\"117,134.3 123,134.3 120,140.3\" fill=\"#ffffff\" stroke=\"none\" stroke-width=\"1\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Hacim: 120 cm³</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Daha derinde</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "0,40"
+        },
+        {
+          "harf": "B",
+          "metin": "0,60"
+        },
+        {
+          "harf": "C",
+          "metin": "1,00"
+        },
+        {
+          "harf": "D",
+          "metin": "1,40"
+        },
+        {
+          "harf": "E",
+          "metin": "1,67"
+        }
+      ],
+      "dogru_cevap": "B",
+      "cozum_adimlari": [
+        "Batan hacim 120 / 200 = 0,60 katına düşmüştür. Sıvı yoğunluğu ve yer çekimi sabit olduğundan kaldırma kuvveti de ilk değerin 0,60 katıdır. Rijit cisimlerde geçerli olan “batan hacim sabit” koşulu bu örnekte sağlanmaz."
+      ],
+      "zorluk": 3,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S5: Esnek balon neden farklı?",
+      "beceri": "Modelin sınırlarını tanıma",
+      "kavram_yanilgisi": "Derinlikten bağımsızlığı hacmi değişen her cisme uygulama.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": false
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S6",
+      "tur": "coktan_secmeli",
+      "govde": "Bir teknisyen aynı metal parçayı şekildeki iki durumda dengede tutuyor. Dinamometre okumaları şekillerde verilmiştir. Parça su içinde tamamen batmıştır ve kaba değmez. Havanın kaldırma etkisi ihmal ediliyor. Parçanın gerçek ağırlığı ve sudaki kaldırma kuvveti hangisidir?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Dinamometre aynı cisim havadayken 5 N, cisim tamamen suya batırılınca 3 N gösteriyor.\"><defs><linearGradient id=\"aks6-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks6-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><line x1=\"97\" y1=\"8\" x2=\"143\" y2=\"8\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"99\" y1=\"8\" x2=\"103\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"106\" y1=\"8\" x2=\"110\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"113\" y1=\"8\" x2=\"117\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"124\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"127\" y1=\"8\" x2=\"131\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"134\" y1=\"8\" x2=\"138\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"120\" y2=\"14\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"18\" rx=\"4\" ry=\"4\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><rect x=\"108\" y=\"22\" width=\"24\" height=\"42\" rx=\"2.5\" fill=\"#ffffff\"/><rect x=\"111\" y=\"26\" width=\"10\" height=\"32\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><polyline points=\"116,28 116,30 113,32 119,35 113,38 119,41 113,44 119,47 116,50 116,55\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"0.8\" stroke-linejoin=\"round\"/><line x1=\"125\" y1=\"29\" x2=\"129\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"34\" x2=\"129\" y2=\"34\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"39\" x2=\"129\" y2=\"39\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"44\" x2=\"129\" y2=\"44\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"49\" x2=\"129\" y2=\"49\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"54\" x2=\"129\" y2=\"54\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"64\" x2=\"120\" y2=\"105\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"132\" y1=\"41\" x2=\"142\" y2=\"41\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"146\" y=\"45\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">5 N</text><rect x=\"101\" y=\"105\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks6-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"109\" x2=\"135\" y2=\"109\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Aynı metal parça</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Havada, dengede</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"75\" width=\"170\" height=\"80\" rx=\"0\" fill=\"url(#aks6-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"97\" y1=\"8\" x2=\"143\" y2=\"8\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"99\" y1=\"8\" x2=\"103\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"106\" y1=\"8\" x2=\"110\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"113\" y1=\"8\" x2=\"117\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"124\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"127\" y1=\"8\" x2=\"131\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"134\" y1=\"8\" x2=\"138\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"120\" y2=\"14\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"18\" rx=\"4\" ry=\"4\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><rect x=\"108\" y=\"22\" width=\"24\" height=\"42\" rx=\"2.5\" fill=\"#ffffff\"/><rect x=\"111\" y=\"26\" width=\"10\" height=\"32\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><polyline points=\"116,28 116,30 113,32 119,35 113,38 119,41 113,44 119,47 116,50 116,55\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"0.8\" stroke-linejoin=\"round\"/><line x1=\"125\" y1=\"29\" x2=\"129\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"34\" x2=\"129\" y2=\"34\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"39\" x2=\"129\" y2=\"39\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"44\" x2=\"129\" y2=\"44\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"49\" x2=\"129\" y2=\"49\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"54\" x2=\"129\" y2=\"54\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"64\" x2=\"120\" y2=\"105\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"132\" y1=\"41\" x2=\"142\" y2=\"41\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"146\" y=\"45\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">3 N</text><rect x=\"101\" y=\"105\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks6-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"109\" x2=\"135\" y2=\"109\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Cisim kaba değmiyor</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Suda, dengede</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "Gerçek ağırlık 3 N; kaldırma kuvveti 2 N.",
+          "gerekce": "3 N sudaki ip gerilmesidir. Havadaki denge ölçümü cismin gerçek ağırlığının 5 N olduğunu gösterir. Kaldırma kuvvetini doğru bulsa da bu seçenek ağırlığı yanlış yorumlar."
+        },
+        {
+          "harf": "B",
+          "metin": "Gerçek ağırlık 5 N; kaldırma kuvveti 3 N.",
+          "gerekce": "3 N, kaldırma kuvveti değil dinamometrenin ölçtüğü ip gerilmesidir. Kaldırma da 3 N olsaydı yukarı kuvvetler 6 N olurdu; 5 N ağırlıkla denge kurulamazdı."
+        },
+        {
+          "harf": "C",
+          "metin": "Gerçek ağırlık 2 N; kaldırma kuvveti 3 N.",
+          "gerekce": "2 N iki okumanın farkıdır ve kaldırma kuvvetini verir. Gerçek ağırlık havadaki 5 N okumadır. Bu seçenekte ölçülen nicelikler karıştırılmıştır."
+        },
+        {
+          "harf": "D",
+          "metin": "Gerçek ağırlık 5 N; kaldırma kuvveti 2 N."
+        },
+        {
+          "harf": "E",
+          "metin": "Gerçek ağırlık 3 N; kaldırma kuvveti 5 N.",
+          "gerekce": "Ağırlık 3 N’a düşmez. Kaldırma 5 N olsaydı, 3 N ip gerilmesiyle birlikte toplam yukarı kuvvet 8 N olurdu. Verilen dengeyle uyuşmaz."
+        }
+      ],
+      "dogru_cevap": "D",
+      "cozum_adimlari": [
+        "<strong>Veriyi fark et.</strong> Havadaki okuma 5 N, sudaki okuma 3 N. Cisim her iki durumda da dengede. Aynı cismin ağırlığı değişiyor mu, yoksa onu taşıyan kuvvetler mi değişiyor?<br><span class=\"denklem\">Havada: 5 N     Suda: 3 N</span><br><em>Sınıfa sor: Dinamometre doğrudan hangi kuvveti ölçer?</em>",
+        "<strong>İlişkiyi kur.</strong> Dinamometre ip gerilmesini ölçer. Havada kaldırma ihmal edildiğinde gerilme ağırlığa eşittir. Suda cismi yukarı doğru hem ip hem de kaldırma kuvveti taşır.<br><span class=\"denklem\">Denge: T + Fₖ = G</span><br><em>Sınıfa sor: 3 N’luk ip gerilmesi, 5 N’luk ağırlığı tek başına dengeleyebilir mi?</em>",
+        "<strong>Sonucu göster.</strong> Gerçek ağırlık 5 N olarak kalır. Suyun taşıdığı pay, iki dinamometre okumasının farkıdır.<br><span class=\"denklem\">Fₖ = 5 − 3 = 2 N</span><br><em>Şimdi batan hacmi değiştirin: ağırlık sabit kalırken ip gerilmesini izleyin.</em>"
+      ],
+      "zorluk": 2,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S6: Dinamometre neyi gösteriyor?",
+      "beceri": "Ölçümü yorumlama",
+      "kavram_yanilgisi": "Dinamometredeki azalmayı cismin gerçek ağırlığının azalması sayma.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S7",
+      "tur": "coktan_secmeli",
+      "govde": "Durgun suda serbestçe yüzen bir maket servis teknesinin toplam kütlesi, eklenen yükle 200 g'dan 250 g'a çıkıyor. Tekne su almıyor; yeni durumda da bir bölümü su dışında kalıyor. Suyun yoğunluğu ve yer çekimi değişmiyor. Yeni kaldırma kuvveti ve batan hacim nasıl değişir?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Başlangıçta yüzen tekneye yük ekleniyor; yeni denge durumunun batan hacmi soruluyor.\"><defs><linearGradient id=\"aks7-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks7-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"75\" width=\"170\" height=\"80\" rx=\"0\" fill=\"url(#aks7-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><polygon points=\"77,59 163,59 153,86 145,94 95,94 87,86\" fill=\"url(#aks7-cisim)\" stroke=\"none\" stroke-width=\"1\"/><rect x=\"104\" y=\"40\" width=\"32\" height=\"19\" rx=\"2.5\" fill=\"#ffffff\"/><rect x=\"110\" y=\"44\" width=\"7\" height=\"8\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><rect x=\"121\" y=\"44\" width=\"7\" height=\"8\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><line x1=\"83\" y1=\"67\" x2=\"157\" y2=\"67\" stroke=\"#ffffff\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"82\" y2=\"75\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"158\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><text x=\"120\" y=\"177\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Toplam kütle: 200 g</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Yük eklenmeden önce</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"75\" width=\"170\" height=\"80\" rx=\"0\" fill=\"url(#aks7-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"70\" y=\"110\" font-size=\"15\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Yeni denge?</text><text x=\"49\" y=\"138\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Batan hacim: ?</text><text x=\"120\" y=\"177\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Toplam kütle: 250 g</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Yük eklendikten sonra</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "İkisi de %25 artar."
+        },
+        {
+          "harf": "B",
+          "metin": "Kaldırma kuvveti %25 artar; batan hacim değişmez."
+        },
+        {
+          "harf": "C",
+          "metin": "Kaldırma kuvveti değişmez; batan hacim %25 artar."
+        },
+        {
+          "harf": "D",
+          "metin": "İkisi de %20 azalır."
+        },
+        {
+          "harf": "E",
+          "metin": "İkisi de %20 artar."
+        }
+      ],
+      "dogru_cevap": "A",
+      "cozum_adimlari": [
+        "Toplam ağırlık 250 / 200 = 1,25 katına çıkar. Yeni yüzme dengesinde kaldırma kuvveti de aynı oranda artar. Sıvı yoğunluğu ve yer çekimi sabit olduğundan batan hacim de %25 artar."
+      ],
+      "zorluk": 3,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S7: Yüklenen servis teknesi.",
+      "beceri": "Orantısal akıl yürütme",
+      "kavram_yanilgisi": "Yüzen cisme etki eden kaldırma kuvvetinin yük değişse de sabit kalacağını düşünme.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": false
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S8",
+      "tur": "coktan_secmeli",
+      "govde": "Öğrenciler, sıvı yoğunluğunun kaldırma kuvvetine etkisini araştırıyor. Bütün denemelerde yer çekimi aynı; cisimler kaba değmiyor. Yalnızca sıvı yoğunluğunun etkisini ayırabilmek için hangi iki karşılaştırma uygundur?<table><thead><tr><th>Deneme</th><th>Sıvı yoğunluğu (g/cm³)</th><th>Batan hacim (cm³)</th></tr></thead><tbody><tr><td>K</td><td>1,00</td><td>80</td></tr><tr><td>L</td><td>1,00</td><td>120</td></tr><tr><td>M</td><td>1,20</td><td>80</td></tr><tr><td>N</td><td>1,20</td><td>120</td></tr></tbody></table>",
+      "sekil_svg": null,
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "K–L ve M–N",
+          "gerekce": "K–L ve M–N çiftlerinde sıvı yoğunluğu sabit, batan hacim farklıdır. Bu çiftler yoğunluğun değil batan hacmin etkisini araştırır."
+        },
+        {
+          "harf": "B",
+          "metin": "K–N ve L–M",
+          "gerekce": "K–N ve L–M çiftlerinde hem sıvı yoğunluğu hem batan hacim değişir. Sonucu yalnız yoğunluğa bağlayamayız."
+        },
+        {
+          "harf": "C",
+          "metin": "K–M ve L–N"
+        },
+        {
+          "harf": "D",
+          "metin": "K–L ve K–N",
+          "gerekce": "K–L batan hacmin etkisini araştırır. K–N’de ise iki değişken birlikte değişir. İki karşılaştırma da istenen deneye uygun değildir."
+        },
+        {
+          "harf": "E",
+          "metin": "K–M ve K–N",
+          "gerekce": "K–M uygundur; batan hacim 80 cm³ olarak sabittir. Ancak K–N’de hem yoğunluk hem batan hacim değişir. Seçenekteki iki çiftin de uygun olması gerekir."
+        }
+      ],
+      "dogru_cevap": "C",
+      "cozum_adimlari": [
+        "<strong>Veriyi fark et.</strong> Araştırılan değişken sıvı yoğunluğudur. Yer çekimi zaten aynı. Adil bir karşılaştırmada batan hacmi de sabit tutmamız gerekir.<br><span class=\"denklem\">Değişen: sıvı yoğunluğu     Sabit: batan hacim ve g</span><br><em>Sınıfa sor: Tabloda batan hacimleri aynı olan denemeler hangileri?</em>",
+        "<strong>İlişkiyi kur.</strong> 80 cm³ grubunda K ile M’yi; 120 cm³ grubunda L ile N’yi karşılaştırın. Her grubun içinde yalnızca sıvı yoğunluğu değişir.<br><span class=\"denklem\">K–M: 80 cm³ sabit     L–N: 120 cm³ sabit</span><br><em>Sınıfa sor: K ile N’yi karşılaştırsaydık hangi iki değişken birlikte değişirdi?</em>",
+        "<strong>Sonucu göster.</strong> Uygun iki karşılaştırma K–M ve L–N’dir. Her ikisi de sıvı yoğunluğunun etkisini diğer değişkenlerden ayırır.<br><span class=\"denklem\">K–M ve L–N</span><br><em>Kontrol: Yalnızca batan hacmin etkisini araştırmak için hangi çiftleri seçerdiniz?</em>"
+      ],
+      "zorluk": 3,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.5"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S8: Adil bir deney karşılaştırması.",
+      "beceri": "Deney tasarımı",
+      "kavram_yanilgisi": "Birden çok değişkeni birlikte değiştirip sonucu tek nedene bağlama.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S9",
+      "tur": "coktan_secmeli",
+      "govde": "Rijit ve sızdırmaz bir su altı kamerası, homojen suda tamamen batmış olarak iple tutuluyor. Derine indirilirken gövdesindeki basınç sensörünün değeri artıyor; dinamometre değeri aynı kalıyor. Cismin hacmi, kütlesi ve yer çekimi sabittir. Bir öğrenci “Basınç artmışsa kaldırma kuvveti de mutlaka artmıştır.” diyor. İki ölçüme göre hangi yorum doğrudur?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Tamamen batmış kamera iki derinlikte; dinamometre T sabit, yerel basınç ikinci durumda daha büyük.\"><defs><linearGradient id=\"aks9-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks9-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks9-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"97\" y1=\"8\" x2=\"143\" y2=\"8\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"99\" y1=\"8\" x2=\"103\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"106\" y1=\"8\" x2=\"110\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"113\" y1=\"8\" x2=\"117\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"124\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"127\" y1=\"8\" x2=\"131\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"134\" y1=\"8\" x2=\"138\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"120\" y2=\"14\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"18\" rx=\"4\" ry=\"4\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><rect x=\"108\" y=\"22\" width=\"24\" height=\"42\" rx=\"2.5\" fill=\"#ffffff\"/><rect x=\"111\" y=\"26\" width=\"10\" height=\"32\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><polyline points=\"116,28 116,30 113,32 119,35 113,38 119,41 113,44 119,47 116,50 116,55\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"0.8\" stroke-linejoin=\"round\"/><line x1=\"125\" y1=\"29\" x2=\"129\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"34\" x2=\"129\" y2=\"34\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"39\" x2=\"129\" y2=\"39\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"44\" x2=\"129\" y2=\"44\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"49\" x2=\"129\" y2=\"49\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"54\" x2=\"129\" y2=\"54\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"64\" x2=\"120\" y2=\"88\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"132\" y1=\"41\" x2=\"142\" y2=\"41\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"146\" y=\"45\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">T</text><rect x=\"101\" y=\"88\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks9-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"92\" x2=\"135\" y2=\"92\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"102\" rx=\"8\" ry=\"8\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><text x=\"154\" y=\"106\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">p₁</text><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Aynı kamera</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Daha sığ</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks9-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"97\" y1=\"8\" x2=\"143\" y2=\"8\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"99\" y1=\"8\" x2=\"103\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"106\" y1=\"8\" x2=\"110\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"113\" y1=\"8\" x2=\"117\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"124\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"127\" y1=\"8\" x2=\"131\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"134\" y1=\"8\" x2=\"138\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"120\" y2=\"14\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"18\" rx=\"4\" ry=\"4\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><rect x=\"108\" y=\"22\" width=\"24\" height=\"42\" rx=\"2.5\" fill=\"#ffffff\"/><rect x=\"111\" y=\"26\" width=\"10\" height=\"32\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><polyline points=\"116,28 116,30 113,32 119,35 113,38 119,41 113,44 119,47 116,50 116,55\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"0.8\" stroke-linejoin=\"round\"/><line x1=\"125\" y1=\"29\" x2=\"129\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"34\" x2=\"129\" y2=\"34\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"39\" x2=\"129\" y2=\"39\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"44\" x2=\"129\" y2=\"44\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"49\" x2=\"129\" y2=\"49\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"54\" x2=\"129\" y2=\"54\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"64\" x2=\"120\" y2=\"114\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"132\" y1=\"41\" x2=\"142\" y2=\"41\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"146\" y=\"45\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">T</text><rect x=\"101\" y=\"114\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks9-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"118\" x2=\"135\" y2=\"118\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"128\" rx=\"8\" ry=\"8\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><text x=\"154\" y=\"132\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">p₂ &gt; p₁</text><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Aynı kamera</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Daha derin</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "Basınç arttığı için cismin gerçek ağırlığı artmıştır."
+        },
+        {
+          "harf": "B",
+          "metin": "Dinamometre sabit olduğundan gövdedeki sıvı basıncı sabittir."
+        },
+        {
+          "harf": "C",
+          "metin": "Kaldırma kuvveti artmış, cismin ağırlığı aynı miktarda azalmıştır."
+        },
+        {
+          "harf": "D",
+          "metin": "Basınç sensörü ile dinamometre aynı fiziksel niceliği ölçer."
+        },
+        {
+          "harf": "E",
+          "metin": "Yerel basınç artarken kaldırma kuvveti sabit kalmıştır."
+        }
+      ],
+      "dogru_cevap": "E",
+      "cozum_adimlari": [
+        "Yerel sıvı basıncı derinlikle artar. Buna karşılık karşıt yüzeylerdeki kuvvetler birlikte arttığından bileşke kaldırma kuvveti sabit kalır. Gerçek ağırlık sabitken dinamometre değerinin de sabit olması bu sonuçla uyumludur. Basınç artışı gövde dayanımını ilgilendirir; tek başına net kaldırmanın arttığını göstermez."
+      ],
+      "zorluk": 3,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S9: Su altı kamerasının gövdesi.",
+      "beceri": "Veriye dayalı gerekçe",
+      "kavram_yanilgisi": "Yerel basınç ile cisme etki eden net kuvveti eşitleme.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S10",
+      "tur": "coktan_secmeli",
+      "govde": "Bir ekip, şekilde kütle ve dış hacimleri verilen rijit ve sızdırmaz K ve L kargo kapsüllerini aynı suda tamamen batmış hâlde tutup serbest bırakıyor. Su yoğunluğu 1 g/cm³, g = 10 N/kg. Kapsüller su almıyor, şekil değiştirmiyor ve kaba değmiyor. Serbest bırakılma anındaki kaldırma kuvvetleri ve ilk hareket eğilimleri hangisidir?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"K ve L kapsülleri tamamen su içinde serbest bırakılma anında; ikisi de 400 gram, dış hacimleri farklı. Hareket yönü verilmemiştir.\"><defs><linearGradient id=\"aks10-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks10-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks10-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><rect x=\"90\" y=\"95\" width=\"60\" height=\"36\" rx=\"2.5\" fill=\"url(#aks10-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"94\" y1=\"99\" x2=\"146\" y2=\"99\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"114\" y=\"114\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">K</text><text x=\"120\" y=\"20\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Kütle: 400 g</text><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Dış hacim: 600 cm³</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">K kapsülü</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks10-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><rect x=\"99\" y=\"95\" width=\"42\" height=\"25\" rx=\"2.5\" fill=\"url(#aks10-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"103\" y1=\"99\" x2=\"137\" y2=\"99\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"114\" y=\"114\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">L</text><text x=\"120\" y=\"20\" font-size=\"13\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Kütle: 400 g</text><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Dış hacim: 200 cm³</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">L kapsülü</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "K: 4 N, dengede; L: 4 N, dengede."
+        },
+        {
+          "harf": "B",
+          "metin": "K: 6 N, aşağı; L: 2 N, yukarı."
+        },
+        {
+          "harf": "C",
+          "metin": "K: 2 N, aşağı; L: 6 N, yukarı."
+        },
+        {
+          "harf": "D",
+          "metin": "K: 6 N, yukarı; L: 2 N, aşağı."
+        },
+        {
+          "harf": "E",
+          "metin": "K: 6 N, yukarı; L: 4 N, dengede."
+        }
+      ],
+      "dogru_cevap": "D",
+      "cozum_adimlari": [
+        "Tam batmış kapsüller sırasıyla 600 g ve 200 g suyun yerini değiştirir; kaldırma kuvvetleri 6 N ve 2 N olur. Her birinin ağırlığı 4 N olduğundan K yukarı, L aşağı hareket etme eğilimindedir. K daha sonra yüzme dengesine gelirse kaldırma kuvveti 4 N olur; soru ilk anı soruyor."
+      ],
+      "zorluk": 3,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S10: İki kargo kapsülü.",
+      "beceri": "Modeli yeni duruma uygulama",
+      "kavram_yanilgisi": "Yüzme dengesindeki kuvvet eşitliğini tam batmış cismin her durumuna uygulama.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S11",
+      "tur": "coktan_secmeli",
+      "govde": "Bir taşırma kabındaki su taşma seviyesine kadar doludur. İpe bağlı rijit cisim tamamen batırılıp dengede tutulduğunda 100 cm³ su taşar. Cisim kaba değmez. Dinamometre havada 4 N, suda 3 N gösterir. Suyun yoğunluğu 1 g/cm³, yer çekimi 10 N/kg'dır; havanın kaldırma etkisi ihmal edilir. Taşan suyun ağırlığı ve cisme etki eden kaldırma kuvveti sırasıyla kaç N olur?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Taşırma kabına batırılan cisim dinamometrede 3 N gösteriyor; ayrı kapta 100 santimetreküp taşan su toplanıyor. Havada okuma 4 N.\"><defs><linearGradient id=\"aks11-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks11-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><line x1=\"97\" y1=\"8\" x2=\"143\" y2=\"8\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"99\" y1=\"8\" x2=\"103\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"106\" y1=\"8\" x2=\"110\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"113\" y1=\"8\" x2=\"117\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"124\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"127\" y1=\"8\" x2=\"131\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"134\" y1=\"8\" x2=\"138\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"8\" x2=\"120\" y2=\"14\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"18\" rx=\"4\" ry=\"4\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><rect x=\"108\" y=\"22\" width=\"24\" height=\"42\" rx=\"2.5\" fill=\"#ffffff\"/><rect x=\"111\" y=\"26\" width=\"10\" height=\"32\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><polyline points=\"116,28 116,30 113,32 119,35 113,38 119,41 113,44 119,47 116,50 116,55\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"0.8\" stroke-linejoin=\"round\"/><line x1=\"125\" y1=\"29\" x2=\"129\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"34\" x2=\"129\" y2=\"34\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"39\" x2=\"129\" y2=\"39\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"44\" x2=\"129\" y2=\"44\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"49\" x2=\"129\" y2=\"49\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"125\" y1=\"54\" x2=\"129\" y2=\"54\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"64\" x2=\"120\" y2=\"105\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"132\" y1=\"41\" x2=\"142\" y2=\"41\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"146\" y=\"45\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">4 N</text><rect x=\"101\" y=\"105\" width=\"38\" height=\"28\" rx=\"2.5\" fill=\"url(#aks11-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"105\" y1=\"109\" x2=\"135\" y2=\"109\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Aynı rijit cisim</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Havada</text><g transform=\"translate(264 20)\"><rect x=\"22\" y=\"78\" width=\"128\" height=\"77\" rx=\"0\" fill=\"url(#aks11-su)\"/><line x1=\"22\" y1=\"47\" x2=\"22\" y2=\"155\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"22\" y1=\"155\" x2=\"150\" y2=\"155\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"150\" y1=\"155\" x2=\"150\" y2=\"84\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"22\" y1=\"78\" x2=\"150\" y2=\"78\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"150\" y1=\"78\" x2=\"177\" y2=\"90\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"150\" y1=\"84\" x2=\"173\" y2=\"96\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"176\" y1=\"96\" x2=\"176\" y2=\"115\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-dasharray=\"5 4\"/><line x1=\"63\" y1=\"8\" x2=\"109\" y2=\"8\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"65\" y1=\"8\" x2=\"69\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"8\" x2=\"76\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"79\" y1=\"8\" x2=\"83\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"86\" y1=\"8\" x2=\"90\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"93\" y1=\"8\" x2=\"97\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"100\" y1=\"8\" x2=\"104\" y2=\"4\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"86\" y1=\"8\" x2=\"86\" y2=\"14\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><ellipse cx=\"86\" cy=\"18\" rx=\"4\" ry=\"4\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><rect x=\"74\" y=\"22\" width=\"24\" height=\"42\" rx=\"2.5\" fill=\"#ffffff\"/><rect x=\"77\" y=\"26\" width=\"10\" height=\"32\" rx=\"2.5\" fill=\"#dfe6ec\" stroke=\"#7f97ab\" stroke-width=\"1\"/><polyline points=\"82,28 82,30 79,32 85,35 79,38 85,41 79,44 85,47 82,50 82,55\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"0.8\" stroke-linejoin=\"round\"/><line x1=\"91\" y1=\"29\" x2=\"95\" y2=\"29\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"91\" y1=\"34\" x2=\"95\" y2=\"34\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"91\" y1=\"39\" x2=\"95\" y2=\"39\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"91\" y1=\"44\" x2=\"95\" y2=\"44\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"91\" y1=\"49\" x2=\"95\" y2=\"49\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"91\" y1=\"54\" x2=\"95\" y2=\"54\" stroke=\"#1d2733\" stroke-width=\"0.7\" stroke-linecap=\"round\"/><line x1=\"86\" y1=\"64\" x2=\"86\" y2=\"106\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"98\" y1=\"41\" x2=\"108\" y2=\"41\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><text x=\"112\" y=\"45\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">3 N</text><rect x=\"69\" y=\"106\" width=\"34\" height=\"27\" rx=\"2.5\" fill=\"url(#aks11-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><rect x=\"162\" y=\"128\" width=\"52\" height=\"27\" rx=\"0\" fill=\"url(#aks11-su)\"/><line x1=\"162\" y1=\"113\" x2=\"162\" y2=\"155\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"162\" y1=\"155\" x2=\"214\" y2=\"155\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"214\" y1=\"113\" x2=\"214\" y2=\"155\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><text x=\"120\" y=\"177\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">100 cm³ su</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Taşırma kabında</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "0,1 ve 1"
+        },
+        {
+          "harf": "B",
+          "metin": "1 ve 1"
+        },
+        {
+          "harf": "C",
+          "metin": "1 ve 3"
+        },
+        {
+          "harf": "D",
+          "metin": "3 ve 1"
+        },
+        {
+          "harf": "E",
+          "metin": "4 ve 4"
+        }
+      ],
+      "dogru_cevap": "B",
+      "cozum_adimlari": [
+        "100 cm³ suyun kütlesi 100 g = 0,1 kg; ağırlığı 0,1 × 10 = 1 N'dur. Dinamometre farkı 4 − 3 = 1 N'dur. Bu iki bağımsız hesap aynı sonuca ulaşır: kaldırma kuvveti, yer değiştiren sıvının ağırlığına eşittir."
+      ],
+      "zorluk": 3,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S11: Taşan suyun söylediği.",
+      "beceri": "İki ölçümden kanıt oluşturma",
+      "kavram_yanilgisi": "Yer değiştiren sıvının ağırlığı ile cismin kendi ağırlığını karıştırma.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": true
+    },
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/S12",
+      "tur": "coktan_secmeli",
+      "govde": "Bir su altı kulübü eğitim afişine “Cismi daha derine indirmek kaldırma kuvvetini değiştirmez” yazıyor. Homojen suda, tamamen batmış kapalı esnek bir balonun derine indikçe hacminin küçüldüğü gözleniyor. Yer çekimi sabit. Bu gözlemi dikkate alan en uygun düzeltme hangisidir?",
+      "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Tamamen batmış esnek balonun derine indikçe küçülen hacmi.\"><defs><linearGradient id=\"aks12-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"aks12-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks12-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"94\" rx=\"21\" ry=\"17.85\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><polygon points=\"117,111.85 123,111.85 120,117.85\" fill=\"#ffffff\" stroke=\"none\" stroke-width=\"1\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">İlk hacim</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">İlk konum</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"90\" rx=\"0\" fill=\"url(#aks12-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"119\" rx=\"18\" ry=\"15.3\" fill=\"#ffffff\" stroke=\"#1d2733\" stroke-width=\"1\"/><polygon points=\"117,134.3 123,134.3 120,140.3\" fill=\"#ffffff\" stroke=\"none\" stroke-width=\"1\"/><text x=\"120\" y=\"178\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Daha küçük hacim</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Daha derinde</text></svg>",
+      "secenekler": [
+        {
+          "harf": "A",
+          "metin": "Kaldırma kuvveti yalnız derinliğe bağlıdır."
+        },
+        {
+          "harf": "B",
+          "metin": "Cisim tamamen batmışsa hacmindeki değişim önemsizdir."
+        },
+        {
+          "harf": "C",
+          "metin": "Balona etki eden kaldırma kuvveti her derinlikte sıfırdır."
+        },
+        {
+          "harf": "D",
+          "metin": "Genelleme, batan hacmi değişmeyen cisim koşuluyla sınırlandırılmalıdır."
+        },
+        {
+          "harf": "E",
+          "metin": "Derinlik arttığında bütün cisimlerin batan hacmi azalır."
+        }
+      ],
+      "dogru_cevap": "D",
+      "cozum_adimlari": [
+        "Rijit bir cisimde batan hacim sabit kaldığı için afişteki cümle geçerlidir. Esnek balon küçülürse batan hacmi ve dolayısıyla kaldırma kuvveti azalır. Genel cümleye tam batma, değişmeyen hacim, sabit sıvı yoğunluğu ve yer çekimi koşulları eklenmelidir."
+      ],
+      "zorluk": 4,
+      "baglam_temelli": true,
+      "kazanimlar": [
+        "FİZ.9.3.6"
+      ],
+      "kaynak_notu": "Fizik Atölye pilotu, S12: Bir genellemenin sınırı.",
+      "beceri": "Genellemenin sınırlarını belirleme",
+      "kavram_yanilgisi": "Bir modelin sonucunu geçerlilik koşullarından ayırma.",
+      "puanlama_olcutu": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+      "ornek": false,
+      "yayinda": false
+    }
+  ],
+  "icerikler": [
+    {
+      "dis_kimlik": "fizik-atolye/kaldirma-kuvveti/konu",
+      "tur": "konu_anlatimi",
+      "baslik": "Kaldırma kuvveti: kavram rehberi",
+      "aciklama": "Şekilli kavram başlıkları ve 40 ya da 80 dakikalık ders akışı.",
+      "unite": {
+        "seviye": "9",
+        "no": 3
+      },
+      "sira": 1,
+      "kazanimlar": [
+        "FİZ.9.3.5",
+        "FİZ.9.3.6"
+      ],
+      "veri": {
+        "bolumler": [
+          {
+            "baslik": "Kaldırma kuvveti nedir?",
+            "metin": "Sıvı ve gazların, içlerine kısmen veya tamamen batmış cisimlere uyguladığı yukarı yönlü kuvvettir. Durgun sıvıda basınç derinlikle artar; cismin yüzeylerine etki eden basınç kuvvetlerinin bileşkesi kaldırma kuvvetini oluşturur.",
+            "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 225\" role=\"img\" aria-label=\"Cismin üst yüzeyinde aşağı, alt yüzeyinde daha büyük yukarı basınç kuvvetleri; yan kuvvetler birbirini dengeler. Sıvının net etkisi yukarı yönlü kaldırma kuvvetidir.\"><defs><linearGradient id=\"akk1-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"akk1-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"115\" rx=\"0\" fill=\"url(#akk1-su)\"/><polyline points=\"35,45 35,173 35.5,176 37,178.5 40,180 200,180 203,178.5 204.5,176 205,173 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><rect x=\"96\" y=\"101\" width=\"48\" height=\"34\" rx=\"2.5\" fill=\"url(#akk1-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"100\" y1=\"105\" x2=\"140\" y2=\"105\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><line x1=\"107\" y1=\"78\" x2=\"107\" y2=\"96\" stroke=\"#c62828\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"107,101 110,94 104,94\" fill=\"#c62828\" stroke=\"#c62828\" stroke-width=\"1\"/><line x1=\"107\" y1=\"168\" x2=\"107\" y2=\"140\" stroke=\"#1f5fae\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"107,135 104,142 110,142\" fill=\"#1f5fae\" stroke=\"#1f5fae\" stroke-width=\"1\"/><line x1=\"120\" y1=\"78\" x2=\"120\" y2=\"96\" stroke=\"#c62828\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"120,101 123,94 117,94\" fill=\"#c62828\" stroke=\"#c62828\" stroke-width=\"1\"/><line x1=\"120\" y1=\"168\" x2=\"120\" y2=\"140\" stroke=\"#1f5fae\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"120,135 117,142 123,142\" fill=\"#1f5fae\" stroke=\"#1f5fae\" stroke-width=\"1\"/><line x1=\"133\" y1=\"78\" x2=\"133\" y2=\"96\" stroke=\"#c62828\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"133,101 136,94 130,94\" fill=\"#c62828\" stroke=\"#c62828\" stroke-width=\"1\"/><line x1=\"133\" y1=\"168\" x2=\"133\" y2=\"140\" stroke=\"#1f5fae\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"133,135 130,142 136,142\" fill=\"#1f5fae\" stroke=\"#1f5fae\" stroke-width=\"1\"/><line x1=\"73\" y1=\"113\" x2=\"91\" y2=\"113\" stroke=\"#6b7685\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"96,113 89,110 89,116\" fill=\"#6b7685\" stroke=\"#6b7685\" stroke-width=\"1\"/><line x1=\"167\" y1=\"113\" x2=\"149\" y2=\"113\" stroke=\"#6b7685\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"144,113 151,116 151,110\" fill=\"#6b7685\" stroke=\"#6b7685\" stroke-width=\"1\"/><text x=\"151\" y=\"89\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">F üst</text><text x=\"151\" y=\"162\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">F alt</text><text x=\"120\" y=\"196\" font-size=\"11.5\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Alt yüzeydeki etki daha büyük</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Basınç kuvvetleri</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"65\" width=\"170\" height=\"115\" rx=\"0\" fill=\"url(#akk1-su)\"/><polyline points=\"35,45 35,173 35.5,176 37,178.5 40,180 200,180 203,178.5 204.5,176 205,173 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"65\" x2=\"205\" y2=\"65\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"60\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><rect x=\"96\" y=\"101\" width=\"48\" height=\"34\" rx=\"2.5\" fill=\"url(#akk1-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"100\" y1=\"105\" x2=\"140\" y2=\"105\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><line x1=\"120\" y1=\"118\" x2=\"120\" y2=\"77\" stroke=\"#1b7a43\" stroke-width=\"3\" stroke-linecap=\"round\"/><polygon points=\"120,72 117,79 123,79\" fill=\"#1b7a43\" stroke=\"#1b7a43\" stroke-width=\"1\"/><text x=\"142\" y=\"91\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">F kaldırma</text><text x=\"120\" y=\"196\" font-size=\"11.5\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">Basınç kuvvetlerinin bileşkesi</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Kaldırma kuvveti</text></svg>"
+          },
+          {
+            "baslik": "Batan hacim ve Arşimet ilkesi",
+            "metin": "Batan hacim, cismin sıvı içinde kalan bölümünün hacmidir; her zaman cismin toplam hacmi değildir. Kaldırma kuvvetinin büyüklüğü, cismin yerini değiştirdiği sıvının ağırlığına eşittir.",
+            "sekil_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 504 205\" role=\"img\" aria-label=\"Kısmen batan cisimde yalnız su içindeki bölüm; tamamen batan cisimde bütün hacim yer değiştiren sıvı hacmini belirler.\"><defs><linearGradient id=\"akk2-su\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d4ecfa\"/><stop offset=\"1\" stop-color=\"#9ccbea\"/></linearGradient><linearGradient id=\"akk2-cisim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f6c065\"/><stop offset=\"1\" stop-color=\"#d9861f\"/></linearGradient></defs><g transform=\"translate(0 20)\"><rect x=\"35\" y=\"75\" width=\"170\" height=\"80\" rx=\"0\" fill=\"url(#akk2-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><rect x=\"91\" y=\"49\" width=\"58\" height=\"46\" rx=\"2.5\" fill=\"url(#akk2-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"95\" y1=\"53\" x2=\"145\" y2=\"53\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><rect x=\"92\" y=\"76\" width=\"56\" height=\"19\" rx=\"2.5\" fill=\"url(#akk2-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"90\" y1=\"49\" x2=\"90\" y2=\"95\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"150\" y1=\"75\" x2=\"171\" y2=\"75\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"150\" y1=\"95\" x2=\"171\" y2=\"95\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"166\" y1=\"75\" x2=\"166\" y2=\"95\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><text x=\"153\" y=\"67\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">V batan</text><text x=\"120\" y=\"180\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">V batan &lt; V toplam</text></g><text x=\"120\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Kısmen batmış cisim</text><g transform=\"translate(264 20)\"><rect x=\"35\" y=\"75\" width=\"170\" height=\"80\" rx=\"0\" fill=\"url(#akk2-su)\"/><polyline points=\"35,45 35,148 35.5,151 37,153.5 40,155 200,155 203,153.5 204.5,151 205,148 205,45\" fill=\"none\" stroke=\"#1d2733\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"35\" y1=\"75\" x2=\"205\" y2=\"75\" stroke=\"#3d86c6\" stroke-width=\"1.3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"48\" x2=\"40\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><line x1=\"200\" y1=\"48\" x2=\"200\" y2=\"70\" stroke=\"#7f97ab\" stroke-width=\"0.8\" stroke-linecap=\"round\"/><rect x=\"91\" y=\"92\" width=\"58\" height=\"46\" rx=\"2.5\" fill=\"url(#akk2-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"95\" y1=\"96\" x2=\"145\" y2=\"96\" stroke=\"#ffffff\" stroke-width=\"1\" stroke-linecap=\"round\"/><rect x=\"92\" y=\"93\" width=\"56\" height=\"45\" rx=\"2.5\" fill=\"url(#akk2-cisim)\" stroke=\"#8a4b0f\" stroke-width=\"1.2\"/><line x1=\"90\" y1=\"92\" x2=\"90\" y2=\"138\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"150\" y1=\"92\" x2=\"171\" y2=\"92\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"150\" y1=\"138\" x2=\"171\" y2=\"138\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"166\" y1=\"92\" x2=\"166\" y2=\"138\" stroke=\"#1d2733\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><text x=\"153\" y=\"84\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">V batan</text><text x=\"120\" y=\"180\" font-size=\"12\" font-weight=\"500\" text-anchor=\"middle\" fill=\"#1d2733\" paint-order=\"stroke\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linejoin=\"round\">V batan = V toplam</text></g><text x=\"384\" y=\"14\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1d2733\">Tamamen batmış cisim</text></svg>"
+          },
+          {
+            "baslik": "Hangi nicelikler önemlidir?",
+            "metin": "Diğer koşullar sabitken batan hacim veya sıvı yoğunluğu artarsa kaldırma kuvveti artar. Yer çekimi de etkilidir. Aynı homojen sıvıda, tamamen batmış ve hacmi değişmeyen bir cismin yalnız derinliğini değiştirmek kaldırma kuvvetini değiştirmez.",
+            "sekil_svg": null
+          },
+          {
+            "baslik": "Yüzme, askıda kalma ve batma",
+            "metin": "Başka düşey kuvvet yoksa serbestçe yüzen cisim dengededir: kaldırma kuvveti ağırlığa eşittir. Tamamen sıvı içinde askıda kalan cisim için de bu eşitlik geçerlidir. Tam batmış cisim durgun hâlden serbest bırakıldığında ağırlığı kaldırma kuvvetinden büyükse aşağı, küçükse yukarı hareket etmeye başlar. Tam batmış olmak, aşağı doğru batmakla aynı şey değildir.",
+            "sekil_svg": null
+          },
+          {
+            "baslik": "Dinamometre ve görünür ağırlık",
+            "metin": "Yukarıdan dinamometreyle asılan cisim suda dengedeyken, dinamometrenin gösterdiği ip gerilmesi ile kaldırma kuvvetinin toplamı cismin ağırlığına eşittir. Havanın kaldırma etkisi ihmal edilirse havadaki ve sudaki okumaların farkı, sudaki kaldırma kuvvetini verir; cismin gerçek ağırlığı değişmez.",
+            "sekil_svg": null
+          },
+          {
+            "baslik": "Soruyu çözerken üç kontrol",
+            "metin": "1. Cisim yüzüyor mu, tam batmış mı? 2. Batan hacim ve sıvı yoğunluğu değişiyor mu? 3. İp gibi başka bir kuvvet var mı; ilk hareket anı mı, denge hâli mi soruluyor?",
+            "sekil_svg": null
+          }
+        ],
+        "planlar": {
+          "40": [
+            {
+              "time": "0-5 dk",
+              "title": "Ön kontrol",
+              "body": "S4 ve S6 ile batan hacim, ağırlık ve dinamometre ayrımını yoklayın."
+            },
+            {
+              "time": "5-12 dk",
+              "title": "Bir kavramı netleştir",
+              "body": "S1 verilerini tartışın. Gerekirse 3B modeli açıp yüzey kuvvetlerini ve farklarını gösterin."
+            },
+            {
+              "time": "12-28 dk",
+              "title": "Karşılaştırmalı çözüm",
+              "body": "S2-S3 çiftinde yüzme ile tam batmayı; S5 ile değişen hacmi karşılaştırın. Gerekçeleri kısaca yazdırın."
+            },
+            {
+              "time": "28-36 dk",
+              "title": "Bireysel kontrol",
+              "body": "S8 ve S9 sorularını cevabı göstermeden çözdürün. Bağlamdaki gerekli bilgiyi ayıklatın."
+            },
+            {
+              "time": "36-40 dk",
+              "title": "Hedefli ödev",
+              "body": "Yanlış gerekçesine göre S7, S10, S11 veya S12 sorularını seçin. Sonraki derste kısa kontrol yapın."
+            }
+          ],
+          "80": [
+            {
+              "time": "0-10 dk",
+              "title": "Ön kontrol ve gerekçe",
+              "body": "S4 ve S6 sorularını bireysel çözdürün; cevap ve gerekçeyi ayrı okuyun."
+            },
+            {
+              "time": "10-25 dk",
+              "title": "Model ve soru ilişkisi",
+              "body": "S1 ve S9 içindeki basınç-kuvvet ayrımını açıklayın; ihtiyaç varsa 3B modeli kullanın."
+            },
+            {
+              "time": "25-45 dk",
+              "title": "Koşulları karşılaştır",
+              "body": "S2, S3, S5 ve S7 sorularında değişen ve sabit kalan nicelikleri belirtin."
+            },
+            {
+              "time": "45-65 dk",
+              "title": "Bireysel mini test",
+              "body": "S8, S10, S11 ve S12 sorularını bireysel çözdürün. Süreyi sınıfa göre ayarlayın."
+            },
+            {
+              "time": "65-80 dk",
+              "title": "Çözüm ve telafi",
+              "body": "Öğrenciler gerekçelerini çözümlerle karşılaştırsın. Yanlışın kaynağına göre yeni çalışma seçin."
+            }
+          ]
+        }
+      },
+      "ornek": false,
+      "yayinda": false
+    }
+  ]
+}

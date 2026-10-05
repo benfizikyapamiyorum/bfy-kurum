@@ -28,12 +28,16 @@ Netlify: derlenmiş statik dosyaları yayınlar. Sunucu kodu yok.
 | `src/depo/` | Veri erişim katmanı: Supabase istemcisi, yerel kaynak, IndexedDB önbelleği, senkron kuyruğu. |
 | `src/tahta/` | Tahta modu ekranları ve araçları (M1). |
 | `src/sayfalar/` | Tahta dışındaki sayfalar. |
+| `src/kurum/`, `src/testler/`, `src/raporlar/`, `src/ogrenci/` | Kurum paneli, test oluşturucu, raporlar, öğrenci ekranları. |
+| `src/yonetim/` | Süper admin paneli: kurumlar, soru bankası, içerikler, toplu içe aktarım. |
+| `icerik-paketleri/` | İçe aktarılmaya hazır JSON paketleri ve kaynakları (biçim: `docs/ICE_AKTARIM.md`). |
 | `src/bilesenler/` | Ortak arayüz bileşenleri. |
 | `src/yapilandirma/` | Marka (`marka.json`) ve ortam değişkenleri. |
 | `src/stil/` | CSS. Renkler CSS değişkenleriyle tanımlıdır; açık, koyu ve yüksek kontrast temaları aynı belirteçleri değiştirir. |
 | `supabase/migrations/` | Sıralı SQL dosyaları: şema, yardımcı fonksiyonlar, RLS, depolama, katalog, örnek veri. |
 | `testler/db/` | Gerçek Postgres üzerinde RLS testleri ve Supabase taklit şeması. |
-| `testler/e2e/` | Playwright ile tahta modu testleri (M1). |
+| `testler/e2e/` | Playwright ile tahta modu testleri (sunucusuz). |
+| `testler/e2e-sunucu/` | Yerel Supabase'e karşı uçtan uca testler (giriş, kurum, test, rapor, süper admin). |
 | `scripts/` | Yerel veritabanı başlatma ve tohum SQL üretme betikleri. |
 
 ## 3. Veri modeli
@@ -168,6 +172,12 @@ Kayıtlı test `/tahta/test/:test/:no` ile tahtada soru soru açılır. Çoktan 
 - **Telafi testi:** zayıf çıktılardan `otomatikTestOlustur` ile, sınıfa daha önce verilmemiş sorular öncelikli olarak tek tıkla oluşturulur ve düzenleyicide açılır. Havuz yetmezse daha önce verilen sorular kullanılır ve öğretmen uyarılır.
 - **Öğrenci gelişimi:** öğrencinin sınav sırasına göre netleri çizgi grafikte (dokununca değer, yanında tablo görünümü), eğilim (yükseliyor, durağan, düşüyor) en küçük kareler eğimiyle. Öğrenci kendi ana sayfasında da net gelişimini görür.
 
+### 6.7. Süper admin paneli (`/yonetim`)
+
+- **Kurumlar:** `kurum_ozetleri()` RPC'si kurumları kontenjan kullanımı ve yönetici adıyla döner (yalnızca süper admin; başkası boş liste alır). Yeni kurum doğrudan `kurum` tablosuna yazılır (RLS: süper admin). Kurum yöneticisi hesabı `kullanici` Edge Function'ı ile açılır. Lisans uzatma bugünden ya da mevcut bitişten (hangisi ileriyse) hesaplanır (`uzatilmisBitis`).
+- **Soru bankası:** tüm sorular (yayında olmayanlar dahil) süzülür, yayına alınır, düzenlenir. Düzenleyici şık gerekçelerini, çözüm adımlarını, kavram yanılgısını, puanlama ölçütünü ve kazanım etiketlerini kapsar. Canlı önizleme vardır. Bir testte kullanılmış soru silinemez (`on delete restrict`); yayından kaldırılır.
+- **Toplu içe aktarım:** dosya tarayıcıda `iceAktarimDogrula` ile denetlenir, ardından `toplu_ice_aktar(jsonb)` tek işlemde yazar. `dis_kimlik` (soru, içerik), `kod` (kazanım) ve sınıf + ünite no üzerinden upsert yapılır; tekrar yüklemede kopya oluşmaz. Hata olursa işlem bütünüyle geri alınır. Biçim: `docs/ICE_AKTARIM.md`.
+
 ## 7. Çevrimdışı çalışma
 
 - **Uygulama kabuğu:** `vite-plugin-pwa` (Workbox) tüm JavaScript, CSS ve yazı tiplerini önbelleğe alır. İnternet yokken uygulama açılır.
@@ -223,7 +233,12 @@ animasyonTuruKaydet('isin-kirilma', (oge, { sure, gecikme }) => [
 - Kit, `sandbox="allow-scripts allow-forms allow-popups allow-modals allow-downloads"` olan bir iframe içinde `srcdoc` ile açılır. `allow-same-origin` verilmez: kitin betikleri çalışır, ama uygulamanın oturum anahtarına, çerezlerine ve IndexedDB'sine erişemez.
 - Bu yalıtımda tarayıcı kitin `localStorage` erişimini engeller. Kit bozulmasın diye kitin başına bellekte çalışan bir `localStorage`/`sessionStorage` eklenir (`src/tahta/kitHtml.ts`). Kitin kaydettiği tercihler o oturum boyunca geçerlidir.
 - Kitler tek dosya olmalıdır. Dış dosyaya göreli bağlantı (`resim.png`) iframe içinde çözülemez; resimler dosyanın içine gömülmelidir (data URI ya da satır içi SVG).
-- İçe aktarma (M1): `/icerik/ice-aktar` ekranında seçilen HTML dosyaları bu tarayıcının IndexedDB'sine kaydedilir ve seçilen ünitede görünür. M5'te süper admin aynı ekrandan Supabase Storage'a yükleyecek ve kitler tüm kurumlara açılacak.
+- Yerel içe aktarma: `/icerik/ice-aktar` ekranında seçilen HTML dosyaları yalnızca bu tarayıcının IndexedDB'sine kaydedilir (sunucusuz deneme modu).
+- Merkezî yükleme: süper admin `/yonetim/icerikler` ekranından kiti Storage `icerik` kovasına (`kitler/<sınıf>/<zaman>-<ad>.html`) yükler ve bir `icerik` satırı açar. Kova özeldir; dosyayı yalnızca içerik erişimi olan kullanıcı indirebilir.
+
+### 8.3. Konu anlatımı (`/tahta/konu/:icerik`)
+
+HTML dosyası olmayan içerikler `icerik.veri` sütununda yapılandırılmış olarak durur: `{ bolumler: [{ baslik, metin, sekil_svg? }], planlar?: { "40": [...], "80": [...] } }`. Tahtada her bölüm tek ekranda büyük yazı ve şekille gösterilir. Ok tuşları ve sunum kumandası (PageUp/PageDown) ile geçilir. Ders akışı yalnızca öğretmenin açtığı panelde durur. Ünite listesi `html_yolu` varsa kiti, yoksa bu görünümü açar. "Tahtaya indir" konu anlatımını da çevrimdışı saklar (satır yeterlidir, ayrı dosya yoktur).
 
 ## 9. Marka ve yapılandırma
 

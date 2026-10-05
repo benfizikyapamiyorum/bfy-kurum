@@ -58,7 +58,7 @@ export class SupabaseKaynak implements IcerikKaynagi {
     const satirlar = hataVarsa(
       await this.db
         .from('icerik')
-        .select('id, tur, baslik, aciklama, unite_id, hafta, sira, html_yolu, meb_baglanti, ornek, icerik_kazanim(kazanim_id)')
+        .select('id, tur, baslik, aciklama, unite_id, hafta, sira, html_yolu, veri, meb_baglanti, ornek, icerik_kazanim(kazanim_id)')
         .eq('unite_id', uniteId)
         .order('hafta')
         .order('sira'),
@@ -70,7 +70,7 @@ export class SupabaseKaynak implements IcerikKaynagi {
     const satir = hataVarsa(
       await this.db
         .from('icerik')
-        .select('id, tur, baslik, aciklama, unite_id, hafta, sira, html_yolu, meb_baglanti, ornek, icerik_kazanim(kazanim_id)')
+        .select('id, tur, baslik, aciklama, unite_id, hafta, sira, html_yolu, veri, meb_baglanti, ornek, icerik_kazanim(kazanim_id)')
         .eq('id', id)
         .maybeSingle(),
     ) as IcerikSatiri | null

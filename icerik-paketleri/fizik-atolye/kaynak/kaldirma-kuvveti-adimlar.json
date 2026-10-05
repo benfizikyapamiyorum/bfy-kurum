@@ -1,0 +1,114 @@
+{
+ "S6": {
+  "focus": [
+   "aynı metal parçayı",
+   "dengede",
+   "tamamen batmıştır",
+   "kaba değmez"
+  ],
+  "numbers": [
+   "5 N",
+   "3 N"
+  ],
+  "steps": [
+   {
+    "title": "Veriyi fark et",
+    "body": "Havadaki okuma 5 N, sudaki okuma 3 N. Cisim her iki durumda da dengede. Aynı cismin ağırlığı değişiyor mu, yoksa onu taşıyan kuvvetler mi değişiyor?",
+    "equation": "Havada: 5 N     Suda: 3 N",
+    "prompt": "Sınıfa sor: Dinamometre doğrudan hangi kuvveti ölçer?"
+   },
+   {
+    "title": "İlişkiyi kur",
+    "body": "Dinamometre ip gerilmesini ölçer. Havada kaldırma ihmal edildiğinde gerilme ağırlığa eşittir. Suda cismi yukarı doğru hem ip hem de kaldırma kuvveti taşır.",
+    "equation": "Denge: T + Fₖ = G",
+    "prompt": "Sınıfa sor: 3 N’luk ip gerilmesi, 5 N’luk ağırlığı tek başına dengeleyebilir mi?"
+   },
+   {
+    "title": "Sonucu göster",
+    "body": "Gerçek ağırlık 5 N olarak kalır. Suyun taşıdığı pay, iki dinamometre okumasının farkıdır.",
+    "equation": "Fₖ = 5 − 3 = 2 N",
+    "prompt": "Şimdi batan hacmi değiştirin: ağırlık sabit kalırken ip gerilmesini izleyin."
+   }
+  ],
+  "why": {
+   "A": "3 N sudaki ip gerilmesidir. Havadaki denge ölçümü cismin gerçek ağırlığının 5 N olduğunu gösterir. Kaldırma kuvvetini doğru bulsa da bu seçenek ağırlığı yanlış yorumlar.",
+   "B": "3 N, kaldırma kuvveti değil dinamometrenin ölçtüğü ip gerilmesidir. Kaldırma da 3 N olsaydı yukarı kuvvetler 6 N olurdu; 5 N ağırlıkla denge kurulamazdı.",
+   "C": "2 N iki okumanın farkıdır ve kaldırma kuvvetini verir. Gerçek ağırlık havadaki 5 N okumadır. Bu seçenekte ölçülen nicelikler karıştırılmıştır.",
+   "E": "Ağırlık 3 N’a düşmez. Kaldırma 5 N olsaydı, 3 N ip gerilmesiyle birlikte toplam yukarı kuvvet 8 N olurdu. Verilen dengeyle uyuşmaz."
+  }
+ },
+ "S1": {
+  "focus": [
+   "tamamen su içindeki",
+   "rijit",
+   "Su homojen",
+   "hacmi ve yer çekimi değişmiyor"
+  ],
+  "numbers": [
+   "80 N",
+   "160 N",
+   "200 N",
+   "280 N"
+  ],
+  "steps": [
+   {
+    "title": "Veriyi fark et",
+    "body": "Üst yüzeydeki sıvı kuvveti aşağı, alt yüzeydeki yukarı yönlüdür. Derinlik değişirken küpün batan hacmi ve suyun yoğunluğu sabit kalır.",
+    "equation": "I: 80 N ↓ / 160 N ↑     II: 200 N ↓ / 280 N ↑",
+    "prompt": "Sınıfa sor: Kaldırma kuvvetini tek bir yüzey kuvvetinden bulabilir miyiz?"
+   },
+   {
+    "title": "İlişkiyi kur",
+    "body": "Yan yüzeylerin yatay kuvvetleri birbirini dengeler. Sıvının düşey bileşkesi, alt ve üst yüzey kuvvetlerinin farkıdır. İki derinliği aynı ilişkiyle karşılaştırın.",
+    "equation": "Fₖ = Falt − Füst",
+    "prompt": "Sınıfa sor: İki kuvvete de aynı miktar eklenirse aralarındaki fark değişir mi?"
+   },
+   {
+    "title": "Sonucu göster",
+    "body": "Her iki yüzey kuvveti 120 N artar. Kaldırma kuvveti ise iki durumda da 80 N’dur. Bu sonuç, homojen sıvıda sabit batan hacim koşuluna aittir.",
+    "equation": "160 − 80 = 80 N     280 − 200 = 80 N",
+    "prompt": "Kontrol: Yüzey kuvvetlerinin artması, bileşkenin de artmasını gerektirir mi?"
+   }
+  ],
+  "why": {
+   "A": "120 N, her bir yüzey kuvvetindeki artıştır. Kaldırma kuvveti bu kuvvetlerin farkıdır; fark iki durumda da 80 N kalır.",
+   "C": "Alt yüzeydeki sıvı kuvveti cismin ağırlığı değildir. Cismin kütlesi ve yer çekimi değişmediğinden ağırlığı da değişmez.",
+   "D": "Artışların eşit olması, kuvvetlerin kendilerinin eşit olduğu anlamına gelmez. 160 − 80 ve 280 − 200 farkları sıfır değil 80 N’dur.",
+   "E": "Üst yüzeyde aşağı yönlü bir sıvı kuvveti de vardır. Alt kuvvetten bu katkı çıkarılmadan kaldırma kuvveti bulunamaz."
+  }
+ },
+ "S8": {
+  "focus": [
+   "sıvı yoğunluğunun",
+   "yer çekimi aynı",
+   "Yalnızca sıvı yoğunluğunun"
+  ],
+  "numbers": [],
+  "steps": [
+   {
+    "title": "Veriyi fark et",
+    "body": "Araştırılan değişken sıvı yoğunluğudur. Yer çekimi zaten aynı. Adil bir karşılaştırmada batan hacmi de sabit tutmamız gerekir.",
+    "equation": "Değişen: sıvı yoğunluğu     Sabit: batan hacim ve g",
+    "prompt": "Sınıfa sor: Tabloda batan hacimleri aynı olan denemeler hangileri?"
+   },
+   {
+    "title": "İlişkiyi kur",
+    "body": "80 cm³ grubunda A ile C’yi; 120 cm³ grubunda B ile D’yi karşılaştırın. Her grubun içinde yalnızca sıvı yoğunluğu değişir.",
+    "equation": "A–C: 80 cm³ sabit     B–D: 120 cm³ sabit",
+    "prompt": "Sınıfa sor: A ile D’yi karşılaştırsaydık hangi iki değişken birlikte değişirdi?"
+   },
+   {
+    "title": "Sonucu göster",
+    "body": "Uygun iki karşılaştırma A–C ve B–D’dir. Her ikisi de sıvı yoğunluğunun etkisini diğer değişkenlerden ayırır.",
+    "equation": "A–C ve B–D",
+    "prompt": "Kontrol: Yalnızca batan hacmin etkisini araştırmak için hangi çiftleri seçerdiniz?"
+   }
+  ],
+  "why": {
+   "A": "A–B ve C–D çiftlerinde sıvı yoğunluğu sabit, batan hacim farklıdır. Bu çiftler yoğunluğun değil batan hacmin etkisini araştırır.",
+   "B": "A–D ve B–C çiftlerinde hem sıvı yoğunluğu hem batan hacim değişir. Sonucu yalnız yoğunluğa bağlayamayız.",
+   "D": "A–B batan hacmin etkisini araştırır. A–D’de ise iki değişken birlikte değişir. İki karşılaştırma da istenen deneye uygun değildir.",
+   "E": "A–C uygundur; batan hacim 80 cm³ olarak sabittir. Ancak A–D’de hem yoğunluk hem batan hacim değişir. Seçenekteki iki çiftin de uygun olması gerekir."
+  }
+ }
+}

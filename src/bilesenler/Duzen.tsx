@@ -30,8 +30,10 @@ function KullaniciMenusu() {
           await o.cikis()
           git('/')
         }}
+        aria-label="Çıkış"
       >
-        Çıkış
+        <Simge ad="kapi" />
+        <span className="dar-gizle">Çıkış</span>
       </button>
     </>
   )
@@ -45,7 +47,7 @@ export function Duzen() {
       <header className="ust-serit">
         <Link to="/" className="urun">
           <UrunIsareti />
-          {marka.urunAdi}
+          <span className="urun-adi">{marka.urunAdi}</span>
         </Link>
         <span className="bosluk" />
         <nav className="ust-menu" aria-label="Ana menü">
@@ -55,7 +57,13 @@ export function Duzen() {
               <span className="dar-gizle">Tahta modu</span>
             </NavLink>
           )}
-          {(!profil || profil.rol === 'superadmin') && (
+          {profil?.rol === 'superadmin' && (
+            <NavLink to="/yonetim" className="dugme sade">
+              <Simge ad="belge" />
+              <span className="dar-gizle">Yönetim</span>
+            </NavLink>
+          )}
+          {!profil && (
             <NavLink to="/icerik/ice-aktar" className="dugme sade">
               <Simge ad="yukle" />
               <span className="dar-gizle">Kit içe aktar</span>
