@@ -42,6 +42,8 @@ export interface Kazanim {
 export interface Secenek {
   harf: SecenekHarfi
   metin: string
+  /** Bu şık neden yanlış (tahtada "Neden B değil?" ile açılır). Doğru şıkta boş. */
+  gerekce?: string
 }
 
 export interface CozumAdimi {
@@ -61,6 +63,12 @@ export interface Soru {
   kaynak_notu: string | null
   ornek: boolean
   kazanim_idleri: string[]
+  /** Ölçülen beceri, ör. "Veriden çıkarım". */
+  beceri?: string | null
+  /** Sorunun yokladığı yaygın kavram yanılgısı (yalnızca öğretmene görünür). */
+  kavram_yanilgisi?: string | null
+  /** Gerekçeli ya da açık uçlu cevap için puanlama ölçütü. */
+  puanlama_olcutu?: string | null
 }
 
 export interface Icerik {
@@ -116,4 +124,47 @@ export interface SinifGrubu {
   seviye_id: string | null
   katilim_kodu: string | null
   arsiv: boolean
+}
+
+export interface TestAyarlari {
+  /** Sayfa düzeni: tek ya da iki sütun. */
+  duzen?: 'tek' | 'iki'
+  /** Her sorunun altında bırakılan işlem alanı. */
+  islemAlani?: 'yok' | 'kisa' | 'genis'
+  /** Sayfalara kurum adıyla soluk filigran. */
+  filigran?: boolean
+}
+
+export interface Test {
+  id: string
+  kurum_id: string
+  olusturan_id: string | null
+  tur: TestTuru
+  baslik: string
+  aciklama: string | null
+  sure_dk: number | null
+  yanlis_dogru_orani: number
+  ayarlar: TestAyarlari
+  olusturma: string
+}
+
+export interface Atama {
+  id: string
+  kurum_id: string
+  test_id: string
+  sinif_grubu_id: string
+  baslangic: string
+  bitis: string | null
+  cozumler_acik: boolean
+}
+
+export interface Sonuc {
+  atama_id: string
+  ogrenci_id: string
+  dogru: number
+  yanlis: number
+  bos: number
+  net: number
+  kaynak: 'online' | 'elle'
+  tamamlandi: string
 }

@@ -731,3 +731,39 @@
     display: none;
   }
 }
+
+/* "Neden B değil?" */
+.gerekce-alani {
+  margin: 0.6em 0;
+  display: grid;
+  gap: 0.5em;
+}
+.gerekce-dugmeleri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+.gerekce-metni {
+  padding: 0.6em 0.9em;
+  border-radius: 0.6em;
+  background: var(--uyari-acik);
+  border: 2px solid var(--uyari);
+  font-size: 0.92em;
+  animation: belir 0.25s ease-out;
+}
+.soru-govde table,
+.coz-govde table,
+.y-govde table {
+  border-collapse: collapse;
+  margin: 0.4em 0;
+}
+.soru-govde th,
+.soru-govde td,
+.coz-govde th,
+.coz-govde td,
+.y-govde th,
+.y-govde td {
+  border: 1px solid currentColor;
+  padding: 0.2em 0.6em;
+  text-align: center;
+}

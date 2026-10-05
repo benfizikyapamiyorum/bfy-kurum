@@ -24,6 +24,13 @@ import { Ogretmenler } from './kurum/Ogretmenler'
 import { Ogrenciler } from './kurum/Ogrenciler'
 import { Siniflar } from './kurum/Siniflar'
 import type { Rol } from './alan/tipler'
+import { TestListesi } from './testler/TestListesi'
+import { TestDuzenleyici } from './testler/TestDuzenleyici'
+import { TestAtamalari } from './testler/TestAtamalari'
+import { AtamaSonuclari } from './testler/AtamaSonuclari'
+import { TestYazdir } from './testler/TestYazdir'
+import { TestCoz } from './ogrenci/TestCoz'
+import { TestTahta } from './tahta/TestTahta'
 import type { ReactNode } from 'react'
 
 const PERSONEL: Rol[] = ['ogretmen', 'kurum_yonetici']
@@ -44,6 +51,7 @@ const yonlendirici = createBrowserRouter([
       { path: '/icerik/ice-aktar', element: <IceAktar /> },
       { path: '/ogretmen', element: korumali(PERSONEL, <OgretmenAna />) },
       { path: '/ogrenci', element: korumali(['ogrenci'], <OgrenciAna />) },
+      { path: '/ogrenci/test/:atama', element: korumali(['ogrenci'], <TestCoz />) },
       {
         path: '/kurum',
         element: korumali(['kurum_yonetici'], <KurumPaneli />),
@@ -54,7 +62,11 @@ const yonlendirici = createBrowserRouter([
           { path: 'siniflar', element: <Siniflar /> },
         ],
       },
-      { path: '/testler/*', element: korumali(PERSONEL, yakinda('Test ve deneme')) },
+      { path: '/testler', element: korumali(PERSONEL, <TestListesi />) },
+      { path: '/testler/yeni', element: korumali(PERSONEL, <TestDuzenleyici />) },
+      { path: '/testler/:id', element: korumali(PERSONEL, <TestDuzenleyici />) },
+      { path: '/testler/:id/atamalar', element: korumali(PERSONEL, <TestAtamalari />) },
+      { path: '/testler/:id/atama/:atama', element: korumali(PERSONEL, <AtamaSonuclari />) },
       { path: '/raporlar/*', element: korumali(PERSONEL, yakinda('Raporlar')) },
       { path: '/yonetim/*', element: korumali(['superadmin'], yakinda('Süper admin paneli')) },
       { path: '/ayarlar', element: <Ayarlar /> },
@@ -63,7 +75,10 @@ const yonlendirici = createBrowserRouter([
       { path: '*', element: <Bulunamadi /> },
     ],
   },
+  // Yazdırma sayfası: yalnızca kâğıt.
+  { path: '/testler/:id/yazdir/:surum', element: korumali(PERSONEL, <TestYazdir />) },
   // Tahta modu kendi tam ekran düzenini kullanır.
+  { path: '/tahta/test/:test/:no', element: korumali(PERSONEL, <TestTahta />) },
   { path: '/tahta', element: <SinifSecimi /> },
   { path: '/tahta/indir', element: <TahtayaIndir /> },
   { path: '/tahta/kit/:icerik', element: <KitEkrani /> },

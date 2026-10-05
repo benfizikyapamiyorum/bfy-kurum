@@ -451,11 +451,11 @@ export const ornekSorular: Soru[] = [
       'Bu süre boyunca otobüsün ivmesinin büyüklüğü ve yönü nedir?',
     sekil_svg: sekilOtobus,
     secenekler: [
-      { harf: 'A', metin: '3 m/s², hareket yönünde' },
+      { harf: 'A', metin: '3 m/s², hareket yönünde', gerekce: 'Büyüklük doğru ama otobüs yavaşlıyor. Hız azalıyorsa ivme hareket yönüne zıttır.' },
       { harf: 'B', metin: '3 m/s², hareket yönüne zıt' },
-      { harf: 'C', metin: '5 m/s², hareket yönüne zıt' },
-      { harf: 'D', metin: '7 m/s², hareket yönünde' },
-      { harf: 'E', metin: '2 m/s², hareket yönüne zıt' },
+      { harf: 'C', metin: '5 m/s², hareket yönüne zıt', gerekce: '20 m/s yalnızca ilk hızdır. İvme hız değişimidir: (8 − 20) / 4. Son hızı hesaba katmak gerekir.' },
+      { harf: 'D', metin: '7 m/s², hareket yönünde', gerekce: 'Hızlar toplanmış: (20 + 8) / 4 = 7. İvme hızların toplamıyla değil, farkıyla bulunur.' },
+      { harf: 'E', metin: '2 m/s², hareket yönüne zıt', gerekce: 'Yalnızca son hız süreye bölünmüş: 8 / 4. İvme için hız değişimi kullanılır.' },
     ],
     dogru_cevap: 'B',
     cozum_adimlari: [
@@ -537,11 +537,11 @@ export const ornekSorular: Soru[] = [
       'İpteki gerilme kuvvetinin büyüklüğü kaç N olur?',
     sekil_svg: sekilBloklar,
     secenekler: [
-      { harf: 'A', metin: '4' },
+      { harf: 'A', metin: '4', gerekce: '4 sistemin ivmesidir (m/s²), kuvvet değildir. İp gerilmesi için K bloğunun kütlesiyle çarpmak gerekir.' },
       { harf: 'B', metin: '8' },
-      { harf: 'C', metin: '10' },
-      { harf: 'D', metin: '12' },
-      { harf: 'E', metin: '20' },
+      { harf: 'C', metin: '10', gerekce: 'Kuvvet bloklara eşit paylaşılmaz. İp yalnızca K bloğunu hızlandırır; payı K bloğunun kütlesiyle orantılıdır.' },
+      { harf: 'D', metin: '12', gerekce: '3 × 4 = 12, L bloğunu hızlandıran net kuvvettir. İp ise K bloğunu çeker: T = 2 × 4.' },
+      { harf: 'E', metin: '20', gerekce: 'İp F kuvvetini olduğu gibi iletmez. F iki bloğu birlikte hızlandırır, ip yalnızca K bloğunu.' },
     ],
     dogru_cevap: 'B',
     cozum_adimlari: [

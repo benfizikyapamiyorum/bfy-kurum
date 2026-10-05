@@ -52,3 +52,21 @@ export async function kurumAc(ek: { lisansBitti?: boolean; ogrenciLimiti?: numbe
   await kullaniciAc(yoneticiEposta, 'kurum_yonetici', 'Deneme Yönetici', data.id)
   return { id: data.id, kod, ad: data.ad, yoneticiEposta }
 }
+
+/** Kuruma sınıf ve öğrenciler ekler; öğrenci şifreleri SIFRE. */
+export async function sinifVeOgrenciler(kurum: DenemeKurumu, adlar: string[]) {
+  const { data: g, error } = await admin
+    .from('sinif_grubu')
+    .insert({ kurum_id: kurum.id, ad: '11-A', katilim_kodu: `S${Math.random().toString(36).slice(2, 8).toUpperCase()}` })
+    .select('id')
+    .single()
+  if (error) throw error
+  const ogrenciler: { id: string; kullanici_adi: string; ad: string }[] = []
+  for (const [i, ad] of adlar.entries()) {
+    const kadi = `ogr${i + 1}`
+    const id = await kullaniciAc(`${kadi}@${kurum.id}.ogrenci.invalid`, 'ogrenci', ad, kurum.id, kadi)
+    await admin.from('sinif_grubu_ogrenci').insert({ sinif_grubu_id: g.id, ogrenci_id: id })
+    ogrenciler.push({ id, kullanici_adi: kadi, ad })
+  }
+  return { sinifId: g.id as string, ogrenciler }
+}

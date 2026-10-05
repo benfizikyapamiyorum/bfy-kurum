@@ -1,0 +1,270 @@
+/* Test çıktıları (A4). Ekranda kâğıt önizlemesi, yazdırınca yalnızca kâğıt. */
+
+@page {
+  size: A4;
+  margin: 14mm 13mm 16mm;
+  @bottom-center {
+    content: counter(page) ' / ' counter(pages);
+    font-family: 'Inter Variable', Arial, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+
+.yazdir-kok {
+  background: #e8ebef;
+  min-height: 100vh;
+  padding: 24px 0 64px;
+  color: #111;
+  font-family: var(--font);
+}
+.yazdir-arac {
+  max-width: 210mm;
+  margin: 0 auto 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.kitapcik,
+.optik {
+  background: #fff;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 24px;
+  padding: 14mm 13mm;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 12%);
+  font-size: 10.5pt;
+  line-height: 1.45;
+}
+
+.kitapcik-ust {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2mm;
+  border-bottom: 1.5pt solid #1f5fae;
+  padding-bottom: 3mm;
+  margin-bottom: 4mm;
+}
+.kitapcik-kurum {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  font-weight: 700;
+  font-size: 10pt;
+  color: #1f5fae;
+}
+.kitapcik-kurum img {
+  max-height: 12mm;
+  max-width: 40mm;
+  object-fit: contain;
+}
+.kitapcik-ust h1 {
+  font-size: 15pt;
+  margin: 0;
+}
+.kitapcik-ust h1 small {
+  font-size: 10pt;
+  font-weight: 600;
+  color: #c62828;
+}
+.kitapcik-bilgi {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 6mm;
+  font-size: 9pt;
+  color: #444;
+}
+.ogrenci-bilgi {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  font-size: 9.5pt;
+  margin-bottom: 4mm;
+}
+.kitapcik-aciklama {
+  font-size: 9.5pt;
+  margin: 0 0 4mm;
+}
+
+.sorular {
+  column-gap: 8mm;
+}
+.duzen-iki .sorular {
+  column-count: 2;
+  column-rule: 0.5pt solid #bbb;
+}
+.y-soru {
+  display: flex;
+  gap: 2mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  padding-bottom: 4mm;
+  margin-bottom: 4mm;
+  border-bottom: 0.5pt dashed #ccc;
+}
+.y-soru-no {
+  font-weight: 800;
+  min-width: 6mm;
+}
+.y-soru-icerik {
+  flex: 1;
+  min-width: 0;
+}
+.y-govde p {
+  margin: 0 0 2mm;
+}
+.y-sekil {
+  margin: 2mm 0;
+  text-align: center;
+}
+.y-sekil svg {
+  width: 100%;
+  max-height: 70mm;
+  height: auto;
+}
+.duzen-tek .y-sekil svg {
+  max-width: 120mm;
+}
+.y-secenekler {
+  list-style: none;
+  padding: 0;
+  margin: 2mm 0 0;
+  display: grid;
+  gap: 1mm;
+}
+.y-secenekler li.y-dogru,
+.y-dy .y-dogru {
+  font-weight: 800;
+  color: #1b7a43;
+  background: #e5f4ec;
+  border-radius: 1mm;
+  padding: 0 1mm;
+}
+.y-dy {
+  display: flex;
+  gap: 8mm;
+  margin-top: 2mm;
+}
+.y-islem {
+  height: 18mm;
+}
+.islem-genis .y-islem {
+  height: 54mm;
+}
+.islem-yok .y-islem:not(.acik) {
+  display: none;
+}
+.y-islem.acik {
+  height: 40mm;
+  border-bottom: 0.5pt dotted #999;
+  background-image: repeating-linear-gradient(transparent 0 7.5mm, #ddd 7.5mm 7.7mm);
+}
+.y-cozum {
+  margin-top: 2mm;
+  padding: 2mm;
+  border-left: 1mm solid #1f5fae;
+  background: #f3f6fb;
+  font-size: 9pt;
+}
+.y-cozum ol,
+.y-gerekceler {
+  margin: 1mm 0 0;
+  padding-left: 5mm;
+}
+.y-kazanim {
+  color: #666;
+}
+.cevap-anahtari {
+  break-inside: avoid;
+  margin-top: 6mm;
+}
+.cevap-anahtari h2 {
+  font-size: 12pt;
+}
+.cevap-anahtari ol {
+  columns: 5;
+  font-weight: 700;
+}
+.kitapcik-alt {
+  margin-top: 6mm;
+  font-size: 8pt;
+  color: #666;
+  text-align: center;
+}
+.filigran {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 54pt;
+  font-weight: 800;
+  color: rgb(31 95 174 / 6%);
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* Optik form */
+.optik {
+  break-after: page;
+}
+.optik-not {
+  font-size: 9pt;
+  color: #444;
+}
+.optik-sutunlar {
+  display: flex;
+  gap: 8mm;
+  flex-wrap: wrap;
+}
+.optik-tablo {
+  border-collapse: collapse;
+}
+.optik-tablo th {
+  font-size: 9pt;
+  text-align: right;
+  padding: 0 2mm 0 0;
+  width: 8mm;
+}
+.optik-tablo td {
+  padding: 0.6mm 0.8mm;
+}
+.yuvarlak {
+  display: inline-grid;
+  place-items: center;
+  width: 5.2mm;
+  height: 5.2mm;
+  border: 0.4mm solid #333;
+  border-radius: 50%;
+  font-size: 7pt;
+  font-weight: 700;
+  color: #555;
+}
+
+@media print {
+  .yazdir-kok {
+    background: none;
+    padding: 0;
+    min-height: 0;
+  }
+  .ekranda {
+    display: none !important;
+  }
+  .kitapcik,
+  .optik {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  .optik:last-child {
+    break-after: auto;
+  }
+}
+.kitapcik-ibare {
+  margin-left: auto;
+  font-size: 7.5pt;
+}

@@ -50,3 +50,15 @@ describe('zengin metin', () => {
     expect(temiz).toContain('data-ciz-adim="1"')
   })
 })
+
+describe('çözüm katmanları', () => {
+  it('öğrenci şeklinden 1. ve sonraki adımların öğeleri çıkar, hareketli öğe kalır', async () => {
+    const { cozumKatmanlariniKaldir } = await import('./zenginMetin')
+    const atis = ornekSorular.find((s) => s.sekil_svg?.includes('Yere çarparken'))!
+    const temiz = cozumKatmanlariniKaldir(sekilSvgTemizle(atis.sekil_svg!))
+    expect(temiz).not.toContain('Yere çarparken')
+    expect(temiz).not.toContain('60 m')
+    expect(temiz).toContain('45 m')
+    expect(temiz).toContain('data-ciz-tur="kinematik"')
+  })
+})

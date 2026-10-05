@@ -53,37 +53,41 @@ export function SoruEkrani() {
       </TahtaCercevesi>
     )
   }
+  const onceki = sira[index - 1]?.id
+  const sonraki = sira[index + 1]?.id
   return (
     <SoruGorunumu
       key={soru.id}
       soru={soru}
       no={index + 1}
       toplam={sira.length}
-      onceki={sira[index - 1]?.id}
-      sonraki={sira[index + 1]?.id}
-      temel={temel}
+      oncekiAdres={onceki && `${temel}/soru/${onceki}`}
+      sonrakiAdres={sonraki && `${temel}/soru/${sonraki}`}
+      geri={temel}
       yardimci={yardimci}
     />
   )
 }
 
-interface GorunumOzellikleri {
+export interface GorunumOzellikleri {
   soru: Soru
   no: number
   toplam: number
-  onceki?: string
-  sonraki?: string
-  temel: string
+  oncekiAdres?: string
+  sonrakiAdres?: string
+  geri: string
   yardimci: KatalogYardimcisi
 }
 
-function SoruGorunumu({ soru, no, toplam, onceki, sonraki, temel, yardimci }: GorunumOzellikleri) {
+export function SoruGorunumu({ soru, no, toplam, oncekiAdres, sonrakiAdres, geri, yardimci }: GorunumOzellikleri) {
   const git = useNavigate()
   const [cevapAcik, setCevapAcik] = useState(false)
   const [adim, setAdim] = useState(0)
   const [secilen, setSecilen] = useState<string | null>(null)
   const [yenidenOynat, setYenidenOynat] = useState(0)
   const [sekilAnimasyonlu, setSekilAnimasyonlu] = useState(false)
+  const [gerekce, setGerekce] = useState<string | null>(null)
+  const gerekceli = soru.secenekler?.filter((x) => x.gerekce && x.harf !== soru.dogru_cevap) ?? []
   const cevapRef = useRef<HTMLDivElement>(null)
   const adimlarRef = useRef<HTMLOListElement>(null)
 
@@ -114,8 +118,8 @@ function SoruGorunumu({ soru, no, toplam, onceki, sonraki, temel, yardimci }: Go
       <button
         type="button"
         className="dugme"
-        disabled={!onceki}
-        onClick={() => onceki && git(`${temel}/soru/${onceki}`)}
+        disabled={!oncekiAdres}
+        onClick={() => oncekiAdres && git(oncekiAdres)}
         aria-label="Önceki soru"
       >
         <Simge ad="geri" />
@@ -160,8 +164,8 @@ function SoruGorunumu({ soru, no, toplam, onceki, sonraki, temel, yardimci }: Go
       <button
         type="button"
         className="dugme"
-        disabled={!sonraki}
-        onClick={() => sonraki && git(`${temel}/soru/${sonraki}`)}
+        disabled={!sonrakiAdres}
+        onClick={() => sonrakiAdres && git(sonrakiAdres)}
         aria-label="Sonraki soru"
       >
         <span className="dar-gizle">Sonraki</span>
@@ -182,7 +186,7 @@ function SoruGorunumu({ soru, no, toplam, onceki, sonraki, temel, yardimci }: Go
           {kazanimKodlari}, {SORU_TURU_ADI[soru.tur].toLocaleLowerCase('tr-TR')}
         </>
       }
-      geri={temel}
+      geri={geri}
       ustEk={<Sayac sifirlaAnahtari={soru.id} />}
       altCubuk={altCubuk}
       cizimAnahtari={soru.id}
@@ -245,6 +249,29 @@ function SoruGorunumu({ soru, no, toplam, onceki, sonraki, temel, yardimci }: Go
                 <>{soru.dogru_cevap === 'D' ? 'Doğru.' : 'Yanlış.'}</>
               ) : (
                 <ZenginMetin metin={soru.dogru_cevap} etiket="span" />
+              )}
+            </div>
+          )}
+
+          {cevapAcik && gerekceli.length > 0 && (
+            <div className="gerekce-alani">
+              <div className="gerekce-dugmeleri" role="group" aria-label="Yanlış seçeneklerin gerekçesi">
+                {gerekceli.map((x) => (
+                  <button
+                    key={x.harf}
+                    type="button"
+                    className={`dugme ${gerekce === x.harf ? 'secili' : ''}`}
+                    aria-pressed={gerekce === x.harf}
+                    onClick={() => setGerekce((g) => (g === x.harf ? null : x.harf))}
+                  >
+                    Neden {x.harf} değil?
+                  </button>
+                ))}
+              </div>
+              {gerekce && (
+                <div className="gerekce-metni" role="status">
+                  <ZenginMetin metin={gerekceli.find((x) => x.harf === gerekce)?.gerekce ?? ''} />
+                </div>
               )}
             </div>
           )}
