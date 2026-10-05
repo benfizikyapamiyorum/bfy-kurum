@@ -1064,10 +1064,12 @@
 .yuzde-cubuklari li {
   display: grid;
   grid-template-columns: minmax(140px, 1.2fr) minmax(120px, 2fr) 120px;
+  min-width: 0;
   gap: 12px;
   align-items: center;
 }
 .yc-etiket {
+  min-width: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 2px 8px;
@@ -1135,7 +1137,7 @@
 }
 @media (max-width: 700px) {
   .yuzde-cubuklari li {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 4px;
   }
 }
@@ -1272,4 +1274,37 @@ textarea.kod {
   .kullanici-adi {
     max-width: 104px;
   }
+}
+
+/* Demo */
+.demo-ust {
+  margin-bottom: 20px;
+}
+.demo-ust h1 {
+  margin: 8px 0;
+}
+.demo-kartlari {
+  margin-bottom: 20px;
+}
+.demo-karti {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.demo-karti:hover,
+.demo-karti:focus-visible {
+  box-shadow: 0 6px 20px rgb(16 24 40 / 14%);
+  transform: translateY(-2px);
+}
+.demo-karti h2 {
+  margin: 0;
+}
+.demo-karti .dugme {
+  justify-self: start;
+}
+.demo-karti svg {
+  color: var(--ana);
 }

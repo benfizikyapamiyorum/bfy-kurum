@@ -12,7 +12,11 @@ export function AnaSayfa() {
           Hepsi tek yerde.
         </p>
         <div className="giris-dugmeleri">
-          <Link to="/tahta" className="dugme ana buyuk">
+          <Link to="/demo" className="dugme ana buyuk">
+            <Simge ad="oynat" />
+            Demoyu dene
+          </Link>
+          <Link to="/tahta" className="dugme buyuk">
             <Simge ad="tahta" />
             Tahta modunu aç
           </Link>
@@ -37,7 +41,13 @@ export function AnaSayfa() {
         </article>
         <article className="kart">
           <h2>Test ve deneme</h2>
-          <p className="soluk">Kazanıma göre soru seçimi, PDF çıktısı, online çözüm ve net hesabı. Yakında.</p>
+          <p className="soluk">Kazanıma göre soru seçimi, PDF çıktısı, online çözüm ve net hesabı.</p>
+        </article>
+        <article className="kart">
+          <h2>Raporlar ve telafi</h2>
+          <p className="soluk">
+            Sınıfın hangi öğrenme çıktısında zayıf olduğu, öğrencinin net gelişimi ve tek tıkla telafi testi.
+          </p>
         </article>
       </section>
     </div>

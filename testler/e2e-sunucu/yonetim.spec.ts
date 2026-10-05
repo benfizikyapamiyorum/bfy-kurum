@@ -1,6 +1,6 @@
 import { resolve } from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
-import { admin, kullaniciAc, SIFRE } from './yardimci'
+import { admin, kullaniciAc, kurumAc, SIFRE } from './yardimci'
 
 const PAKET = resolve(import.meta.dirname, '../../icerik-paketleri/kaldirma-kuvveti.json')
 
@@ -80,8 +80,8 @@ test('süper admin: paketi içe aktarır, soruyu düzenler; konu anlatımı taht
 
 test('süper admin olmayan /yonetim sayfasını açamaz', async ({ page }) => {
   const eposta = `ogretmen-${Math.random().toString(36).slice(2, 8)}@deneme.test`
-  const { data: k } = await admin.from('kurum').select('id').limit(1).single()
-  await kullaniciAc(eposta, 'ogretmen', 'Öğretmen', k!.id)
+  const k = await kurumAc()
+  await kullaniciAc(eposta, 'ogretmen', 'Öğretmen', k.id)
   await page.goto('/giris')
   await page.getByRole('tab', { name: 'Öğretmen ve yönetici' }).click()
   await page.getByLabel('E-posta').fill(eposta)

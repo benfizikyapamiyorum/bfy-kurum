@@ -30,6 +30,7 @@ Netlify: derlenmiş statik dosyaları yayınlar. Sunucu kodu yok.
 | `src/sayfalar/` | Tahta dışındaki sayfalar. |
 | `src/kurum/`, `src/testler/`, `src/raporlar/`, `src/ogrenci/` | Kurum paneli, test oluşturucu, raporlar, öğrenci ekranları. |
 | `src/yonetim/` | Süper admin paneli: kurumlar, soru bankası, içerikler, toplu içe aktarım. |
+| `src/demo/` | Herkese açık demo: örnek test ve örnek sınıf raporu (sunucuya yazmaz). |
 | `icerik-paketleri/` | İçe aktarılmaya hazır JSON paketleri ve kaynakları (biçim: `docs/ICE_AKTARIM.md`). |
 | `src/bilesenler/` | Ortak arayüz bileşenleri. |
 | `src/yapilandirma/` | Marka (`marka.json`) ve ortam değişkenleri. |
@@ -89,7 +90,14 @@ Politikalar `supabase/migrations/20261003000300_rls_politikalari.sql` dosyasınd
 - **Lisans:** Lisans süresi biten ya da pasif kurumun üyeleri soru bankasını göremez ve yazma işlemi yapamaz, ama kendi geçmiş verilerini okumaya devam eder.
 - **Rol yükseltme yok:** Kurum yöneticisi yalnızca öğretmen ve öğrenci ekler, kendi rolünü değiştiremez. Lisans ve kontenjan alanlarını yalnızca süper admin değiştirir (`ozel.kurum_koruma` tetikleyicisi).
 - **Kontenjan:** Aktif öğretmen ve öğrenci sayısı kurum limitini aşamaz (`ozel.kontenjan_kontrol` tetikleyicisi, eşzamanlı eklemeye karşı kurum satırını kilitler).
-- **Cevap anahtarı öğrenciye sızmaz:** Öğrenci `soru` ve `test_soru` tablolarını doğrudan okuyamaz, `cevap` ve `sonuc` tablolarına yazamaz. Online çözüm (M3) iki RPC fonksiyonuyla çalışacak: biri cevapsız soruları döndürür, diğeri cevabı sunucuda puanlayıp kaydeder.
+- **Cevap anahtarı öğrenciye sızmaz:**
+  - Öğrenci `soru` (örnek sorular dahil) ve `test_soru` tablolarını doğrudan okuyamaz, `cevap` ve `sonuc` tablolarına yazamaz.
+  - Online cevap kaydedilirken puanlanmaz (`dogru_mu` boş kalır). Puanlama testi bitirince yapılır, öğrenci kendi cevap satırlarını da ancak o zaman okur. Böylece aynı soruya şıkları sırayla deneyip anahtarı bulamaz.
+  - Şekillerin çözüm katmanları (`data-ciz-adim` 1 ve üstü, hareket ve kinematik hariç) öğrenciye giden RPC'lerde sunucuda ayıklanır (`ozel.cozum_katmanlarini_kaldir`). Tarayıcıdaki aynı adlı fonksiyonla aynı sonucu verdiği testle doğrulanır.
+  - Öğretmen teste yalnızca kendisinin görebildiği (yayındaki) soruyu ekleyebilir.
+- **Giriş kodları:** Kurum kodu ve sınıf kodu tek bir ad alanını paylaşır (tetikleyici). Bir kurum, başka kurumun koduyla sınıf açıp öğrencilerini kendine yönlendiremez. Kurum kodunu yalnızca süper admin değiştirir. Kodlar ASCII'dir; Türkçe klavyeden gelen i, ı, İ harfleri I sayılır.
+- **Test süresi** (`sure_dk`) sunucuda da uygulanır: öğrencinin testi ilk açtığı an `cozum_baslangic` tablosuna yazılır.
+- **Ziyaretçi** yalnızca `giris_kurumu_bul` ve `ogrenci_eposta` fonksiyonlarını çağırabilir (testle denetlenir).
 - **Pasif kullanıcı** hiçbir role sahip sayılmaz.
 
 Yardımcı fonksiyonlar `ozel` şemasındadır. Bu şema Supabase Data API'ye açılmaz. Fonksiyonlar `SECURITY DEFINER` ve boş `search_path` ile tanımlıdır; politikalarda `(select ...)` içinde çağrılarak sorgu başına bir kez çalışır.
@@ -177,6 +185,10 @@ Kayıtlı test `/tahta/test/:test/:no` ile tahtada soru soru açılır. Çoktan 
 - **Kurumlar:** `kurum_ozetleri()` RPC'si kurumları kontenjan kullanımı ve yönetici adıyla döner (yalnızca süper admin; başkası boş liste alır). Yeni kurum doğrudan `kurum` tablosuna yazılır (RLS: süper admin). Kurum yöneticisi hesabı `kullanici` Edge Function'ı ile açılır. Lisans uzatma bugünden ya da mevcut bitişten (hangisi ileriyse) hesaplanır (`uzatilmisBitis`).
 - **Soru bankası:** tüm sorular (yayında olmayanlar dahil) süzülür, yayına alınır, düzenlenir. Düzenleyici şık gerekçelerini, çözüm adımlarını, kavram yanılgısını, puanlama ölçütünü ve kazanım etiketlerini kapsar. Canlı önizleme vardır. Bir testte kullanılmış soru silinemez (`on delete restrict`); yayından kaldırılır.
 - **Toplu içe aktarım:** dosya tarayıcıda `iceAktarimDogrula` ile denetlenir, ardından `toplu_ice_aktar(jsonb)` tek işlemde yazar. `dis_kimlik` (soru, içerik), `kod` (kazanım) ve sınıf + ünite no üzerinden upsert yapılır; tekrar yüklemede kopya oluşmaz. Hata olursa işlem bütünüyle geri alınır. Biçim: `docs/ICE_AKTARIM.md`.
+
+### 6.8. Demo (`/demo`)
+
+Herkese açık demo, ortak bir demo hesabı yerine salt okunur ekranlardan oluşur: tahta modu (örnek içerik zaten giriş gerektirmez), `DemoTest` (örnek soruların otomatik puanlananları, `puanla` ile tarayıcıda puanlanır) ve `DemoRapor` (`src/demo/ornekRapor.ts` içindeki kurgusal sınıf; netler `netHesapla` ile, eğilim ve zayıf çıktılar gerçek rapor fonksiyonlarıyla hesaplanır). Ortak şifreli bir demo kurumu, herkesin veri yazabildiği ve kontenjanı doldurabildiği bir hesap olurdu; bu tasarım o riski taşımaz. `kurum.demo` sütunu ileride gerekirse diye şemada duruyor.
 
 ## 7. Çevrimdışı çalışma
 

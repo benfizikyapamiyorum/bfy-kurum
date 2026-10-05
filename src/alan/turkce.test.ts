@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { trBuyuk, trKucuk, trSayi, trSirala } from './turkce'
+import { girisKodu, trBuyuk, trKucuk, trSayi, trSirala } from './turkce'
 
 describe('Türkçe metin işlemleri', () => {
   it('büyük/küçük harf dönüşümünde İ ve ı doğru', () => {
@@ -23,5 +23,13 @@ describe('Türkçe metin işlemleri', () => {
   it('ondalık virgül kullanır', () => {
     expect(trSayi(2.5)).toBe('2,5')
     expect(trSayi(9.25)).toBe('9,25')
+  })
+})
+
+describe('giriş kodu', () => {
+  it('Türkçe klavyede küçük yazılan i ve ı kodu bozmaz', () => {
+    expect(girisKodu(' tknbyyi ')).toBe('TKNBYYI')
+    expect(girisKodu('atlıs')).toBe('ATLIS')
+    expect(girisKodu('İzmİr1')).toBe('IZMIR1')
   })
 })

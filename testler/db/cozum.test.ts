@@ -133,14 +133,25 @@ d('online çözüm ve puanlama', () => {
       await kaydet(S_CS2, 'C') // yanlış
       await kaydet(S_ACIK, 'Uzun bir cevap.') // net dışı
       // S_DY boş
-      const ara = await c.query(`select soru_id, verilen, dogru_mu from public.cevap where ogrenci_id = $1 order by soru_id`, [OGR])
-      expect(ara.rows).toEqual([
+      // Test bitmeden öğrenci cevap satırlarını (dolayısıyla doğru mu bilgisini) okuyamaz.
+      expect((await c.query(`select * from public.cevap where ogrenci_id = $1`, [OGR])).rows).toEqual([])
+      const satirlar = async () => {
+        await c.query('reset role')
+        const r = await c.query(`select soru_id, verilen, dogru_mu from public.cevap where ogrenci_id = $1 order by soru_id`, [OGR])
+        await c.query('set local role authenticated')
+        return r.rows
+      }
+      // Kayıt anında puanlanmaz: deneme yanılmayla anahtar bulunamaz.
+      expect((await satirlar()).map((x) => x.dogru_mu)).toEqual([null, null, null])
+      const s = (await c.query(`select dogru, yanlis, bos, net::float from public.ogrenci_testi_bitir($1)`, [ATAMA])).rows[0]
+      expect(s).toEqual({ dogru: 1, yanlis: 1, bos: 1, net: 0.75 })
+      expect(await satirlar()).toEqual([
         { soru_id: S_CS1, verilen: 'B', dogru_mu: true },
         { soru_id: S_CS2, verilen: 'C', dogru_mu: false },
         { soru_id: S_ACIK, verilen: 'UZUN BIR CEVAP.', dogru_mu: null },
       ])
-      const s = (await c.query(`select dogru, yanlis, bos, net::float from public.ogrenci_testi_bitir($1)`, [ATAMA])).rows[0]
-      expect(s).toEqual({ dogru: 1, yanlis: 1, bos: 1, net: 0.75 })
+      // Bitince öğrenci kendi satırlarını görür.
+      expect((await c.query(`select count(*)::int as n from public.cevap where ogrenci_id = $1`, [OGR])).rows[0].n).toBe(3)
       // Tekrar bitirmek sonucu değiştirmez; cevap değiştirmek reddedilir.
       expect((await c.query(`select net::float from public.ogrenci_testi_bitir($1)`, [ATAMA])).rows[0].net).toBe(0.75)
       await expect(kaydet(S_DY, 'Y')).rejects.toThrow(/bitirdiniz/)

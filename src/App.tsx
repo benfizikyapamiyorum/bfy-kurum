@@ -39,6 +39,9 @@ import { SoruDuzenle } from './yonetim/SoruDuzenle'
 import { Icerikler } from './yonetim/Icerikler'
 import { TopluIceAktarim } from './yonetim/TopluIceAktarim'
 import { KonuEkrani } from './tahta/KonuEkrani'
+import { DemoAna } from './demo/DemoAna'
+import { DemoTest } from './demo/DemoTest'
+import { DemoRapor } from './demo/DemoRapor'
 import type { ReactNode } from 'react'
 
 const PERSONEL: Rol[] = ['ogretmen', 'kurum_yonetici']
@@ -50,6 +53,9 @@ const yonlendirici = createBrowserRouter([
     children: [
       { path: '/', element: <AnaSayfa /> },
       { path: '/giris', element: <Giris /> },
+      { path: '/demo', element: <DemoAna /> },
+      { path: '/demo/test', element: <DemoTest /> },
+      { path: '/demo/rapor', element: <DemoRapor /> },
       { path: '/icerik/ice-aktar', element: <IceAktar /> },
       { path: '/ogretmen', element: korumali(PERSONEL, <OgretmenAna />) },
       { path: '/ogrenci', element: korumali(['ogrenci'], <OgrenciAna />) },

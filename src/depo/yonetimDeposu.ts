@@ -4,7 +4,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import type { IceAktarimDosyasi } from '../alan/iceAktarim'
 import type { Icerik, IcerikTuru, Secenek, Soru, SoruTuru } from '../alan/tipler'
-import { trKarsilastir } from '../alan/turkce'
+import { girisKodu, trKarsilastir } from '../alan/turkce'
 import { hataCevir } from './kurumDeposu'
 import { supabase } from './supabaseIstemci'
 
@@ -62,7 +62,7 @@ export async function kurumEkle(k: KurumBilgisi): Promise<string> {
   const r = sonuc(
     await db()
       .from('kurum')
-      .insert({ ...k, ad: k.ad.trim(), kod: k.kod.trim().toLocaleUpperCase('tr-TR') })
+      .insert({ ...k, ad: k.ad.trim(), kod: girisKodu(k.kod) })
       .select('id')
       .single(),
   ) as { id: string }
@@ -73,7 +73,7 @@ export async function kurumGuncelle(
   id: string,
   d: Partial<KurumBilgisi & { aktif: boolean }>,
 ): Promise<void> {
-  const v = { ...d, ...(d.kod !== undefined ? { kod: d.kod.trim().toLocaleUpperCase('tr-TR') } : {}) }
+  const v = { ...d, ...(d.kod !== undefined ? { kod: girisKodu(d.kod) } : {}) }
   sonuc(await db().from('kurum').update(v).eq('id', id))
 }
 

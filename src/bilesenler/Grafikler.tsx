@@ -67,7 +67,14 @@ export function CizgiGrafik({ noktalar, birim = 'net', yukseklik = 220 }: { nokt
         {/* Zaman ekseni: en çok 8 etiket. */}
         {noktalar.map((n, i) =>
           noktalar.length <= 8 || i % Math.ceil(noktalar.length / 8) === 0 ? (
-            <text key={`x${i}`} x={x(i)} y={yukseklik - 8} textAnchor="middle" className="grafik-eksen">
+            <text
+              key={`x${i}`}
+              x={x(i)}
+              y={yukseklik - 8}
+              // Uçtaki etiketler grafik dışına taşmasın.
+              textAnchor={noktalar.length > 1 && i === 0 ? 'start' : noktalar.length > 1 && i === noktalar.length - 1 ? 'end' : 'middle'}
+              className="grafik-eksen"
+            >
               {n.ayrinti ?? i + 1}
             </text>
           ) : null,

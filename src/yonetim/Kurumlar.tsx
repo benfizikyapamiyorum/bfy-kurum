@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { lisansDurumu, tarihYaz as tarih } from '../alan/lisans'
+import { girisKodu } from '../alan/turkce'
 import { hesapAc, type HesapSonucu } from '../depo/kurumDeposu'
 import { kurumEkle, kurumGuncelle, kurumOzetleri, uzatilmisBitis, type KurumOzeti } from '../depo/yonetimDeposu'
 import { useVeri } from '../kancalar'
@@ -151,7 +152,7 @@ function YeniKurum({ eklendi }: { eklendi: (id: string, hesaplar: { sonuclar: He
               pattern="[A-Za-z0-9]{3,12}"
               title="3-12 harf ya da rakam."
               value={kod}
-              onChange={(e) => setKod(e.target.value.toLocaleUpperCase('tr-TR'))}
+              onChange={(e) => setKod(girisKodu(e.target.value))}
             />
           </label>
           <label>
@@ -271,7 +272,7 @@ function KurumDuzenle({
             required
             pattern="[A-Za-z0-9]{3,12}"
             value={kod}
-            onChange={(e) => setKod(e.target.value.toLocaleUpperCase('tr-TR'))}
+            onChange={(e) => setKod(girisKodu(e.target.value))}
           />
         </label>
         <label>

@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { Link, Navigate, useSearchParams } from 'react-router-dom'
+import { girisKodu } from '../alan/turkce'
 import { supabase } from '../depo/supabaseIstemci'
 import { ogrenciGirisi, personelGirisi } from '../oturum/girisIslemleri'
 import { rolAnaSayfasi, useOturum } from '../oturum/Oturum'
@@ -101,7 +102,7 @@ export function Giris() {
                 autoCapitalize="characters"
                 required
                 value={kod}
-                onChange={(e) => setKod(e.target.value.toLocaleUpperCase('tr-TR'))}
+                onChange={(e) => setKod(girisKodu(e.target.value))}
               />
             </label>
             <label className="alan">

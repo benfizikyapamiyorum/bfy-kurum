@@ -104,9 +104,10 @@ export const logoAdresi = (yol: string | null | undefined): string | null =>
   yol ? db().storage.from(LOGO_KOVASI).getPublicUrl(yol).data.publicUrl : null
 
 export async function logoYukle(kurumId: string, dosya: File): Promise<string> {
-  if (!/^image\/(png|jpeg|webp|svg\+xml)$/.test(dosya.type)) throw new Error('Yalnızca PNG, JPEG, WebP ya da SVG yükleyin.')
+  // SVG betik taşıyabildiği için herkese açık kovaya yüklenmez.
+  if (!/^image\/(png|jpeg|webp)$/.test(dosya.type)) throw new Error('Yalnızca PNG, JPEG ya da WebP yükleyin.')
   if (dosya.size > 1024 * 1024) throw new Error('Logo 1 MB’tan küçük olmalı.')
-  const uzanti = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/svg+xml': 'svg' }[dosya.type]
+  const uzanti = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp' }[dosya.type]
   // Her yüklemede yeni ad: tarayıcı önbelleği eski logoyu göstermesin.
   const yol = `${kurumId}/logo-${Date.now()}.${uzanti}`
   const { error } = await db().storage.from(LOGO_KOVASI).upload(yol, dosya, { contentType: dosya.type, upsert: false })

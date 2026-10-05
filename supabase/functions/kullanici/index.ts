@@ -107,10 +107,11 @@ const EPOSTA = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 function sifreUret(): string {
   const harf = 'abcdefghjkmnprstuvyz'
   const rakam = '23456789'
-  const r = crypto.getRandomValues(new Uint32Array(7))
+  // 5 harf + 3 rakam: yaklaşık 31 bit (Supabase giriş denemesi sınırıyla birlikte).
+  const r = crypto.getRandomValues(new Uint32Array(8))
   let s = ''
-  for (let i = 0; i < 4; i++) s += harf[r[i]! % harf.length]
-  for (let i = 4; i < 7; i++) s += rakam[r[i]! % rakam.length]
+  for (let i = 0; i < 5; i++) s += harf[r[i]! % harf.length]
+  for (let i = 5; i < 8; i++) s += rakam[r[i]! % rakam.length]
   return s
 }
 
@@ -219,7 +220,12 @@ async function olustur(admin: Yonetici, cagiran: Cagiran, govde: { kurum_id?: st
       } else if (!eposta || !EPOSTA.test(eposta)) {
         throw new Error('Geçerli bir e-posta adresi gerekli.')
       }
-      if (sifre.length < 6) throw new Error('Şifre en az 6 karakter olmalı.')
+      // Öğrencilere ayrılmış iç adres alanı personel hesabında kullanılamaz (başka kurumun
+      // öğrenci kullanıcı adlarını kapatmasın).
+      if (k.rol !== 'ogrenci' && eposta!.endsWith('.ogrenci.invalid')) {
+        throw new Error('Bu e-posta adresi kullanılamaz.')
+      }
+      if (sifre.length < 8) throw new Error('Şifre en az 8 karakter olmalı.')
 
       const yeni = await admin.kullaniciAc(eposta, sifre, ad)
       try {
@@ -257,7 +263,7 @@ Deno.serve(async (req) => {
       case 'sifre_sifirla': {
         await hedefKullanici(admin, cagiran, govde.kullanici_id)
         const sifre = (govde.sifre as string | undefined)?.trim() || sifreUret()
-        if (sifre.length < 6) throw new IstekHatasi('Şifre en az 6 karakter olmalı.')
+        if (sifre.length < 8) throw new IstekHatasi('Şifre en az 8 karakter olmalı.')
         await admin.kullaniciGuncelle(govde.kullanici_id, { password: sifre }).catch((e) => {
           throw new IstekHatasi(hataMesaji(e))
         })

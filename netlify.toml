@@ -36,3 +36,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Başka sitelerin uygulamayı çerçeve içine almasını engeller (tıklama tuzağı).
+    X-Frame-Options = "DENY"
+    # Yalnızca kalıtılmayan ya da kitleri bozmayan yönergeler: srcdoc kitleri bu politikayı
+    # devralır, bu yüzden betik ve stil kısıtı burada yok; kitler sandbox ile yalıtılır.
+    Content-Security-Policy = "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"

@@ -13,6 +13,8 @@ Tek şubeli özel öğretim kursları için fizik eğitim platformu: akıllı ta
 
 Uygulama, Supabase bilgileri girilmeden de açılır. Bu durumda **yerel deneme modunda** çalışır: örnek sorular ve bu tarayıcıya yüklediğiniz HTML kitler kullanılır. Tahta modunu denemek için yeterlidir. Giriş, kurum, test ve rapor özellikleri Supabase bağlandıktan sonra çalışır.
 
+**Demo (satış için).** Ana sayfadaki **Demoyu dene** düğmesi (`/demo`) kurs sahibine kayıt olmadan üç şeyi gösterir: tahta modu, öğrenci gözünden örnek test (net hesabı ve çözümlerle) ve kurs yöneticisi gözünden örnek sınıf raporu. Demo sunucuya hiçbir şey yazmaz, ortak bir demo şifresi yoktur. Bu yüzden kötüye kullanılamaz ve Supabase bağlı olsun olmasın aynı çalışır.
+
 ### Tahta modunu deneme listesi
 
 1. Ana sayfada **Tahta modunu aç** düğmesine dokunun. Sınıf, ünite ve soru seçin. 9, 10 ve 11. sınıfta "ÖRNEK" rozetli 10 soru var.
@@ -125,6 +127,8 @@ Kurs sahibi giriş yapınca **Kurum paneli** açılır: öğretmen ve öğrenci 
 
 ## 2. Netlify kurulumu (yayına alma)
 
+Önce GitHub'daki aşama PR'larını sırayla (M0, M1, ... M6) `main` dalına birleştirin. Netlify `main` dalını yayınlar.
+
 1. [app.netlify.com](https://app.netlify.com) adresine GitHub hesabınızla girin.
 2. **Add new site** → **Import an existing project** → **GitHub** yolunu izleyin.
 3. Bu repoyu (`bfy-kurum`) seçin. Derleme ayarları `netlify.toml` dosyasından otomatik gelir; hiçbir alanı değiştirmeyin.
@@ -138,6 +142,17 @@ Kurs sahibi giriş yapınca **Kurum paneli** açılır: öğretmen ve öğrenci 
 
 6. **Deploys** sekmesinde **Trigger deploy** → **Deploy site** ile yeniden yayınlayın. Değişkenler ancak yeni yayında etkili olur.
 7. Kendi alan adınızı bağlamak için **Domain management** bölümünü kullanın.
+8. Supabase panelinde **Authentication** → **URL Configuration** → **Site URL** alanına sitenin adresini yazın (ör. `https://kurs.ornek.com`).
+
+### 2.1. Yayın öncesi kontrol listesi
+
+- [ ] 1.1'deki tüm SQL dosyaları sırayla çalıştı. **Table Editor**'da `kurum`, `soru`, `test` tabloları görünüyor.
+- [ ] `kullanici` işlevi yüklendi (1.4). Süper admin panelinden bir deneme kurumu ve yöneticisi açılabiliyor.
+- [ ] Yeni kullanıcı kaydı kapalı (1.5).
+- [ ] Netlify'da iki ortam değişkeni girildi, ardından yeniden yayınlandı. Sitenin üstünde "Yerel deneme modu" şeridi **görünmüyor**.
+- [ ] Ana sayfadaki **Demoyu dene** düğmesi giriş yapmadan tahtayı, örnek testi ve örnek raporu açıyor.
+- [ ] Aydınlatma metni ve gizlilik politikası sayfalarındaki `[METİN GELECEK]` yerlerine hukukçunun onayladığı metin yazıldı (`src/sayfalar/YerTutucuMetin.tsx`).
+- [ ] `src/yapilandirma/marka.json` içindeki ürün adı, web adresi ve iletişim e-postası doğru.
 
 ---
 
@@ -203,4 +218,4 @@ Tam liste `.env.example` dosyasındadır.
 | M3 | Test/deneme oluşturucu, PDF çıktıları, online çözüm, elle sonuç girişi, net hesabı. | Tamamlandı. |
 | M4 | Raporlar ve telafi testi. | Tamamlandı. |
 | M5 | Süper admin paneli, lisans yönetimi, toplu içe aktarım. | Tamamlandı. |
-| M6 | Demo kurum, Netlify yayını, son kontroller. | Bekliyor. |
+| M6 | Demo kurum, Netlify yayını, son kontroller. | Tamamlandı. |

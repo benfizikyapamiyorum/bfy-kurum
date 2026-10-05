@@ -18,3 +18,13 @@ export const trAramaAnahtari = (s: string): string => trKucuk(s).replace(/\s+/g,
 /** Türkçe sayı biçimi: ondalık virgül (2,5). */
 export const trSayi = (n: number, basamak = 2): string =>
   n.toLocaleString('tr-TR', { maximumFractionDigits: basamak })
+
+/**
+ * Kurum ve sınıf kodları yalnızca İngilizce büyük harf ve rakamdır. Türkçe klavyede küçük
+ * yazılan "i" Türkçe kurala göre "İ" olurdu; burada i, ı, İ hepsi "I" sayılır.
+ */
+export const girisKodu = (s: string): string =>
+  s
+    .trim()
+    .replace(/[iıİ]/g, 'I')
+    .toUpperCase()

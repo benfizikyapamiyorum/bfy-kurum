@@ -85,13 +85,13 @@ export function KurumGenel() {
         <div className="logo-onizleme">
           <KurumLogosu />
         </div>
-        <p className="soluk kucuk">Logo tahta ekranının köşesinde ve PDF çıktılarında görünür. PNG, JPEG, WebP ya da SVG, en çok 1 MB.</p>
+        <p className="soluk kucuk">Logo tahta ekranının köşesinde ve PDF çıktılarında görünür. PNG, JPEG ya da WebP, en çok 1 MB.</p>
         <div className="secim-grubu">
           <label className="dugme">
             Logo yükle
             <input
               type="file"
-              accept="image/png,image/jpeg,image/webp,image/svg+xml"
+              accept="image/png,image/jpeg,image/webp"
               className="gizli-erisilebilir"
               onChange={(e) => {
                 const d = e.target.files?.[0]
