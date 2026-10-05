@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
+import { ortam } from '../yapilandirma/ortam'
 import { SORU_TURU_ADI } from '../alan/etiketler'
 import { OrnekRozeti, ZorlukGostergesi } from '../bilesenler/Rozetler'
 import { Simge } from '../bilesenler/Simge'
@@ -70,6 +71,10 @@ export function IcerikListesi() {
                         ) : indirildi ? (
                           <span className="durum-cipi tamam">
                             <Simge ad="tamam" /> Tahtaya indirildi
+                          </span>
+                        ) : ortam.tanitim ? (
+                          <span className="durum-cipi tamam">
+                            <Simge ad="tamam" /> Bu dosyada, internetsiz
                           </span>
                         ) : (
                           <span className="durum-cipi">İnternet gerekir</span>

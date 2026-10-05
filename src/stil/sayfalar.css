@@ -1308,3 +1308,21 @@ textarea.kod {
 .demo-karti svg {
   color: var(--ana);
 }
+.marka-satiri {
+  margin: 0 0 10px;
+  font-weight: 600;
+  color: var(--vurgu);
+  letter-spacing: 0.01em;
+}
+.paket-karti {
+  margin-bottom: 20px;
+  border: 2px solid var(--ana);
+  background: linear-gradient(135deg, var(--ana-acik), var(--yuzey) 60%);
+}
+.paket-karti h2 {
+  margin: 8px 0;
+  font-size: 1.4rem;
+}
+.paket-metni {
+  max-width: 70ch;
+}

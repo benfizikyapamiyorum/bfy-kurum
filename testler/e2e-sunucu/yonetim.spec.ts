@@ -58,8 +58,9 @@ test('süper admin: paketi içe aktarır, soruyu düzenler; konu anlatımı taht
   await page.getByLabel('Ara').fill('kaldirma-kuvveti/S8')
   await expect(page.getByRole('row')).toHaveCount(2)
   await page.getByRole('link', { name: 'Düzenle' }).click()
-  await expect(page.getByLabel('A seçeneği')).toHaveValue('K–L ve M–N')
-  await expect(page.getByLabel('A neden yanlış')).toHaveValue(/K–L ve M–N çiftlerinde/)
+  // S8: model denizaltı sorusu (paketteki sayılar bölünmeyen boşlukla yazılır).
+  await expect(page.getByLabel('A seçeneği')).toHaveValue(/^Tanka 300\scm³ su alınınca askıda kalır/)
+  await expect(page.getByLabel('A neden yanlış')).toHaveValue(/kütle 2\s100\sg olur/)
   await page.getByLabel('Ölçülen beceri').fill('Deney tasarımı')
   await page.getByRole('button', { name: 'Kaydet' }).click()
   await expect(page.getByRole('status')).toHaveText('Soru kaydedildi.')

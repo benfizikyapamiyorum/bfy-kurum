@@ -156,30 +156,24 @@ JSON ile bağlamak için `html_yolu` alanına Storage `icerik` kovasındaki yolu
 | `meb_baglanti` | Hayır | İlgili MEB kaynağının bağlantısı. İçerik kopyalanmaz. |
 | `ornek`, `yayinda` | Hayır | Sorulardakiyle aynı. |
 
-## Örnek dosya ve dönüştürücü
+## Örnek paket: kaldırma kuvveti
 
-`icerik-paketleri/kaldirma-kuvveti.json` eksiksiz bir örnektir: 9. sınıf kaldırma kuvveti, 12 soru ve 1 konu anlatımı içerir.
-Dosya, Fizik Atölye pilot paketinden şu komutla üretilir:
+`icerik-paketleri/kaldirma-kuvveti.json` eksiksiz bir örnektir. 9. sınıf Akışkanlar ünitesi için 12 soru ve 1 konu anlatımı içerir. Dosya elle yazılmaz; kaynaktan üretilir:
 
 ```bash
-npx tsx scripts/atolye-paketi-donustur.ts
+npm run paket:kaldirma
 ```
 
-Dönüştürücü pakete bağımsız hakem incelemesinin düzeltmelerini uygular. Düzeltmeler betiğin başında listelidir.
-Sonucu aynı doğrulayıcıyla denetler ve şekil ilkellerini dolgulu SVG'ye çevirir.
-
-### Pilot paketin hakem durumu
-
-Hakem 12 sorunun anahtarlarını ve sayılarını bağımsız çözdü, hepsi doğru çıktı. Aşağıdaki sorular şekil ya da kurgu düzeyinde değişiklik bekliyor. Bu nedenle `yayinda: false` aktarılır:
-
-| Soru | Açık bulgu |
+| Kaynak | İçerik |
 |---|---|
-| S5 | Kapalı balon suda serbestçe asılı çizilmiş, oysa batmaz, yükselir. Bir ağırlığa bağlı çizilmeli. 200 → 120 cm³ küçülme yaklaşık 7 m derinlik ister; soru metni ve şekil bunu göstermeli. |
-| S7 | Model tekne kurgusu ve şekli S2 ile neredeyse aynı. Farklı bir kurgu gerekiyor (ör. oyuncak sal, 320 g + 80 g; cevap %25 kalır). |
-| S12 | S5 ile aynı balon kurgusu ve şekli, biri diğerinin cevabını veriyor. Farklı bir cisim gerekiyor (ör. derinde ezilen ince plastik şişe). |
+| `icerik-paketleri/kaldirma-kuvveti/cizim.ts` | 3B görünümlü SVG çizim takımı: cam kap, sıvı, ayaklı düzenek, dinamometre, ip, katı cisimler, oklar, formül etiketleri. |
+| `icerik-paketleri/kaldirma-kuvveti/sekiller.ts` | Her sorunun şekli. |
+| `icerik-paketleri/kaldirma-kuvveti/sorular.ts` | Soru metinleri, şıklar, gerekçeler, çözüm adımları ve `dogrula()`. |
+| `icerik-paketleri/kaldirma-kuvveti/konu.ts` | Konu anlatımı bölümleri, şekilleri ve 40/80 dakikalık ders akışı. |
 
-Yazım ve küçük şekil önerileri (S1 şekil ölçeği, S11 taşırma ağzındaki su seviyesi) de kaynak pakette düzeltilmeli.
-Ders akışı metinleri soruları pilot paketteki numaralarıyla (S4, S6...) anıyor; paketin soru sırası korunduğu sürece bu tutarlıdır.
+Üretim sırasında `dogrula()` her sorunun sayısal cevabını verilen verilerden yeniden hesaplar. Ayrıca yazım kurallarını ("·", ondalık nokta, çıplak `<` ve `>`, gerekçelerin noktayla bitmesi) ve cevap harflerinin dağılımını denetler. Hata varsa dosya yazılmaz.
+
+Sorular bağımsız bir hakem tarafından cevap anahtarına bakılmadan iki tur çözüldü. 12 anahtarın hepsi doğru; bütün bulgular kapatıldı. Dış kimlikler (`fizik-atolye/kaldirma-kuvveti/S1` ...) eski pilot paketiyle aynıdır; yeni dosya içe aktarılınca eski soruların üzerine yazılır.
 
 ## Sık görülen hatalar
 

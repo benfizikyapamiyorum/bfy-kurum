@@ -13,6 +13,8 @@ Tek şubeli özel öğretim kursları için fizik eğitim platformu: akıllı ta
 
 Uygulama, Supabase bilgileri girilmeden de açılır. Bu durumda **yerel deneme modunda** çalışır: örnek sorular ve bu tarayıcıya yüklediğiniz HTML kitler kullanılır. Tahta modunu denemek için yeterlidir. Giriş, kurum, test ve rapor özellikleri Supabase bağlandıktan sonra çalışır.
 
+**Tanıtım dosyası (flash bellek için).** `npm run build:tanitim` komutu `dist-tanitim/index.html` adında tek bir dosya üretir. Dosya çift tıklayınca tarayıcıda açılır; internet, sunucu ve kurulum gerekmez, adres çubuğunda site adı görünmez. İçinde demo ekranları ve kaldırma kuvveti soru paketi vardır.
+
 **Demo (satış için).** Ana sayfadaki **Demoyu dene** düğmesi (`/demo`) kurs sahibine kayıt olmadan üç şeyi gösterir: tahta modu, öğrenci gözünden örnek test (net hesabı ve çözümlerle) ve kurs yöneticisi gözünden örnek sınıf raporu. Demo sunucuya hiçbir şey yazmaz, ortak bir demo şifresi yoktur. Bu yüzden kötüye kullanılamaz ve Supabase bağlı olsun olmasın aynı çalışır.
 
 ### Tahta modunu deneme listesi

@@ -757,6 +757,11 @@
   border-collapse: collapse;
   margin: 0.4em 0;
 }
+/* Tahtada yazı büyük: çok sütunlu veri tabloları metin sütununa sığsın. */
+.soru-govde table {
+  font-size: 0.72em;
+  max-width: 100%;
+}
 .soru-govde th,
 .soru-govde td,
 .coz-govde th,

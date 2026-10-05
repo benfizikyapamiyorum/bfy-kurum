@@ -7,6 +7,7 @@ export function AnaSayfa() {
     <div className="sayfa ana-sayfa">
       <section className="giris">
         <h1>{marka.urunAdi}</h1>
+        <p className="marka-satiri">{marka.sahipAdi} içeriğiyle.</p>
         <p className="giris-metni">
           Akıllı tahtada ders anlatımı, kazanım etiketli soru bankası, test ve deneme hazırlama, sonuç raporları.
           Hepsi tek yerde.

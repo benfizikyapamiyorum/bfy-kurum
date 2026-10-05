@@ -1,16 +1,35 @@
 // Demo: örnek sorularla online test. Puanlama tarayıcıda, gerçek testlerle aynı net kuralıyla yapılır.
 
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { puanla, VARSAYILAN_YANLIS_DOGRU_ORANI } from '../alan/puanlama'
 import { trSayi } from '../alan/turkce'
 import type { Soru } from '../alan/tipler'
 import { ZenginMetin } from '../bilesenler/ZenginMetin'
 import { cozumKatmanlariniKaldir, sekilSvgTemizle } from '../bilesenler/zenginMetin'
+import { useVeri } from '../kancalar'
 import { ornekSorular } from '../veri/ornekSorular'
+import { ortam } from '../yapilandirma/ortam'
 
 // Yalnızca otomatik puanlanan türler; açık uçlu sorular demoda yok.
-const SORULAR: Soru[] = ornekSorular.filter((s) => s.tur !== 'acik_uclu')
+const ORNEK: Soru[] = ornekSorular.filter((s) => s.tur !== 'acik_uclu')
+
+/** ?paket=kaldirma: tanıtım sürümündeki kaldırma kuvveti paketi. */
+async function soruSeti(paket: string | null): Promise<{ baslik: string; sorular: Soru[] }> {
+  if (paket === 'kaldirma' && ortam.tanitim) {
+    const { tanitimSorulari } = await import('../veri/tanitimPaketi')
+    return { baslik: 'Kaldırma kuvveti testi', sorular: tanitimSorulari }
+  }
+  return { baslik: 'Örnek test', sorular: ORNEK }
+}
+
+export function DemoTest() {
+  const [ara] = useSearchParams()
+  const paket = ara.get('paket')
+  const v = useVeri(() => soruSeti(paket), [paket])
+  if (!v.veri) return <div className="sayfa">Yükleniyor.</div>
+  return <DemoTestCoz key={paket ?? 'ornek'} baslik={v.veri.baslik} SORULAR={v.veri.sorular} />
+}
 
 function Sekil({ svg, cozumlu }: { svg: string; cozumlu: boolean }) {
   const html = useMemo(() => (cozumlu ? sekilSvgTemizle(svg) : cozumKatmanlariniKaldir(sekilSvgTemizle(svg))), [svg, cozumlu])
@@ -25,7 +44,7 @@ const secenekleri = (s: Soru) =>
       ]
     : (s.secenekler ?? [])
 
-export function DemoTest() {
+function DemoTestCoz({ baslik, SORULAR }: { baslik: string; SORULAR: Soru[] }) {
   const [no, setNo] = useState(0)
   const [cevaplar, setCevaplar] = useState<Record<string, string>>({})
   const [onay, setOnay] = useState(false)
@@ -37,7 +56,7 @@ export function DemoTest() {
         SORULAR.map((s) => cevaplar[s.id] ?? null),
         SORULAR.map((s) => s.dogru_cevap),
       ),
-    [cevaplar],
+    [cevaplar, SORULAR],
   )
 
   const yeniden = () => {
@@ -51,7 +70,7 @@ export function DemoTest() {
     return (
       <div className="sayfa dar">
         <p className="rozet ornek">DEMO</p>
-        <h1>Örnek test sonucu</h1>
+        <h1>{baslik}: sonuç</h1>
         <section className="kart sonuc-karti" aria-label="Sonuç">
           <div>
             <span className="sonuc-net">{trSayi(sonuc.net)}</span>
@@ -129,7 +148,7 @@ export function DemoTest() {
       <header className="coz-ust">
         <div>
           <h1>
-            Örnek test <span className="rozet ornek">DEMO</span>
+            {baslik} <span className="rozet ornek">DEMO</span>
           </h1>
           <span className="soluk">
             Soru {no + 1} / {SORULAR.length}

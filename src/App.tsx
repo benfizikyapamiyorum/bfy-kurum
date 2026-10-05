@@ -1,4 +1,5 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
+import { ortam } from './yapilandirma/ortam'
 import { Duzen } from './bilesenler/Duzen'
 import { KatalogSaglayici } from './katalogBaglami'
 import { AnaSayfa } from './sayfalar/AnaSayfa'
@@ -47,7 +48,8 @@ import type { ReactNode } from 'react'
 const PERSONEL: Rol[] = ['ogretmen', 'kurum_yonetici']
 const korumali = (roller: Rol[], oge: ReactNode) => <RolGerekli roller={roller}>{oge}</RolGerekli>
 
-const yonlendirici = createBrowserRouter([
+// Tek dosya (file://) sürümünde adres yolu yok; sayfalar # ile ayrılır.
+const yonlendirici = (ortam.tekDosya ? createHashRouter : createBrowserRouter)([
   {
     element: <Duzen />,
     children: [

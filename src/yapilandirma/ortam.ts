@@ -8,4 +8,8 @@ export const ortam = {
   supabaseAnonAnahtar: anahtar,
   /** Supabase bağlantısı tanımlı mı? */
   supabaseVar: url !== '' && anahtar !== '',
+  /** Tanıtım sürümü: kaldırma kuvveti paketi demo içeriğine eklenir. */
+  tanitim: import.meta.env.VITE_TANITIM === '1',
+  /** Tek dosya (flash bellek) sürümü: adresler # ile, service worker yok. */
+  tekDosya: import.meta.env.VITE_TEK_DOSYA === '1',
 } as const

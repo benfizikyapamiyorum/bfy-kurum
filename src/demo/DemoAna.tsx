@@ -3,7 +3,35 @@
 
 import { Link } from 'react-router-dom'
 import { Simge } from '../bilesenler/Simge'
+import { useVeri } from '../kancalar'
 import { marka } from '../yapilandirma/marka'
+import { ortam } from '../yapilandirma/ortam'
+
+/** Tanıtım sürümünde öne çıkan soru paketi. */
+function PaketKarti() {
+  const v = useVeri(async () => (ortam.tanitim ? (await import('../veri/tanitimPaketi')).tanitimUniteYolu() : null), [])
+  if (!v.veri) return null
+  return (
+    <section className="kart paket-karti" aria-label="Kaldırma kuvveti soru paketi">
+      <div className="paket-metni">
+        <span className="rozet">9. sınıf, Akışkanlar</span>
+        <h2>Kaldırma kuvveti soru paketi</h2>
+        <p>
+          12 bağlam temelli, seçici soru: liman, pekmez üreticisi, dalış okulu, Ay üssü. Her şık gerçek bir kavram yanılgısına
+          göre seçildi; her yanlış şık için “Neden bu değil?” açıklaması, adım adım çözüm ve konu anlatımı var.
+        </p>
+        <div className="secim-grubu">
+          <Link to={v.veri} className="dugme ana">
+            Tahtada aç
+          </Link>
+          <Link to="/demo/test?paket=kaldirma" className="dugme">
+            Öğrenci gibi çöz
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export function DemoAna() {
   return (
@@ -11,11 +39,14 @@ export function DemoAna() {
       <header className="demo-ust">
         <span className="rozet ornek">DEMO</span>
         <h1>{marka.demoKurumAdi}</h1>
+        <p className="marka-satiri">{marka.sahipAdi} içeriğiyle.</p>
         <p className="giris-metni">
           Kayıt olmadan sistemi deneyin. Öğretmenin tahtada ne gördüğüne, öğrencinin testi nasıl çözdüğüne ve kurs yöneticisinin hangi
           raporu aldığına buradan bakabilirsiniz. Demoda yaptıklarınız hiçbir yere kaydedilmez.
         </p>
       </header>
+
+      {ortam.tanitim && <PaketKarti />}
 
       <section className="izgara demo-kartlari">
         <Link to="/tahta" className="kart demo-karti">
