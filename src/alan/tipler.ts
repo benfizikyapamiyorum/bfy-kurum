@@ -85,3 +85,35 @@ export interface Katalog {
   uniteler: Unite[]
   kazanimlar: Kazanim[]
 }
+
+export interface Kurum {
+  id: string
+  ad: string
+  kod: string | null
+  logo_yolu: string | null
+  lisans_baslangic: string
+  lisans_bitis: string
+  ogretmen_limiti: number
+  ogrenci_limiti: number
+  aktif: boolean
+  demo: boolean
+}
+
+export interface Kullanici {
+  id: string
+  kurum_id: string | null
+  rol: Rol
+  ad_soyad: string
+  kullanici_adi: string | null
+  eposta: string | null
+  aktif: boolean
+}
+
+export interface SinifGrubu {
+  id: string
+  kurum_id: string
+  ad: string
+  seviye_id: string | null
+  katilim_kodu: string | null
+  arsiv: boolean
+}

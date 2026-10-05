@@ -13,13 +13,50 @@ import { SoruEkrani } from './tahta/SoruEkrani'
 import { TahtayaIndir } from './tahta/TahtayaIndir'
 import { UniteSecimi } from './tahta/UniteSecimi'
 import { TemaSaglayici } from './tema'
+import { OturumSaglayici } from './oturum/Oturum'
+import { RolGerekli } from './oturum/RolGerekli'
+import { Giris } from './sayfalar/Giris'
+import { OgretmenAna } from './sayfalar/OgretmenAna'
+import { OgrenciAna } from './sayfalar/OgrenciAna'
+import { KurumPaneli } from './kurum/KurumPaneli'
+import { KurumGenel } from './kurum/KurumGenel'
+import { Ogretmenler } from './kurum/Ogretmenler'
+import { Ogrenciler } from './kurum/Ogrenciler'
+import { Siniflar } from './kurum/Siniflar'
+import type { Rol } from './alan/tipler'
+import type { ReactNode } from 'react'
+
+const PERSONEL: Rol[] = ['ogretmen', 'kurum_yonetici']
+const korumali = (roller: Rol[], oge: ReactNode) => <RolGerekli roller={roller}>{oge}</RolGerekli>
+const yakinda = (ad: string) => (
+  <div className="sayfa dar">
+    <h1>{ad}</h1>
+    <p className="yer-tutucu">Bu bölüm sonraki aşamada eklenecek.</p>
+  </div>
+)
 
 const yonlendirici = createBrowserRouter([
   {
     element: <Duzen />,
     children: [
       { path: '/', element: <AnaSayfa /> },
+      { path: '/giris', element: <Giris /> },
       { path: '/icerik/ice-aktar', element: <IceAktar /> },
+      { path: '/ogretmen', element: korumali(PERSONEL, <OgretmenAna />) },
+      { path: '/ogrenci', element: korumali(['ogrenci'], <OgrenciAna />) },
+      {
+        path: '/kurum',
+        element: korumali(['kurum_yonetici'], <KurumPaneli />),
+        children: [
+          { index: true, element: <KurumGenel /> },
+          { path: 'ogretmenler', element: <Ogretmenler /> },
+          { path: 'ogrenciler', element: <Ogrenciler /> },
+          { path: 'siniflar', element: <Siniflar /> },
+        ],
+      },
+      { path: '/testler/*', element: korumali(PERSONEL, yakinda('Test ve deneme')) },
+      { path: '/raporlar/*', element: korumali(PERSONEL, yakinda('Raporlar')) },
+      { path: '/yonetim/*', element: korumali(['superadmin'], yakinda('Süper admin paneli')) },
       { path: '/ayarlar', element: <Ayarlar /> },
       { path: '/aydinlatma-metni', element: <AydinlatmaMetni /> },
       { path: '/gizlilik', element: <GizlilikPolitikasi /> },
@@ -38,9 +75,11 @@ const yonlendirici = createBrowserRouter([
 export function App() {
   return (
     <TemaSaglayici>
-      <KatalogSaglayici>
-        <RouterProvider router={yonlendirici} />
-      </KatalogSaglayici>
+      <OturumSaglayici>
+        <KatalogSaglayici>
+          <RouterProvider router={yonlendirici} />
+        </KatalogSaglayici>
+      </OturumSaglayici>
     </TemaSaglayici>
   )
 }

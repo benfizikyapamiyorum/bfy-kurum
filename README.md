@@ -84,7 +84,49 @@ insert into public.kullanici (id, kurum_id, rol, ad_soyad)
 values ('BURAYA-UID', null, 'superadmin', 'Ad Soyad');
 ```
 
-Giriş ekranı M2 aşamasında gelecek.
+Artık `/giris` sayfasından bu e-posta ve şifreyle girebilirsiniz.
+
+### 1.4. Hesap açma işlevini yayınlamak (bir kez)
+
+Öğretmen ve öğrenci hesaplarını açan küçük sunucu işlevi (`supabase/functions/kullanici`) Supabase'e yüklenmelidir. Bilgisayarınızda bir kez şu komutları çalıştırın:
+
+```bash
+npx supabase login
+npx supabase link --project-ref <proje-kimliği>
+npx supabase functions deploy kullanici
+```
+
+İşlev, Supabase'in kendi gizli anahtarını sunucuda kullanır; sizin ayrıca anahtar girmeniz gerekmez.
+
+### 1.5. Giriş ayarları
+
+Supabase panelinde **Authentication** → **Sign In / Providers** bölümünde:
+
+- **Allow new users to sign up** kapalı olsun. Hesapları yalnızca kurum yöneticisi ve süper admin açar.
+- **Email** sağlayıcısı açık kalsın, **Confirm email** kapalı olsun.
+
+### 1.6. İlk kurumu açmak (süper admin paneli gelene kadar)
+
+M5 aşamasında süper admin paneli gelecek. O zamana kadar ilk kurum SQL Editor'da açılır:
+
+```sql
+insert into public.kurum (ad, kod, lisans_baslangic, lisans_bitis, ogretmen_limiti, ogrenci_limiti)
+values ('Örnek Eğitim Kursu', 'ORNEK', current_date, current_date + 365, 5, 100)
+returning id;
+```
+
+Ardından 1.3'teki gibi Authentication'da kurs sahibine bir kullanıcı açın ve şunu çalıştırın:
+
+```sql
+insert into public.kullanici (id, kurum_id, rol, ad_soyad, eposta)
+values ('KULLANICI-UID', 'KURUM-ID', 'kurum_yonetici', 'Ad Soyad', 'eposta@ornek.com');
+```
+
+Kurs sahibi giriş yapınca **Kurum paneli** açılır: öğretmen ve öğrenci ekler (tek tek ya da Excel/CSV ile), sınıf açar, logo yükler, giriş kartlarını yazdırır.
+
+### 1.7. Öğrenci girişi nasıl çalışır?
+
+Öğrenci giriş ekranında **kurum kodunu** (ör. ORNEK) ya da **sınıf kodunu**, kendi **kullanıcı adını** ve **şifresini** yazar. Öğrenciden e-posta istenmez. Unutulan şifreyi kurum yöneticisi panelden sıfırlar.
 
 ---
 
@@ -108,7 +150,17 @@ Giriş ekranı M2 aşamasında gelecek.
 
 ## 3. Bilgisayarda çalıştırmak (geliştirici için)
 
-Gerekenler: [Node.js 22](https://nodejs.org) ve Git.
+Gerekenler: [Node.js 22](https://nodejs.org) ve Git. Giriş ve kurum özelliklerini bilgisayarda denemek için ayrıca [Docker](https://www.docker.com).
+
+Yerel Supabase ile tam deneme:
+
+```bash
+npx supabase start           # yerel veritabanı, giriş ve dosya sunucusu (ilk açılış birkaç dakika sürer)
+npm run supabase:tohum       # deneme hesapları
+# .env.local dosyasına: VITE_SUPABASE_URL=http://127.0.0.1:54321 ve
+# VITE_SUPABASE_ANON_KEY=<npx supabase status çıktısındaki Publishable key>
+npm run dev
+```
 
 ```bash
 git clone <repo-adresi>
@@ -130,6 +182,8 @@ Akıllı tahtadan denemek için aynı ağdaki tahtanın tarayıcısında `npm ru
 | `npm test` | Birim testleri (net hesabı, soru tekrar etmeme, Türkçe sıralama...). |
 | `npm run test:db` | Veritabanı ve RLS testleri. Önce `bash scripts/yerel-db.sh` ile yerel Postgres başlatılır, ardından `DATABASE_URL=postgresql://postgres@localhost:54329/postgres npm run test:db`. |
 | `npm run test:e2e` | Tahta modu uçtan uca testleri (1920×1080, dokunmatik). |
+| `npm run test:e2e:sunucu` | Giriş, kurum paneli, hesap açma testleri. Önce `npx supabase start` ile yerel Supabase başlatılır (Docker gerekir). |
+| `npm run supabase:tohum` | Yerel Supabase'e deneme hesapları açar: admin@ornek.test, yonetici@atlas.test, ogretmen@atlas.test (şifre: deneme123), kurum kodu ATLAS. |
 | `npm run lint` | Kod denetimi. |
 | `npm run seed:uret` | `src/veri/` altındaki kataloğu ve örnek içeriği SQL tohum dosyalarına dönüştürür. |
 
@@ -151,8 +205,8 @@ Tam liste `.env.example` dosyasındadır.
 | Aşama | İçerik | Durum |
 |---|---|---|
 | M0 | Proje iskeleti, kurulum rehberi, mimari, veritabanı şeması ve RLS. | Tamamlandı. |
-| M1 | Tahta modu, örnek içerik, HTML kit içe aktarma, çevrimdışı önbellek. | Tamamlandı, tasarım onayı bekleniyor. |
-| M2 | Giriş sistemi, roller, çok kiracılı yapı, kurum paneli. | Bekliyor. |
+| M1 | Tahta modu, örnek içerik, HTML kit içe aktarma, çevrimdışı önbellek. | Tamamlandı. |
+| M2 | Giriş sistemi, roller, çok kiracılı yapı, kurum paneli. | Tamamlandı. |
 | M3 | Test/deneme oluşturucu, PDF çıktıları, online çözüm, elle sonuç girişi, net hesabı. | Bekliyor. |
 | M4 | Raporlar ve telafi testi. | Bekliyor. |
 | M5 | Süper admin paneli, lisans yönetimi, toplu içe aktarım. | Bekliyor. |

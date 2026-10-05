@@ -12,7 +12,9 @@
     "test": "vitest run",
     "test:db": "vitest run --config vitest.db.config.ts",
     "test:e2e": "playwright test",
-    "seed:uret": "tsx scripts/ornek-veri-sql-uret.ts"
+    "seed:uret": "tsx scripts/ornek-veri-sql-uret.ts",
+    "test:e2e:sunucu": "playwright test -c playwright.sunucu.config.ts",
+    "supabase:tohum": "tsx scripts/yerel-supabase-tohum.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
@@ -22,7 +24,8 @@
     "katex": "^0.19.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "react-router-dom": "^7.18.4"
+    "react-router-dom": "^7.18.4",
+    "read-excel-file": "^9.3.10"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -40,6 +43,7 @@
     "globals": "^17.13.0",
     "jsdom": "^29.1.1",
     "pg": "^8.23.1",
+    "supabase": "^2.119.0",
     "tsx": "^4.23.15",
     "typescript": "~5.9",
     "typescript-eslint": "^8.71.0",
