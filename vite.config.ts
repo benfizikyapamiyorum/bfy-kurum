@@ -37,7 +37,7 @@ const tanitimSurumu = defineConfig({
     emptyOutDir: true,
     assetsInlineLimit: 100_000_000,
     chunkSizeWarningLimit: 100_000,
-    // Klasik betik: modül desteği gerektirmez; scripts/tanitim-son-islem.mjs sayfanın sonuna taşır.
+    // Çıkan modül betiğini scripts/tanitim-son-islem.mjs klasik betiğe çevirip sayfanın sonuna taşır.
   },
 })
 
