@@ -30,6 +30,7 @@ Netlify: derlenmiş statik dosyaları yayınlar. Sunucu kodu yok.
 | `src/sayfalar/` | Tahta dışındaki sayfalar. |
 | `src/kurum/`, `src/testler/`, `src/raporlar/`, `src/ogrenci/` | Kurum paneli, test oluşturucu, raporlar, öğrenci ekranları. |
 | `src/yonetim/` | Süper admin paneli: kurumlar, soru bankası, içerikler, toplu içe aktarım. |
+| `src/demo/` | Herkese açık demo: örnek test ve örnek sınıf raporu (sunucuya yazmaz). |
 | `icerik-paketleri/` | İçe aktarılmaya hazır JSON paketleri ve kaynakları (biçim: `docs/ICE_AKTARIM.md`). |
 | `src/bilesenler/` | Ortak arayüz bileşenleri. |
 | `src/yapilandirma/` | Marka (`marka.json`) ve ortam değişkenleri. |
@@ -177,6 +178,10 @@ Kayıtlı test `/tahta/test/:test/:no` ile tahtada soru soru açılır. Çoktan 
 - **Kurumlar:** `kurum_ozetleri()` RPC'si kurumları kontenjan kullanımı ve yönetici adıyla döner (yalnızca süper admin; başkası boş liste alır). Yeni kurum doğrudan `kurum` tablosuna yazılır (RLS: süper admin). Kurum yöneticisi hesabı `kullanici` Edge Function'ı ile açılır. Lisans uzatma bugünden ya da mevcut bitişten (hangisi ileriyse) hesaplanır (`uzatilmisBitis`).
 - **Soru bankası:** tüm sorular (yayında olmayanlar dahil) süzülür, yayına alınır, düzenlenir. Düzenleyici şık gerekçelerini, çözüm adımlarını, kavram yanılgısını, puanlama ölçütünü ve kazanım etiketlerini kapsar. Canlı önizleme vardır. Bir testte kullanılmış soru silinemez (`on delete restrict`); yayından kaldırılır.
 - **Toplu içe aktarım:** dosya tarayıcıda `iceAktarimDogrula` ile denetlenir, ardından `toplu_ice_aktar(jsonb)` tek işlemde yazar. `dis_kimlik` (soru, içerik), `kod` (kazanım) ve sınıf + ünite no üzerinden upsert yapılır; tekrar yüklemede kopya oluşmaz. Hata olursa işlem bütünüyle geri alınır. Biçim: `docs/ICE_AKTARIM.md`.
+
+### 6.8. Demo (`/demo`)
+
+Herkese açık demo, ortak bir demo hesabı yerine salt okunur ekranlardan oluşur: tahta modu (örnek içerik zaten giriş gerektirmez), `DemoTest` (örnek soruların otomatik puanlananları, `puanla` ile tarayıcıda puanlanır) ve `DemoRapor` (`src/demo/ornekRapor.ts` içindeki kurgusal sınıf; netler `netHesapla` ile, eğilim ve zayıf çıktılar gerçek rapor fonksiyonlarıyla hesaplanır). Ortak şifreli bir demo kurumu, herkesin veri yazabildiği ve kontenjanı doldurabildiği bir hesap olurdu; bu tasarım o riski taşımaz. `kurum.demo` sütunu ileride gerekirse diye şemada duruyor.
 
 ## 7. Çevrimdışı çalışma
 
