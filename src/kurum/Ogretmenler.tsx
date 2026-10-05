@@ -51,7 +51,7 @@ export function Ogretmenler() {
           </label>
           <label>
             Şifre (boş bırakılırsa üretilir)
-            <input minLength={6} value={sifre} onChange={(e) => setSifre(e.target.value)} />
+            <input minLength={8} value={sifre} onChange={(e) => setSifre(e.target.value)} />
           </label>
           <button type="submit" className="dugme ana hizali" disabled={bekliyor}>
             Hesap aç

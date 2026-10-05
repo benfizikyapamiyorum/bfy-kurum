@@ -1,5 +1,6 @@
 // Giriş ve çıkış. Öğretmen ve yönetici e-postayla, öğrenci kurum (ya da sınıf) koduyla girer.
 
+import { girisKodu } from '../alan/turkce'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
 const hataCevir = (m: string) =>
@@ -19,7 +20,7 @@ export async function personelGirisi(db: SupabaseClient, eposta: string, sifre: 
 }
 
 export async function ogrenciGirisi(db: SupabaseClient, kod: string, kullaniciAdi: string, sifre: string): Promise<void> {
-  const { data: kurumId, error } = await db.rpc('giris_kurumu_bul', { p_kod: kod })
+  const { data: kurumId, error } = await db.rpc('giris_kurumu_bul', { p_kod: girisKodu(kod) })
   if (error) throw new Error(hataCevir(error.message))
   if (!kurumId) throw new Error('Bu kurum ya da sınıf kodu bulunamadı.')
   const eposta = `${kullaniciAdi.trim().toLowerCase()}@${kurumId}.ogrenci.invalid`

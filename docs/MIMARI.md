@@ -90,7 +90,14 @@ Politikalar `supabase/migrations/20261003000300_rls_politikalari.sql` dosyasınd
 - **Lisans:** Lisans süresi biten ya da pasif kurumun üyeleri soru bankasını göremez ve yazma işlemi yapamaz, ama kendi geçmiş verilerini okumaya devam eder.
 - **Rol yükseltme yok:** Kurum yöneticisi yalnızca öğretmen ve öğrenci ekler, kendi rolünü değiştiremez. Lisans ve kontenjan alanlarını yalnızca süper admin değiştirir (`ozel.kurum_koruma` tetikleyicisi).
 - **Kontenjan:** Aktif öğretmen ve öğrenci sayısı kurum limitini aşamaz (`ozel.kontenjan_kontrol` tetikleyicisi, eşzamanlı eklemeye karşı kurum satırını kilitler).
-- **Cevap anahtarı öğrenciye sızmaz:** Öğrenci `soru` ve `test_soru` tablolarını doğrudan okuyamaz, `cevap` ve `sonuc` tablolarına yazamaz. Online çözüm (M3) iki RPC fonksiyonuyla çalışacak: biri cevapsız soruları döndürür, diğeri cevabı sunucuda puanlayıp kaydeder.
+- **Cevap anahtarı öğrenciye sızmaz:**
+  - Öğrenci `soru` (örnek sorular dahil) ve `test_soru` tablolarını doğrudan okuyamaz, `cevap` ve `sonuc` tablolarına yazamaz.
+  - Online cevap kaydedilirken puanlanmaz (`dogru_mu` boş kalır). Puanlama testi bitirince yapılır, öğrenci kendi cevap satırlarını da ancak o zaman okur. Böylece aynı soruya şıkları sırayla deneyip anahtarı bulamaz.
+  - Şekillerin çözüm katmanları (`data-ciz-adim` 1 ve üstü, hareket ve kinematik hariç) öğrenciye giden RPC'lerde sunucuda ayıklanır (`ozel.cozum_katmanlarini_kaldir`). Tarayıcıdaki aynı adlı fonksiyonla aynı sonucu verdiği testle doğrulanır.
+  - Öğretmen teste yalnızca kendisinin görebildiği (yayındaki) soruyu ekleyebilir.
+- **Giriş kodları:** Kurum kodu ve sınıf kodu tek bir ad alanını paylaşır (tetikleyici). Bir kurum, başka kurumun koduyla sınıf açıp öğrencilerini kendine yönlendiremez. Kurum kodunu yalnızca süper admin değiştirir. Kodlar ASCII'dir; Türkçe klavyeden gelen i, ı, İ harfleri I sayılır.
+- **Test süresi** (`sure_dk`) sunucuda da uygulanır: öğrencinin testi ilk açtığı an `cozum_baslangic` tablosuna yazılır.
+- **Ziyaretçi** yalnızca `giris_kurumu_bul` ve `ogrenci_eposta` fonksiyonlarını çağırabilir (testle denetlenir).
 - **Pasif kullanıcı** hiçbir role sahip sayılmaz.
 
 Yardımcı fonksiyonlar `ozel` şemasındadır. Bu şema Supabase Data API'ye açılmaz. Fonksiyonlar `SECURITY DEFINER` ve boş `search_path` ile tanımlıdır; politikalarda `(select ...)` içinde çağrılarak sorgu başına bir kez çalışır.

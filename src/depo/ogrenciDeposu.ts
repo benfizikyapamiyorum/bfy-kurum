@@ -68,7 +68,11 @@ kuyrukIsleyicisiKaydet('ogrenci_cevap', async (veri) => {
     p_verilen: c.verilen ?? '',
     p_sure_sn: c.sure,
   })
-  if (error) throw new Error(hataCevir(error.message))
+  if (!error) return
+  // Kalıcı ret (test bitti, süre doldu, yetki yok, geçersiz veri): yeniden denemek işe yaramaz.
+  // İşlem kuyruktan düşer; aksi halde arkasındaki tüm işlemleri sonsuza dek bekletirdi.
+  if (error.code === '42501' || error.code === '22023') return
+  throw new Error(hataCevir(error.message))
 })
 
 /** Cevabı kuyruğa ekler. Aynı soruya verilen yeni cevap kuyruktaki eskisinin yerine geçer. */

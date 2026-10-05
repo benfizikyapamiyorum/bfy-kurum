@@ -275,7 +275,8 @@ d('RLS ve bütünlük kuralları', () => {
       olarak(OGR_A1, async (c) => {
         expect(await kimlikler(c, 'test')).toEqual([TEST_A])
         expect(await say(c, 'select * from public.test_soru')).toBe(0)
-        expect(await kimlikler(c, 'soru')).toEqual([SORU_ORNEK])
+        // Örnek sorular da görünmez: teste konmuşsa cevap anahtarı sızmasın.
+        expect(await kimlikler(c, 'soru')).toEqual([])
       }))
 
     it('cevap ve sonuç yazamaz (doğru mu alanını kendisi belirleyemez)', () =>
