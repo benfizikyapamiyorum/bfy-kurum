@@ -492,6 +492,46 @@ d('RLS ve bütünlük kuralları', () => {
     })
   })
 
+  describe('öğrenci girişi için kurum bulma', () => {
+    it('kurum kodu ve sınıf koduyla kurumu bulur, büyük/küçük harf önemsiz', async () => {
+      const c = await havuz.connect()
+      try {
+        await c.query('begin')
+        await c.query(`update public.kurum set kod = 'AKURS' where id = $1`, [KA])
+        await c.query(`update public.sinif_grubu set katilim_kodu = 'SNF123' where id = $1`, [GRP_A])
+        await c.query(`set local role anon`)
+        const bul = async (kod: string) => (await c.query('select public.giris_kurumu_bul($1) as id', [kod])).rows[0].id
+        expect(await bul('akurs')).toBe(KA)
+        expect(await bul(' snf123 ')).toBe(KA)
+        expect(await bul('YOKBOYLE')).toBeNull()
+      } finally {
+        await c.query('rollback')
+        c.release()
+      }
+    })
+
+    it('pasif kurum bulunmaz', async () => {
+      const c = await havuz.connect()
+      try {
+        await c.query('begin')
+        await c.query(`update public.kurum set kod = 'PASIFK', aktif = false where id = $1`, [KB])
+        await c.query(`set local role anon`)
+        expect((await c.query(`select public.giris_kurumu_bul('PASIFK') as id`)).rows[0].id).toBeNull()
+      } finally {
+        await c.query('rollback')
+        c.release()
+      }
+    })
+
+    it('sınıf kodu üretici çakışmasız ve okunaklı kod verir', () =>
+      olarak(YON_A, async (c) => {
+        const kodlar = new Set<string>()
+        for (let i = 0; i < 50; i++) kodlar.add((await c.query('select public.katilim_kodu_uret() as k')).rows[0].k)
+        expect(kodlar.size).toBe(50)
+        for (const k of kodlar) expect(k).toMatch(/^[A-HJ-NP-Z2-9]{6}$/)
+      }))
+  })
+
   describe('dosya depolama', () => {
     it('yönetici yalnızca kendi kurumunun logo klasörüne yazar', () =>
       olarak(YON_A, async (c) => {

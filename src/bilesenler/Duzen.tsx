@@ -1,11 +1,45 @@
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { rolAnaSayfasi, useOturum } from '../oturum/Oturum'
 import { marka } from '../yapilandirma/marka'
 import { ortam } from '../yapilandirma/ortam'
 import { Simge } from './Simge'
 import { UrunIsareti } from './UrunIsareti'
 
 /** Tahta modu dışındaki sayfaların ortak çerçevesi. */
+function KullaniciMenusu() {
+  const o = useOturum()
+  const git = useNavigate()
+  if (!o.sunucuVar) return null
+  if (!o.oturum || !o.profil) {
+    return (
+      <NavLink to="/giris" className="dugme sade">
+        <Simge ad="kapi" />
+        Giriş
+      </NavLink>
+    )
+  }
+  return (
+    <>
+      <NavLink to={rolAnaSayfasi(o.profil.rol)} className="dugme sade kullanici-adi">
+        {o.profil.ad_soyad}
+      </NavLink>
+      <button
+        type="button"
+        className="dugme sade"
+        onClick={async () => {
+          await o.cikis()
+          git('/')
+        }}
+      >
+        Çıkış
+      </button>
+    </>
+  )
+}
+
 export function Duzen() {
+  const { profil } = useOturum()
+  const personel = !profil || profil.rol !== 'ogrenci'
   return (
     <div className="duzen">
       <header className="ust-serit">
@@ -15,17 +49,22 @@ export function Duzen() {
         </Link>
         <span className="bosluk" />
         <nav className="ust-menu" aria-label="Ana menü">
-          <NavLink to="/tahta" className="dugme sade">
-            <Simge ad="tahta" />
-            Tahta modu
-          </NavLink>
-          <NavLink to="/icerik/ice-aktar" className="dugme sade">
-            <Simge ad="yukle" />
-            <span className="dar-gizle">Kit içe aktar</span>
-          </NavLink>
+          {personel && (
+            <NavLink to="/tahta" className="dugme sade">
+              <Simge ad="tahta" />
+              <span className="dar-gizle">Tahta modu</span>
+            </NavLink>
+          )}
+          {(!profil || profil.rol === 'superadmin') && (
+            <NavLink to="/icerik/ice-aktar" className="dugme sade">
+              <Simge ad="yukle" />
+              <span className="dar-gizle">Kit içe aktar</span>
+            </NavLink>
+          )}
           <NavLink to="/ayarlar" className="dugme sade" aria-label="Ayarlar">
             <Simge ad="ayarlar" />
           </NavLink>
+          <KullaniciMenusu />
         </nav>
       </header>
       {!ortam.supabaseVar && (

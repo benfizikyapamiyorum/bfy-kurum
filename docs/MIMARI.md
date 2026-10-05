@@ -90,12 +90,30 @@ Politikalar `supabase/migrations/20261003000300_rls_politikalari.sql` dosyasınd
 
 Yardımcı fonksiyonlar `ozel` şemasındadır. Bu şema Supabase Data API'ye açılmaz. Fonksiyonlar `SECURITY DEFINER` ve boş `search_path` ile tanımlıdır; politikalarda `(select ...)` içinde çağrılarak sorgu başına bir kez çalışır.
 
-## 5. Kimlik doğrulama planı (M2)
+## 5. Kimlik doğrulama ve hesaplar
 
-- Öğretmen ve yönetici: e-posta ve şifre (Supabase Auth).
-- Öğrenci: kullanıcı adı ve şifre. Supabase Auth e-posta istediği için öğrenciye görünmeyen bir iç adres üretilir (`<kullanıcı-adı>@<kurum-kimliği>.ogrenci.invalid`). Öğrenciden gerçek e-posta alınmaz.
-- Sınıf koduyla giriş: öğrenci sınıf kodunu ve kendi adını seçer, ardından şifresini girer.
-- Hesap açma `service_role` yetkisi ister. Bu yüzden tek bir Supabase Edge Function (`kullanici-olustur`) kullanılır: çağıranın kurum yöneticisi olduğunu ve kontenjanı doğrular, ardından `auth.users` ve `kullanici` satırını birlikte açar. Uygulamanın geri kalanında sunucu kodu yoktur.
+- **Öğretmen, yönetici, süper admin:** Supabase Auth ile e-posta ve şifre.
+- **Öğrenci:** kurum kodu (ya da sınıf kodu), kullanıcı adı ve şifre. Supabase Auth e-posta istediği için öğrenciye görünmeyen bir iç adres kullanılır: `<kullanıcı-adı>@<kurum-kimliği>.ogrenci.invalid`. `.invalid` alan adı hiçbir zaman gerçek bir posta kutusuna gitmez; öğrenciden e-posta alınmaz. Giriş ekranı kodu `giris_kurumu_bul` RPC'siyle kurum kimliğine çevirir; bu fonksiyon yalnızca kimlik döndürür, ad ya da kullanıcı listesi vermez.
+- **Kendi kendine kayıt kapalıdır** (`enable_signup = false`). Hesapları yalnızca `kullanici` Edge Function'ı açar.
+
+### 5.1. `kullanici` Edge Function
+
+Hesap açmak `service_role` yetkisi ister; bu yetki yalnızca bu işlevde, sunucuda kullanılır. İşlev dış paket kullanmaz (Supabase Auth ve REST uç noktalarını doğrudan çağırır).
+
+| İşlem | Kim | Ne yapar |
+|---|---|---|
+| `olustur` | Süper admin (her kurum, her rol), kurum yöneticisi (kendi kurumu, öğretmen ve öğrenci, lisans geçerliyse) | Auth kullanıcısı ve `kullanici` satırı açar. Şifre verilmezse okunaklı bir geçici şifre üretir (`abcd234` biçimi). Profil açılamazsa (kontenjan dolu, kullanıcı adı çakışması) Auth kullanıcısını geri siler. En çok 500 kişi. |
+| `sifre_sifirla` | Aynı yetki | Yeni şifre üretir ve bir kez döndürür. |
+| `durum` | Aynı yetki | Hesabı pasifleştirir ya da açar; pasif hesabın oturumu da kapanır. |
+| `sil` | Aynı yetki | Auth kullanıcısını siler, `kullanici` ve sonuçları zincirleme silinir. Panel önce onay ister. |
+
+Kontenjan ve kurum tutarlılığı ayrıca veritabanı tetikleyicileriyle zorlanır; işlev atlatılsa bile limit aşılamaz.
+
+### 5.2. Kurum paneli
+
+`/kurum` (yalnızca kurum yöneticisi): lisans durumu ve kontenjan, kurum kodu, kurum adı ve logo (Storage `logolar/<kurum_id>/`), öğretmenler, öğrenciler (tek tek ya da Excel/CSV ile toplu), sınıflar (sınıf kodu, üyelik). Yeni hesapların şifreleri yalnızca bir kez gösterilir ve A4'e giriş kartı olarak yazdırılabilir.
+
+Toplu ekleme `.xlsx` ve `.csv` okur. Türkçe Excel'in `;` ayraçlı ve Windows-1254 kodlu CSV'si tanınır. Sütun başlıkları esnektir (Ad Soyad, Adı + Soyadı, Şube, Kullanıcı adı, Şifre); başlık yoksa ilk sütun ad soyad, ikinci sütun sınıf sayılır. Kullanıcı adı adı ve soyadından Türkçe karakterler çevrilerek önerilir (`Şule Işık` → `sule.isik`), çakışırsa sayı eklenir. Olmayan sınıflar otomatik açılır.
 
 ## 6. Çevrimdışı çalışma
 
@@ -171,5 +189,6 @@ animasyonTuruKaydet('isin-kirilma', (oge, { sure, gecikme }) => [
 |---|---|
 | `npm test` | `src/**/*.test.ts`: net hesabı, cevap dizisi, soru tekrar etmeme ve otomatik test oluşturma, Türkçe sıralama. |
 | `npm run test:db` | `testler/db/`: migration'lar gerçek bir Postgres'e uygulanır, Supabase'in `auth` ve `storage` şemaları taklit edilir, her rol için RLS davranışı denetlenir. |
+| `npm run test:e2e:sunucu` | `testler/e2e-sunucu/`: yerel Supabase (`npx supabase start`) üzerinde giriş, hesap açma, CSV ile toplu öğrenci, kurum ve sınıf koduyla öğrenci girişi, kontenjan, lisans bitişi, rol yalıtımı, logo. Her çalıştırma kendi kurumunu açar. |
 | `npm run test:e2e` | `testler/e2e/`: üretim derlemesi üzerinde, 1920×1080 dokunmatik ekranda tahta akışı, cevabın gizli başlaması, adım adım çözüm ve şekil animasyonu, kalem, sayaç, 56 piksel dokunma hedefi, HTML kit açma ve içe aktarma, internet kesikken çalışma; ayrıca 4K ve telefon genişliği. |
 | `src/veri/ornekSorular.test.ts` | Örnek soruların biçim kuralları ve her sayısal sonucun kodla yeniden hesaplanması. |

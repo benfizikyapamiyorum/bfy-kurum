@@ -12,3 +12,5 @@ playwright-report
 .DS_Store
 .netlify
 *-tmp.*
+dist-sunucu
+dist-yerel

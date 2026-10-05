@@ -17,8 +17,10 @@ export default defineConfig({
     launchOptions: process.env.PW_CHROMIUM ? { executablePath: process.env.PW_CHROMIUM } : {},
   },
   webServer: {
-    command: 'npm run build && npx vite preview --port 4173 --strictPort',
+    // Yerel deneme modu: .env.local içinde Supabase tanımlı olsa bile boş bırakılır.
+    command: 'npx vite build --outDir dist-yerel --emptyOutDir && npx vite preview --outDir dist-yerel --port 4173 --strictPort',
     url: 'http://localhost:4173',
+    env: { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '' },
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },
