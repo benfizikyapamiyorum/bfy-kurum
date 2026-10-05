@@ -4,7 +4,10 @@
 import DOMPurify from 'dompurify'
 import katex from 'katex'
 
-const METIN_ETIKETLERI = ['b', 'strong', 'i', 'em', 'u', 'br', 'sub', 'sup', 'span', 'p', 'ul', 'ol', 'li', 'small']
+const METIN_ETIKETLERI = [
+  'b', 'strong', 'i', 'em', 'u', 'br', 'sub', 'sup', 'span', 'p', 'ul', 'ol', 'li', 'small',
+  'table', 'thead', 'tbody', 'tr', 'th', 'td', 'caption',
+]
 
 /** $...$ formüllerini KaTeX ile işler, geri kalan HTML'i temizler. */
 export function zenginMetinHtml(kaynak: string): string {
@@ -37,4 +40,20 @@ export function sekilSvgTemizle(kaynak: string): string {
     ALLOW_DATA_ATTR: true,
     FORBID_TAGS: ['foreignObject', 'script', 'style', 'a', 'image', 'use'],
   })
+}
+
+/**
+ * Öğrenciye gidecek şekillerden çözüm katmanlarını çıkarır: data-ciz-adim değeri 1 ve üstü olan
+ * öğeler (bileşke vektör, alan değerleri, çarpma anındaki hız bileşenleri gibi) cevabı ele verir.
+ * Hareketli öğeler (hareket, kinematik) başlangıç konumunda kalır.
+ */
+export function cozumKatmanlariniKaldir(temizSvg: string): string {
+  if (typeof DOMParser === 'undefined') return temizSvg
+  const belge = new DOMParser().parseFromString(`<div>${temizSvg}</div>`, 'text/html')
+  for (const oge of belge.querySelectorAll('[data-ciz-adim]')) {
+    const adim = Number(oge.getAttribute('data-ciz-adim'))
+    const tur = oge.getAttribute('data-ciz-tur')
+    if (adim >= 1 && tur !== 'hareket' && tur !== 'kinematik') oge.remove()
+  }
+  return belge.body.firstElementChild?.innerHTML ?? temizSvg
 }

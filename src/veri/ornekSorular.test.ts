@@ -160,3 +160,22 @@ describe('örnek sorular: fizik sonuçları kodla yeniden hesaplanır', () => {
     expect(366 - 180 / ((40 * 3) / 80)).toBe(246)
   })
 })
+
+describe('örnek sorular: şık gerekçeleri', () => {
+  it('gerekçe yalnızca yanlış şıklarda ve noktayla biter', () => {
+    for (const s of ornekSorular) {
+      for (const x of s.secenekler ?? []) {
+        if (!x.gerekce) continue
+        expect(x.harf).not.toBe(s.dogru_cevap)
+        expect(x.gerekce.trim()).toMatch(/\.$/)
+        expect(x.gerekce).not.toContain('·')
+      }
+    }
+  })
+  it('gerekçedeki hesaplar tutarlı', () => {
+    expect((20 + 8) / 4).toBe(7)
+    expect(8 / 4).toBe(2)
+    expect(20 / 4).toBe(5)
+    expect(3 * 4).toBe(12)
+  })
+})

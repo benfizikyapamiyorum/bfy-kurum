@@ -6,6 +6,8 @@ import './stil/temel.css'
 import './stil/sayfalar.css'
 import './stil/tahta.css'
 import { senkronuBaslat } from './depo/senkronKuyrugu'
+// Öğrenci cevaplarının kuyruk işleyicisini kaydeder.
+import './depo/ogrenciDeposu'
 
 createRoot(document.getElementById('kok')!).render(
   <StrictMode>

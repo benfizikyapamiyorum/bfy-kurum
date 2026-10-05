@@ -207,7 +207,7 @@ Tam liste `.env.example` dosyasındadır.
 | M0 | Proje iskeleti, kurulum rehberi, mimari, veritabanı şeması ve RLS. | Tamamlandı. |
 | M1 | Tahta modu, örnek içerik, HTML kit içe aktarma, çevrimdışı önbellek. | Tamamlandı. |
 | M2 | Giriş sistemi, roller, çok kiracılı yapı, kurum paneli. | Tamamlandı. |
-| M3 | Test/deneme oluşturucu, PDF çıktıları, online çözüm, elle sonuç girişi, net hesabı. | Bekliyor. |
+| M3 | Test/deneme oluşturucu, PDF çıktıları, online çözüm, elle sonuç girişi, net hesabı. | Tamamlandı. |
 | M4 | Raporlar ve telafi testi. | Bekliyor. |
 | M5 | Süper admin paneli, lisans yönetimi, toplu içe aktarım. | Bekliyor. |
 | M6 | Demo kurum, Netlify yayını, son kontroller. | Bekliyor. |
