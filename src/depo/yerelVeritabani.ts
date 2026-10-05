@@ -42,8 +42,23 @@ export type YerelDb = IDBPDatabase<Sema>
 
 let baglanti: Promise<YerelDb> | null = null
 
+/**
+ * Tarayıcı veritabanını açar. Tarayıcı IndexedDB'yi engellerse (gizli pencere, kısıtlı çerçeve)
+ * aynı işlemleri bellekte yapan bir yedek kullanılır: uygulama çalışır, yalnızca indirilenler kalıcı olmaz.
+ */
 export function yerelDb(): Promise<YerelDb> {
-  baglanti ??= openDB<Sema>('kurs-sistemi', 1, {
+  if (!baglanti) {
+    try {
+      baglanti = ac().catch(() => bellekDb())
+    } catch {
+      baglanti = Promise.resolve(bellekDb())
+    }
+  }
+  return baglanti
+}
+
+function ac(): Promise<YerelDb> {
+  return openDB<Sema>('kurs-sistemi', 1, {
     upgrade(db) {
       db.createObjectStore('katalog')
       const sorular = db.createObjectStore('sorular', { keyPath: 'id' })
@@ -56,7 +71,62 @@ export function yerelDb(): Promise<YerelDb> {
       db.createObjectStore('indirilenUniteler', { keyPath: 'uniteId' })
     },
   })
-  return baglanti
+}
+
+// ---------------------------------------------------------------------------
+// Bellek yedeği: uygulamanın kullandığı idb işlemlerinin küçük bir alt kümesi.
+// ---------------------------------------------------------------------------
+
+const ANAHTAR_YOLU: Record<string, string | null> = {
+  katalog: null,
+  sorular: 'id',
+  icerikler: 'id',
+  kitler: 'icerikId',
+  yerelKitler: 'icerik.id',
+  kuyruk: 'id',
+  indirilenUniteler: 'uniteId',
+}
+const DIZIN_YOLU: Record<string, string> = { unite: '_unite', olusturma: 'olusturma' }
+
+const yolOku = (nesne: unknown, yol: string) =>
+  yol.split('.').reduce<unknown>((o, k) => (o && typeof o === 'object' ? (o as Record<string, unknown>)[k] : undefined), nesne)
+
+function bellekDb(): YerelDb {
+  const depolar = new Map<string, Map<string, unknown>>()
+  const depo = (ad: string) => {
+    if (!depolar.has(ad)) depolar.set(ad, new Map())
+    return depolar.get(ad)!
+  }
+  const put = async (ad: string, deger: unknown, anahtar?: string) => {
+    const yol = ANAHTAR_YOLU[ad]
+    const k = anahtar ?? (yol ? String(yolOku(deger, yol)) : '')
+    depo(ad).set(k, structuredClone(deger))
+    return k
+  }
+  const db = {
+    get: async (ad: string, k: string) => structuredClone(depo(ad).get(k)),
+    getAll: async (ad: string) => [...depo(ad).values()].map((v) => structuredClone(v)),
+    getAllFromIndex: async (ad: string, dizin: string, deger?: unknown) => {
+      const yol = DIZIN_YOLU[dizin]!
+      return [...depo(ad).values()]
+        .filter((v) => deger === undefined || yolOku(v, yol) === deger)
+        .sort((a, b) => String(yolOku(a, yol)).localeCompare(String(yolOku(b, yol))))
+        .map((v) => structuredClone(v))
+    },
+    put,
+    delete: async (ad: string, k: string) => {
+      depo(ad).delete(k)
+    },
+    count: async (ad: string) => depo(ad).size,
+    clear: async (ad: string) => {
+      depo(ad).clear()
+    },
+    transaction: () => ({
+      objectStore: (ad: string) => ({ put: (deger: unknown, anahtar?: string) => put(ad, deger, anahtar) }),
+      done: Promise.resolve(),
+    }),
+  }
+  return db as unknown as YerelDb
 }
 
 /** Testler için: bağlantıyı sıfırlar. */
