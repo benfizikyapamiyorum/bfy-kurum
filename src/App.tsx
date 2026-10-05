@@ -31,6 +31,7 @@ import { AtamaSonuclari } from './testler/AtamaSonuclari'
 import { TestYazdir } from './testler/TestYazdir'
 import { TestCoz } from './ogrenci/TestCoz'
 import { TestTahta } from './tahta/TestTahta'
+import { Raporlar } from './raporlar/Raporlar'
 import type { ReactNode } from 'react'
 
 const PERSONEL: Rol[] = ['ogretmen', 'kurum_yonetici']
@@ -67,7 +68,7 @@ const yonlendirici = createBrowserRouter([
       { path: '/testler/:id', element: korumali(PERSONEL, <TestDuzenleyici />) },
       { path: '/testler/:id/atamalar', element: korumali(PERSONEL, <TestAtamalari />) },
       { path: '/testler/:id/atama/:atama', element: korumali(PERSONEL, <AtamaSonuclari />) },
-      { path: '/raporlar/*', element: korumali(PERSONEL, yakinda('Raporlar')) },
+      { path: '/raporlar', element: korumali(PERSONEL, <Raporlar />) },
       { path: '/yonetim/*', element: korumali(['superadmin'], yakinda('Süper admin paneli')) },
       { path: '/ayarlar', element: <Ayarlar /> },
       { path: '/aydinlatma-metni', element: <AydinlatmaMetni /> },

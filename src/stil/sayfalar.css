@@ -998,3 +998,140 @@
   gap: 8px;
   margin-bottom: 8px;
 }
+
+/* Grafikler */
+.grafik {
+  max-width: 760px;
+}
+.grafik svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-family: var(--font);
+}
+.grafik-izgara {
+  stroke: var(--cizgi);
+  stroke-width: 1;
+}
+.grafik-sifir {
+  stroke: var(--yazi-soluk);
+  stroke-width: 1;
+}
+.grafik-eksen {
+  fill: var(--yazi-soluk);
+  font-size: 12px;
+}
+.grafik-cizgi {
+  fill: none;
+  stroke: var(--ana);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.grafik-alan {
+  fill: var(--ana);
+  opacity: 0.1;
+}
+.grafik-nokta {
+  fill: var(--ana);
+  stroke: var(--yuzey);
+  stroke-width: 2;
+}
+.grafik-deger {
+  fill: var(--yazi);
+  font-size: 13px;
+  font-weight: 700;
+}
+.grafik-imlec {
+  stroke: var(--yazi-soluk);
+  stroke-width: 1;
+}
+.grafik-ipucu {
+  min-height: 28px;
+  font-size: 0.9rem;
+}
+.yuzde-cubuklari {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.yuzde-cubuklari li {
+  display: grid;
+  grid-template-columns: minmax(140px, 1.2fr) minmax(120px, 2fr) 120px;
+  gap: 12px;
+  align-items: center;
+}
+.yc-etiket {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  align-items: center;
+}
+.yc-aciklama {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: var(--yazi-soluk);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.yc-cubuk {
+  position: relative;
+  height: 16px;
+  background: var(--yuzey-2);
+  border-radius: 4px;
+}
+.yc-cubuk span {
+  display: block;
+  height: 100%;
+  background: var(--ana);
+  border-radius: 0 4px 4px 0;
+}
+.yc-esik {
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: var(--yazi-soluk);
+}
+.zayif-rozet {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--hata);
+}
+.yc-deger {
+  font-weight: 700;
+}
+.telafi {
+  margin-top: 16px;
+  border-top: 1px solid var(--cizgi);
+  padding-top: 12px;
+}
+.baglanti-dugme {
+  all: unset;
+  cursor: pointer;
+  color: var(--ana);
+  font-weight: 600;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+}
+.baglanti-dugme:disabled {
+  color: var(--yazi);
+  cursor: default;
+}
+.secili-satir td {
+  background: var(--ana-acik);
+}
+@media (max-width: 700px) {
+  .yuzde-cubuklari li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

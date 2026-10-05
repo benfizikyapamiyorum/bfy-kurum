@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { TEST_TURU_ADI } from '../alan/etiketler'
 import { trSayi } from '../alan/turkce'
 import { ogrenciAtamalari } from '../depo/ogrenciDeposu'
+import { CizgiGrafik } from '../bilesenler/Grafikler'
 import { useVeri } from '../kancalar'
 import { useOturum } from '../oturum/Oturum'
 
@@ -55,6 +56,17 @@ export function OgrenciAna() {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {biten.length >= 2 && (
+        <section className="kart">
+          <h2>Net gelişimim</h2>
+          <CizgiGrafik
+            noktalar={[...biten]
+              .sort((a, b) => a.tamamlandi!.localeCompare(b.tamamlandi!))
+              .map((a) => ({ etiket: a.baslik, deger: a.net ?? 0 }))}
+          />
         </section>
       )}
 

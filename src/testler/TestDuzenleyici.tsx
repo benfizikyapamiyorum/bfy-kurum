@@ -3,7 +3,7 @@
 // daha önce verilmiş sorular işaretlenir.
 
 import { useEffect, useMemo, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { SORU_TURU_ADI, TEST_TURU_ADI, ZORLUK_ADI } from '../alan/etiketler'
 import { otomatikTestOlustur, testeSoruEkle } from '../alan/testOlusturma'
 import type { Soru, SoruTuru, TestAyarlari, TestTuru } from '../alan/tipler'
@@ -34,7 +34,8 @@ export function TestDuzenleyici() {
   const [taslak, setTaslak] = useState<TestTaslagi>(BOS_TASLAK)
   const [secilen, setSecilen] = useState<Soru[]>([])
   const [yuklendi, setYuklendi] = useState(!id)
-  const [mesaj, setMesaj] = useState<string | null>(null)
+  const konum = useLocation()
+  const [mesaj, setMesaj] = useState<string | null>(() => (konum.state as { mesaj?: string } | null)?.mesaj || null)
   const [hata, setHata] = useState<string | null>(null)
 
   // Süzgeçler

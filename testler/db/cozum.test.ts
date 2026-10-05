@@ -83,6 +83,9 @@ d('online çözüm ve puanlama', () => {
           ($4, 'acik_uclu', 'Soru 4', null, 'Örnek cevap.', '[]', 4)`,
         [S_CS1, S_CS2, S_DY, S_ACIK, secenekler('B'), secenekler('D')],
       )
+      const K4 = '40000000-0000-4000-8000-000000110104'
+      const K5 = '40000000-0000-4000-8000-000000110105'
+      await c.query(`insert into public.soru_kazanim values ($1, $5), ($2, $5), ($3, $6), ($4, $6)`, [S_CS1, S_CS2, S_DY, S_ACIK, K4, K5])
       await c.query(`insert into public.test (id, kurum_id, tur, baslik, yanlis_dogru_orani) values ($1, $2, 'mini_test', 'Deneme', 4)`, [TEST, K1])
       await c.query(`insert into public.test_soru values ($1, $2, 1), ($1, $3, 2), ($1, $4, 3), ($1, $5, 4)`, [TEST, S_CS1, S_CS2, S_DY, S_ACIK])
       await c.query(
@@ -207,4 +210,29 @@ d('online çözüm ve puanlama', () => {
       const r = await havuz.query(`select count(*)::int as n from public.test_soru where test_id = $1`, [TEST])
       expect(r.rows[0].n).toBe(4)
     }))
+
+  it('kazanım başarısı: tamamlanan denemelerden, açık uçlu hariç', () =>
+    olarak(OGT, async (c) => {
+      await c.query(`select public.elle_sonuc_kaydet($1, $2, $3)`, [ATAMA, OGR, ['B', 'D', 'D', 'x']])
+      const r = await c.query(
+        `select kazanim_id, deneme, dogru, yanlis, bos, yuzde::float, ogrenci_sayisi from public.kazanim_basarisi($1)`,
+        [GRP],
+      )
+      expect(r.rows).toEqual([
+        { kazanim_id: '40000000-0000-4000-8000-000000110105', deneme: 1, dogru: 0, yanlis: 1, bos: 0, yuzde: 0, ogrenci_sayisi: 1 },
+        { kazanim_id: '40000000-0000-4000-8000-000000110104', deneme: 2, dogru: 2, yanlis: 0, bos: 0, yuzde: 100, ogrenci_sayisi: 1 },
+      ])
+    }))
+
+  it('kazanım raporunu başka kurumun öğretmeni ve başka öğrenci göremez', async () => {
+    await olarak(OGT2, async (c) => {
+      await expect(c.query(`select * from public.kazanim_basarisi($1)`, [GRP])).rejects.toThrow(/yetkiniz yok/)
+    })
+    await olarak(OGR, async (c) => {
+      await reddedilir(c, `select * from public.kazanim_basarisi($1)`, [GRP], /yetkiniz yok/)
+      await reddedilir(c, `select * from public.kazanim_basarisi($1, $2)`, [GRP, OGR_DIS], /yetkiniz yok/)
+      const kendi = await c.query(`select * from public.kazanim_basarisi($1, $2)`, [GRP, OGR])
+      expect(kendi.rows).toEqual([])
+    })
+  })
 })
