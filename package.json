@@ -15,7 +15,7 @@
     "seed:uret": "tsx scripts/ornek-veri-sql-uret.ts",
     "test:e2e:sunucu": "playwright test -c playwright.sunucu.config.ts",
     "supabase:tohum": "tsx scripts/yerel-supabase-tohum.ts",
-    "build:tanitim": "tsc -b && vite build --mode tanitim",
+    "build:tanitim": "tsc -b && vite build --mode tanitim && node scripts/tanitim-son-islem.mjs",
     "paket:kaldirma": "tsx icerik-paketleri/kaldirma-kuvveti/paket.ts"
   },
   "dependencies": {

@@ -31,11 +31,13 @@ const tanitimSurumu = defineConfig({
     'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(''),
   },
   build: {
-    target: 'es2022',
+    // Eski tarayıcılar da açabilsin (akıllı tahtalarda güncellenmemiş tarayıcı sık görülür).
+    target: ['es2019', 'safari13', 'chrome80', 'firefox78', 'edge88'],
     outDir: 'dist-tanitim',
     emptyOutDir: true,
     assetsInlineLimit: 100_000_000,
     chunkSizeWarningLimit: 100_000,
+    // Klasik betik: modül desteği gerektirmez; scripts/tanitim-son-islem.mjs sayfanın sonuna taşır.
   },
 })
 

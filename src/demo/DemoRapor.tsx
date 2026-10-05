@@ -128,7 +128,7 @@ export function DemoRapor() {
                           </button>
                         </td>
                         <td>{trSayi(ortalama(netler))}</td>
-                        <td>{trSayi(netler.at(-1)!)}</td>
+                        <td>{trSayi(netler[netler.length - 1]!)}</td>
                         <td>{e ? EGILIM_ADI[e] : ''}</td>
                       </tr>
                     )

@@ -88,6 +88,9 @@ const ANAHTAR_YOLU: Record<string, string | null> = {
 }
 const DIZIN_YOLU: Record<string, string> = { unite: '_unite', olusturma: 'olusturma' }
 
+// structuredClone eski tarayıcılarda yok; saklanan değerler düz JSON nesneleridir.
+const kopya = <T,>(v: T): T => (v === undefined ? v : (JSON.parse(JSON.stringify(v)) as T))
+
 const yolOku = (nesne: unknown, yol: string) =>
   yol.split('.').reduce<unknown>((o, k) => (o && typeof o === 'object' ? (o as Record<string, unknown>)[k] : undefined), nesne)
 
@@ -100,18 +103,18 @@ function bellekDb(): YerelDb {
   const put = async (ad: string, deger: unknown, anahtar?: string) => {
     const yol = ANAHTAR_YOLU[ad]
     const k = anahtar ?? (yol ? String(yolOku(deger, yol)) : '')
-    depo(ad).set(k, structuredClone(deger))
+    depo(ad).set(k, kopya(deger))
     return k
   }
   const db = {
-    get: async (ad: string, k: string) => structuredClone(depo(ad).get(k)),
-    getAll: async (ad: string) => [...depo(ad).values()].map((v) => structuredClone(v)),
+    get: async (ad: string, k: string) => kopya(depo(ad).get(k)),
+    getAll: async (ad: string) => [...depo(ad).values()].map((v) => kopya(v)),
     getAllFromIndex: async (ad: string, dizin: string, deger?: unknown) => {
       const yol = DIZIN_YOLU[dizin]!
       return [...depo(ad).values()]
         .filter((v) => deger === undefined || yolOku(v, yol) === deger)
         .sort((a, b) => String(yolOku(a, yol)).localeCompare(String(yolOku(b, yol))))
-        .map((v) => structuredClone(v))
+        .map((v) => kopya(v))
     },
     put,
     delete: async (ad: string, k: string) => {
