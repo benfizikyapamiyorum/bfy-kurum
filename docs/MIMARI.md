@@ -161,6 +161,13 @@ Sonuç ekranında her öğrenci için cevap dizisi yazılır: `ABCDE-BAC` (boş 
 
 Kayıtlı test `/tahta/test/:test/:no` ile tahtada soru soru açılır. Çoktan seçmeli sorunun şıklarında `gerekce` varsa cevap açılınca "Neden B değil?" düğmeleri çıkar; sınıfın tartıştığı yanlış seçeneğin gerekçesi tek dokunuşla gösterilir. Soru modelinde ayrıca `beceri`, `kavram_yanilgisi` ve `puanlama_olcutu` alanları vardır (Fizik Atölye pilotundan alındı).
 
+### 6.6. Raporlar ve telafi testi (`/raporlar`)
+
+- **Öğrenme çıktısı başarısı:** `kazanim_basarisi(sınıf, öğrenci?)` RPC'si tamamlanmış (sonucu olan) denemelerdeki her test sorusunu bir deneme sayar; açık uçlu sorular hariç, boş bırakılan soru doğru sayılmaz. Soru birden çok çıktıya bağlıysa her birine sayılır. Yetki: kurumun personeli ya da yalnızca kendi verisi için öğrencinin kendisi. `SECURITY DEFINER` olduğu için lisans bitse de kurum geçmiş raporunu görür.
+- **Zayıf çıktı:** başarı %50'nin altında ve en az 3 deneme (`zayifKazanimlar`). Arayüzde renk tek başına kullanılmaz; zayıf çıktı uyarı simgesi ve "Zayıf" yazısıyla işaretlenir, %50 başvuru çizgisi vardır.
+- **Telafi testi:** zayıf çıktılardan `otomatikTestOlustur` ile, sınıfa daha önce verilmemiş sorular öncelikli olarak tek tıkla oluşturulur ve düzenleyicide açılır. Havuz yetmezse daha önce verilen sorular kullanılır ve öğretmen uyarılır.
+- **Öğrenci gelişimi:** öğrencinin sınav sırasına göre netleri çizgi grafikte (dokununca değer, yanında tablo görünümü), eğilim (yükseliyor, durağan, düşüyor) en küçük kareler eğimiyle. Öğrenci kendi ana sayfasında da net gelişimini görür.
+
 ## 7. Çevrimdışı çalışma
 
 - **Uygulama kabuğu:** `vite-plugin-pwa` (Workbox) tüm JavaScript, CSS ve yazı tiplerini önbelleğe alır. İnternet yokken uygulama açılır.
