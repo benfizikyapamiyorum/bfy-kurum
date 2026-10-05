@@ -105,22 +105,15 @@ Supabase panelinde **Authentication** → **Sign In / Providers** bölümünde:
 - **Allow new users to sign up** kapalı olsun. Hesapları yalnızca kurum yöneticisi ve süper admin açar.
 - **Email** sağlayıcısı açık kalsın, **Confirm email** kapalı olsun.
 
-### 1.6. İlk kurumu açmak (süper admin paneli gelene kadar)
+### 1.6. İlk kurumu açmak
 
-M5 aşamasında süper admin paneli gelecek. O zamana kadar ilk kurum SQL Editor'da açılır:
+1.3'te açtığınız süper admin hesabıyla giriş yapın. **Yönetim** sayfası açılır.
 
-```sql
-insert into public.kurum (ad, kod, lisans_baslangic, lisans_bitis, ogretmen_limiti, ogrenci_limiti)
-values ('Örnek Eğitim Kursu', 'ORNEK', current_date, current_date + 365, 5, 100)
-returning id;
-```
+1. **Kurumlar > Yeni kurum** bölümünü açın. Kurum adını, öğrencilerin girişte yazacağı kısa kurum kodunu (ör. `ORNEK`), lisans bitişini ve kontenjanları girin.
+2. Aynı formda kurs sahibinin adını ve e-postasını yazarsanız kurum yöneticisi hesabı da açılır. Şifre ekranda bir kez gösterilir, giriş kartı yazdırılabilir.
+3. Lisansı daha sonra **Düzenle > 1 ay uzat / 1 yıl uzat** ile uzatabilir, kontenjanı değiştirebilir ya da kurumu kapatabilirsiniz. Kapalı ya da süresi dolmuş kurumun kullanıcıları içeriğe erişemez, geçmiş verileri silinmez.
 
-Ardından 1.3'teki gibi Authentication'da kurs sahibine bir kullanıcı açın ve şunu çalıştırın:
-
-```sql
-insert into public.kullanici (id, kurum_id, rol, ad_soyad, eposta)
-values ('KULLANICI-UID', 'KURUM-ID', 'kurum_yonetici', 'Ad Soyad', 'eposta@ornek.com');
-```
+Soru ve içerik eklemek için **Soru bankası**, **İçerikler** (HTML kit yükleme) ve **Toplu içe aktarım** sekmeleri kullanılır. Toplu içe aktarımın dosya biçimi `docs/ICE_AKTARIM.md` belgesindedir.
 
 Kurs sahibi giriş yapınca **Kurum paneli** açılır: öğretmen ve öğrenci ekler (tek tek ya da Excel/CSV ile), sınıf açar, logo yükler, giriş kartlarını yazdırır.
 
@@ -209,5 +202,5 @@ Tam liste `.env.example` dosyasındadır.
 | M2 | Giriş sistemi, roller, çok kiracılı yapı, kurum paneli. | Tamamlandı. |
 | M3 | Test/deneme oluşturucu, PDF çıktıları, online çözüm, elle sonuç girişi, net hesabı. | Tamamlandı. |
 | M4 | Raporlar ve telafi testi. | Tamamlandı. |
-| M5 | Süper admin paneli, lisans yönetimi, toplu içe aktarım. | Bekliyor. |
+| M5 | Süper admin paneli, lisans yönetimi, toplu içe aktarım. | Tamamlandı. |
 | M6 | Demo kurum, Netlify yayını, son kontroller. | Bekliyor. |

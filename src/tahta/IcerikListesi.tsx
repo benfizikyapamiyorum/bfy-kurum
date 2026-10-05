@@ -58,7 +58,7 @@ export function IcerikListesi() {
                   const indirildi = durum.veri!.indirilen.kitler.has(i.id)
                   const yerel = i.id.startsWith(YEREL_KIT_ON_EKI)
                   return (
-                    <Link key={i.id} to={`/tahta/kit/${encodeURIComponent(i.id)}`} className="buyuk-kutu kit-kutusu">
+                    <Link key={i.id} to={`/tahta/${i.veri?.bolumler ? 'konu' : 'kit'}/${encodeURIComponent(i.id)}`} className="buyuk-kutu kit-kutusu">
                       <span className="buyuk-kutu-ust">
                         {i.hafta ? `${i.hafta}. hafta` : ICERIK_TURU_ADI[i.tur]}
                         {i.ornek && <OrnekRozeti />}

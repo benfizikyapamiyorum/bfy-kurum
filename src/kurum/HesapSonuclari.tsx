@@ -3,10 +3,16 @@
 
 import type { HesapSonucu } from '../depo/kurumDeposu'
 import { marka } from '../yapilandirma/marka'
-import { useKurumVerisi } from './kurumVerisi'
+import { useKurumVerisiVarsa } from './kurumVerisi'
 
-export function HesapSonuclari({ sonuclar, kapat }: { sonuclar: HesapSonucu[]; kapat: () => void }) {
-  const { kurum } = useKurumVerisi()
+export interface KartKurumu {
+  ad: string
+  kod: string | null
+}
+
+export function HesapSonuclari({ sonuclar, kapat, kurum: verilen }: { sonuclar: HesapSonucu[]; kapat: () => void; kurum?: KartKurumu }) {
+  const baglam = useKurumVerisiVarsa()
+  const kurum: KartKurumu = verilen ?? baglam?.kurum ?? { ad: '', kod: null }
   const basarili = sonuclar.filter((s) => s.tamam)
   const hatali = sonuclar.filter((s) => !s.tamam)
   const adres = typeof window !== 'undefined' ? window.location.host : marka.web

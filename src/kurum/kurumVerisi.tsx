@@ -25,6 +25,10 @@ export function KurumVerisiSaglayici({ kurum, children }: { kurum: Kurum; childr
   return <Baglam.Provider value={{ kurum, ...v.veri, yenile: v.yenile }}>{children}</Baglam.Provider>
 }
 
+/** Sağlayıcı dışında (ör. süper admin paneli) null döner. */
+// eslint-disable-next-line react-refresh/only-export-components
+export const useKurumVerisiVarsa = (): KurumVerisi | null => useContext(Baglam)
+
 // eslint-disable-next-line react-refresh/only-export-components
 export function useKurumVerisi(): KurumVerisi {
   const k = useContext(Baglam)

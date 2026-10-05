@@ -335,6 +335,10 @@
   display: grid;
   gap: 16px;
 }
+/* Izgara öğesi içindeki geniş tablo kartı büyütmesin; tablo kendi içinde kaysın. */
+.panel-dikey > * {
+  min-width: 0;
+}
 .kart h2 {
   font-size: 1.15rem;
 }
@@ -1133,5 +1137,139 @@
   .yuzde-cubuklari li {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+}
+
+/* Süper admin: soru düzenleyici */
+.soru-duzenleyici {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.soru-onizleme {
+  position: sticky;
+  top: 12px;
+}
+.soru-onizleme svg {
+  max-width: 100%;
+  height: auto;
+}
+.onizleme-secenekler {
+  list-style: none;
+  padding: 0;
+}
+.onizleme-secenekler li {
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.onizleme-secenekler li.dogru {
+  outline: 2px solid var(--basari);
+}
+.secenek-duzenleme,
+.soru-duzenleyici fieldset {
+  border: 1px solid var(--cizgi);
+  border-radius: 10px;
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.secenek-satiri {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+.dogru-secimi {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+}
+.adim-satiri {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: start;
+}
+textarea.kod {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+}
+@media (max-width: 900px) {
+  .soru-duzenleyici {
+    grid-template-columns: 1fr;
+  }
+  .soru-onizleme {
+    position: static;
+  }
+  .secenek-satiri {
+    grid-template-columns: auto 1fr;
+  }
+  .secenek-satiri > input:last-child:not(:nth-child(2)) {
+    grid-column: 2;
+  }
+}
+.form-dikey > label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--yazi-soluk);
+}
+.form-dikey > label > textarea,
+.form-dikey > label > input:not([type='checkbox'], [type='radio'], [type='file']),
+.secenek-satiri input,
+.adim-satiri textarea,
+.kazanim-secimi select {
+  width: 100%;
+  min-width: 0;
+  border-radius: 10px;
+  border: 1.5px solid var(--cizgi);
+  background: var(--yuzey);
+  color: var(--yazi);
+  font: inherit;
+  font-weight: 400;
+  padding: 8px 10px;
+}
+.form-dikey > label.anahtar-satiri {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.kazanim-secimi > label:first-of-type {
+  display: grid;
+  gap: 4px;
+  max-width: 240px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+/* Dar ekranda menü sığsın diye ürün adı yalnızca işaretle gösterilir. */
+@media (max-width: 480px) {
+  .ust-serit .urun-adi {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+@media (max-width: 480px) {
+  .ust-serit {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+  .ust-menu {
+    gap: 0;
+  }
+  /* Dokunma hedefi 44 px altına inmez. */
+  .ust-menu .dugme {
+    min-width: 44px;
+    padding-inline: 0.6em;
+  }
+  .kullanici-adi {
+    max-width: 104px;
   }
 }

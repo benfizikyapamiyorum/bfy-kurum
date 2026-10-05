@@ -32,16 +32,17 @@ import { TestYazdir } from './testler/TestYazdir'
 import { TestCoz } from './ogrenci/TestCoz'
 import { TestTahta } from './tahta/TestTahta'
 import { Raporlar } from './raporlar/Raporlar'
+import { YonetimPaneli } from './yonetim/YonetimPaneli'
+import { Kurumlar } from './yonetim/Kurumlar'
+import { Sorular } from './yonetim/Sorular'
+import { SoruDuzenle } from './yonetim/SoruDuzenle'
+import { Icerikler } from './yonetim/Icerikler'
+import { TopluIceAktarim } from './yonetim/TopluIceAktarim'
+import { KonuEkrani } from './tahta/KonuEkrani'
 import type { ReactNode } from 'react'
 
 const PERSONEL: Rol[] = ['ogretmen', 'kurum_yonetici']
 const korumali = (roller: Rol[], oge: ReactNode) => <RolGerekli roller={roller}>{oge}</RolGerekli>
-const yakinda = (ad: string) => (
-  <div className="sayfa dar">
-    <h1>{ad}</h1>
-    <p className="yer-tutucu">Bu bölüm sonraki aşamada eklenecek.</p>
-  </div>
-)
 
 const yonlendirici = createBrowserRouter([
   {
@@ -69,7 +70,17 @@ const yonlendirici = createBrowserRouter([
       { path: '/testler/:id/atamalar', element: korumali(PERSONEL, <TestAtamalari />) },
       { path: '/testler/:id/atama/:atama', element: korumali(PERSONEL, <AtamaSonuclari />) },
       { path: '/raporlar', element: korumali(PERSONEL, <Raporlar />) },
-      { path: '/yonetim/*', element: korumali(['superadmin'], yakinda('Süper admin paneli')) },
+      {
+        path: '/yonetim',
+        element: korumali(['superadmin'], <YonetimPaneli />),
+        children: [
+          { index: true, element: <Kurumlar /> },
+          { path: 'sorular', element: <Sorular /> },
+          { path: 'sorular/:id', element: <SoruDuzenle /> },
+          { path: 'icerikler', element: <Icerikler /> },
+          { path: 'ice-aktarim', element: <TopluIceAktarim /> },
+        ],
+      },
       { path: '/ayarlar', element: <Ayarlar /> },
       { path: '/aydinlatma-metni', element: <AydinlatmaMetni /> },
       { path: '/gizlilik', element: <GizlilikPolitikasi /> },
@@ -83,6 +94,7 @@ const yonlendirici = createBrowserRouter([
   { path: '/tahta', element: <SinifSecimi /> },
   { path: '/tahta/indir', element: <TahtayaIndir /> },
   { path: '/tahta/kit/:icerik', element: <KitEkrani /> },
+  { path: '/tahta/konu/:icerik', element: <KonuEkrani /> },
   { path: '/tahta/:seviye', element: <UniteSecimi /> },
   { path: '/tahta/:seviye/:unite', element: <IcerikListesi /> },
   { path: '/tahta/:seviye/:unite/soru/:soru', element: <SoruEkrani /> },

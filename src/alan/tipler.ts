@@ -85,6 +85,27 @@ export interface Icerik {
   meb_baglanti: string | null
   ornek: boolean
   kazanim_idleri: string[]
+  /** HTML dosyası yerine yapılandırılmış içerik (konu anlatımı). */
+  veri?: KonuVerisi | null
+}
+
+export interface KonuBolumu {
+  baslik: string
+  /** Güvenli HTML (KaTeX için $...$). */
+  metin: string
+  sekil_svg?: string | null
+}
+
+export interface DersAkisiAdimi {
+  time: string
+  title: string
+  body: string
+}
+
+export interface KonuVerisi {
+  bolumler: KonuBolumu[]
+  /** Ders süresine (dakika) göre öğretmen akışı, ör. { "40": [...], "80": [...] }. */
+  planlar?: Record<string, DersAkisiAdimi[]>
 }
 
 export interface Katalog {

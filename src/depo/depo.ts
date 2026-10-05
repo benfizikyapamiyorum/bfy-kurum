@@ -132,7 +132,8 @@ export async function kitHtmlGetir(icerik: Icerik): Promise<string> {
 // ---------------------------------------------------------------------------
 
 export async function kitIndir(icerik: Icerik): Promise<IndirilenKit> {
-  const html = await kaynak().kitHtml(icerik)
+  // Yapılandırılmış konu anlatımının HTML dosyası yok; içerik satırı yeterli.
+  const html = icerik.html_yolu ? await kaynak().kitHtml(icerik) : ''
   const kayit: IndirilenKit = {
     icerikId: icerik.id,
     html,

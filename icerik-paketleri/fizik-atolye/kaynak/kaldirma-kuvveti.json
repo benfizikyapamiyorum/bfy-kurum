@@ -1,0 +1,6061 @@
+{
+ "version": "0.3",
+ "title": "Kaldırma kuvveti",
+ "subtitle": "Maarif temelli sorular. YKS hazırlığına uygun çalışma akışı.",
+ "grade": 9,
+ "status": "Özgün pilot ders paketi. Sınıf uygulaması ve bağımsız fizik öğretmeni incelemesi bekleniyor.",
+ "outcomes": [
+  {
+   "id": "FİZ.9.3.5",
+   "title": "Kaldırma kuvvetini etkileyen değişkenleri belirlemeye yönelik deney yapabilme"
+  },
+  {
+   "id": "FİZ.9.3.6",
+   "title": "Kaldırma kuvveti ile sıvılardaki basınca neden olan kuvvet arasındaki ilişkiye yönelik çıkarım yapabilme"
+  }
+ ],
+ "plans": {
+  "40": [
+   {
+    "time": "0-5 dk",
+    "title": "Ön kontrol",
+    "body": "S4 ve S6 ile batan hacim, ağırlık ve dinamometre ayrımını yoklayın."
+   },
+   {
+    "time": "5-12 dk",
+    "title": "Bir kavramı netleştir",
+    "body": "S1 verilerini tartışın. Gerekirse 3B modeli açıp yüzey kuvvetlerini ve farklarını gösterin."
+   },
+   {
+    "time": "12-28 dk",
+    "title": "Karşılaştırmalı çözüm",
+    "body": "S2-S3 çiftinde yüzme ile tam batmayı; S5 ile değişen hacmi karşılaştırın. Gerekçeleri kısaca yazdırın."
+   },
+   {
+    "time": "28-36 dk",
+    "title": "Bireysel kontrol",
+    "body": "S8 ve S9 sorularını cevabı göstermeden çözdürün. Bağlamdaki gerekli bilgiyi ayıklatın."
+   },
+   {
+    "time": "36-40 dk",
+    "title": "Hedefli ödev",
+    "body": "Yanlış gerekçesine göre S7, S10, S11 veya S12 sorularını seçin. Sonraki derste kısa kontrol yapın."
+   }
+  ],
+  "80": [
+   {
+    "time": "0-10 dk",
+    "title": "Ön kontrol ve gerekçe",
+    "body": "S4 ve S6 sorularını bireysel çözdürün; cevap ve gerekçeyi ayrı okuyun."
+   },
+   {
+    "time": "10-25 dk",
+    "title": "Model ve soru ilişkisi",
+    "body": "S1 ve S9 içindeki basınç-kuvvet ayrımını açıklayın; ihtiyaç varsa 3B modeli kullanın."
+   },
+   {
+    "time": "25-45 dk",
+    "title": "Koşulları karşılaştır",
+    "body": "S2, S3, S5 ve S7 sorularında değişen ve sabit kalan nicelikleri belirtin."
+   },
+   {
+    "time": "45-65 dk",
+    "title": "Bireysel mini test",
+    "body": "S8, S10, S11 ve S12 sorularını bireysel çözdürün. Süreyi sınıfa göre ayarlayın."
+   },
+   {
+    "time": "65-80 dk",
+    "title": "Çözüm ve telafi",
+    "body": "Öğrenciler gerekçelerini çözümlerle karşılaştırsın. Yanlışın kaynağına göre yeni çalışma seçin."
+   }
+  ]
+ },
+ "questions": [
+  {
+   "id": "S1",
+   "title": "Su altı sensörünün verileri",
+   "type": "Çoktan seçmeli",
+   "level": "Başlangıç",
+   "skill": "Veriden çıkarım",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Bir ekip, tamamen su içindeki rijit bir küpü farklı derinliklerde sabit tutuyor. Su homojen; küpün hacmi ve yer çekimi değişmiyor. Atmosfer katkısı çıkarılmış yüzey kuvvetleri aşağıda verilmiştir. Verilerin desteklediği yorum hangisidir?",
+   "table": [
+    [
+     "Üst yüzey derinliği",
+     "Üst kuvvet (aşağı)",
+     "Alt kuvvet (yukarı)"
+    ],
+    [
+     "20 cm",
+     "80 N",
+     "160 N"
+    ],
+    [
+     "50 cm",
+     "200 N",
+     "280 N"
+    ]
+   ],
+   "options": [
+    "A) Derinlik arttıkça kaldırma kuvveti 120 N artmıştır.",
+    "B) İki yüzey kuvveti artmış; kaldırma kuvveti aynı kalmıştır.",
+    "C) Alt yüzey kuvveti arttığı için cismin ağırlığı artmıştır.",
+    "D) Üst ve alt kuvvet eşit miktarda arttığından kaldırma kuvveti sıfırdır.",
+    "E) Kaldırma kuvveti, her durumda alt yüzey kuvvetine eşittir."
+   ],
+   "answer": "B",
+   "explanation": "İlk durumda 160 - 80 = 80 N, ikinci durumda 280 - 200 = 80 N. Her iki kuvvet 120 N artmış, farkları değişmemiştir. Alt kuvvet tek başına kaldırma kuvveti değildir.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Alt yüzey kuvvetini doğrudan kaldırma kuvveti sayma.",
+   "figure": {
+    "alt": "Aynı küp iki derinlikte iple tutuluyor; üstte aşağı, altta yukarı basınç kuvvetleri verilmiştir.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "I. konum",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 101,
+        "y1": 29,
+        "x2": 139,
+        "y2": 29,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 102,
+        "y1": 29,
+        "x2": 106,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 109,
+        "y1": 29,
+        "x2": 113,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 116,
+        "y1": 29,
+        "x2": 120,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 123,
+        "y1": 29,
+        "x2": 127,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 130,
+        "y1": 29,
+        "x2": 134,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 137,
+        "y1": 29,
+        "x2": 141,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 29,
+        "x2": 120,
+        "y2": 89,
+        "dash": false
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 89,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 93,
+        "x2": 135.0,
+        "y2": 93,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "line",
+        "x1": 55,
+        "y1": 65,
+        "x2": 55,
+        "y2": 89,
+        "dash": true
+       },
+       {
+        "t": "line",
+        "x1": 50,
+        "y1": 65,
+        "x2": 60,
+        "y2": 65,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 50,
+        "y1": 89,
+        "x2": 60,
+        "y2": 89,
+        "dash": false
+       },
+       {
+        "t": "text",
+        "x": 5,
+        "y": 81.0,
+        "v": "20 cm",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "line",
+        "x1": 110,
+        "y1": 71,
+        "x2": 110.0,
+        "y2": 84.0,
+        "dash": false,
+        "color": "ink",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          110,
+          89
+         ],
+         [
+          113.0,
+          82.0
+         ],
+         [
+          107.0,
+          82.0
+         ]
+        ],
+        "fill": "ink",
+        "color": "ink"
+       },
+       {
+        "t": "text",
+        "x": 145,
+        "y": 82,
+        "v": "80 N",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "line",
+        "x1": 130,
+        "y1": 136,
+        "x2": 130.0,
+        "y2": 122.0,
+        "dash": false,
+        "color": "ink",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          130,
+          117
+         ],
+         [
+          127.0,
+          124.0
+         ],
+         [
+          133.0,
+          124.0
+         ]
+        ],
+        "fill": "ink",
+        "color": "ink"
+       },
+       {
+        "t": "text",
+        "x": 145,
+        "y": 123,
+        "v": "160 N",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 180,
+        "v": "Aynı rijit küp",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "II. konum",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 101,
+        "y1": 29,
+        "x2": 139,
+        "y2": 29,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 102,
+        "y1": 29,
+        "x2": 106,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 109,
+        "y1": 29,
+        "x2": 113,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 116,
+        "y1": 29,
+        "x2": 120,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 123,
+        "y1": 29,
+        "x2": 127,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 130,
+        "y1": 29,
+        "x2": 134,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 137,
+        "y1": 29,
+        "x2": 141,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 29,
+        "x2": 120,
+        "y2": 113,
+        "dash": false
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 113,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 117,
+        "x2": 135.0,
+        "y2": 117,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "line",
+        "x1": 55,
+        "y1": 65,
+        "x2": 55,
+        "y2": 113,
+        "dash": true
+       },
+       {
+        "t": "line",
+        "x1": 50,
+        "y1": 65,
+        "x2": 60,
+        "y2": 65,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 50,
+        "y1": 113,
+        "x2": 60,
+        "y2": 113,
+        "dash": false
+       },
+       {
+        "t": "text",
+        "x": 5,
+        "y": 93.0,
+        "v": "50 cm",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "line",
+        "x1": 110,
+        "y1": 95,
+        "x2": 110.0,
+        "y2": 108.0,
+        "dash": false,
+        "color": "ink",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          110,
+          113
+         ],
+         [
+          113.0,
+          106.0
+         ],
+         [
+          107.0,
+          106.0
+         ]
+        ],
+        "fill": "ink",
+        "color": "ink"
+       },
+       {
+        "t": "text",
+        "x": 145,
+        "y": 106,
+        "v": "200 N",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "line",
+        "x1": 130,
+        "y1": 160,
+        "x2": 130.0,
+        "y2": 146.0,
+        "dash": false,
+        "color": "ink",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          130,
+          141
+         ],
+         [
+          127.0,
+          148.0
+         ],
+         [
+          133.0,
+          148.0
+         ]
+        ],
+        "fill": "ink",
+        "color": "ink"
+       },
+       {
+        "t": "text",
+        "x": 145,
+        "y": 147,
+        "v": "280 N",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 180,
+        "v": "Aynı rijit küp",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S2",
+   "title": "Maket teknenin iki sıvıdaki duruşu",
+   "type": "Çoktan seçmeli",
+   "level": "Uygulama",
+   "skill": "Koşullu karşılaştırma",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Toplam kütlesi 200 g olan bir maket tekne, önce yoğunluğu 1,00 g/cm³ olan A sıvısında, sonra 1,25 g/cm³ olan B sıvısında serbestçe yüzüyor. Tekne su almıyor; yükü ve yer çekimi değişmiyor. Her iki durumda da teknenin bir bölümü sıvı dışında. B'de teknenin batan hacmi ve kaldırma kuvveti, A'ya göre nasıldır?",
+   "options": [
+    "A) Batan hacim artar; kaldırma kuvveti artar.",
+    "B) Batan hacim değişmez; kaldırma kuvveti artar.",
+    "C) Batan hacim azalır; kaldırma kuvveti değişmez.",
+    "D) Batan hacim azalır; kaldırma kuvveti azalır.",
+    "E) Batan hacim artar; kaldırma kuvveti değişmez."
+   ],
+   "answer": "C",
+   "explanation": "Yüzme dengesi sürdüğünden kaldırma kuvveti her iki sıvıda da teknenin ağırlığına eşittir. Batan hacim A'da 200 cm³, B'de 160 cm³ olur. Yoğunluk artarken hacim azalır; yoğunluk ile batan hacmin çarpımı sabit kalır.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Yoğunluk artınca yüzen her cisme etki eden kaldırma kuvvetinin artacağını düşünme.",
+   "figure": {
+    "alt": "A sıvısında yüzen tekne ve B sıvısında bulunması istenen yeni yüzme durumu.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "A sıvısı",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 75,
+        "w": 170,
+        "h": 80,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 20,
+        "v": "Yoğunluk: 1,00 g/cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          77,
+          59
+         ],
+         [
+          163,
+          59
+         ],
+         [
+          153,
+          86
+         ],
+         [
+          145,
+          94
+         ],
+         [
+          95,
+          94
+         ],
+         [
+          87,
+          86
+         ]
+        ],
+        "fill": "object"
+       },
+       {
+        "t": "rect",
+        "x": 104,
+        "y": 40,
+        "w": 32,
+        "h": 19,
+        "fill": "paper",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 110,
+        "y": 44,
+        "w": 7,
+        "h": 8,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 121,
+        "y": 44,
+        "w": 7,
+        "h": 8,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 83,
+        "y1": 67,
+        "x2": 157,
+        "y2": 67,
+        "dash": false,
+        "color": "paper",
+        "width": 1.5
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 82,
+        "y2": 75,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 158,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 177,
+        "v": "Toplam kütle: 200 g",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "B sıvısı",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 75,
+        "w": 170,
+        "h": 80,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 20,
+        "v": "Yoğunluk: 1,25 g/cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       },
+       {
+        "t": "text",
+        "x": 70,
+        "y": 110,
+        "v": "Yeni denge?",
+        "size": 15,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 49,
+        "y": 138,
+        "v": "Batan hacim: ?",
+        "size": 13,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 177,
+        "v": "Toplam kütle: 200 g",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S3",
+   "title": "Aynı sıvılar, farklı deney koşulu",
+   "type": "Çoktan seçmeli",
+   "level": "Uygulama",
+   "skill": "Değişken kontrolü",
+   "outcome": "FİZ.9.3.5",
+   "stem": "Bir laboratuvarda rijit bir metal parça, yoğunluğu 1,00 g/cm³ olan A ve 1,25 g/cm³ olan B sıvılarında sırayla, tamamen batmış olarak bir iple tutuluyor. Parça kaplara değmiyor; hacmi ve yer çekimi değişmiyor. A'da kaldırma kuvveti F ise B'de kaç F olur?",
+   "options": [
+    "A) 0,80 F",
+    "B) F",
+    "C) 1,50 F",
+    "D) 2,25 F",
+    "E) 1,25 F"
+   ],
+   "answer": "E",
+   "explanation": "Tam batmış rijit cismin batan hacmi değişmez. Yer çekimi de sabit olduğundan kaldırma kuvveti sıvı yoğunluğu ile aynı oranda değişir: 1,25 / 1,00 = 1,25. S2'deki yüzen cismin koşulları burada geçerli değildir.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Yüzme dengesindeki sonucu, ip ile tutulan tam batmış cisme genelleme.",
+   "figure": {
+    "alt": "Aynı metal parça farklı yoğunluktaki iki sıvıda tamamen batmış ve iple tutuluyor.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "A sıvısı",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 101,
+        "y1": 29,
+        "x2": 139,
+        "y2": 29,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 102,
+        "y1": 29,
+        "x2": 106,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 109,
+        "y1": 29,
+        "x2": 113,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 116,
+        "y1": 29,
+        "x2": 120,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 123,
+        "y1": 29,
+        "x2": 127,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 130,
+        "y1": 29,
+        "x2": 134,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 137,
+        "y1": 29,
+        "x2": 141,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 29,
+        "x2": 120,
+        "y2": 105,
+        "dash": false
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 105,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 109,
+        "x2": 135.0,
+        "y2": 109,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Yoğunluk: 1,00 g/cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 20,
+        "v": "Kaldırma kuvveti: F",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "B sıvısı",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 101,
+        "y1": 29,
+        "x2": 139,
+        "y2": 29,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 102,
+        "y1": 29,
+        "x2": 106,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 109,
+        "y1": 29,
+        "x2": 113,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 116,
+        "y1": 29,
+        "x2": 120,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 123,
+        "y1": 29,
+        "x2": 127,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 130,
+        "y1": 29,
+        "x2": 134,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 137,
+        "y1": 29,
+        "x2": 141,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 29,
+        "x2": 120,
+        "y2": 105,
+        "dash": false
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 105,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 109,
+        "x2": 135.0,
+        "y2": 109,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Yoğunluk: 1,25 g/cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 20,
+        "v": "Kaldırma kuvveti: ?",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S4",
+   "title": "Farklı malzeme, eşit dış hacim",
+   "type": "Çoktan seçmeli",
+   "level": "Başlangıç",
+   "skill": "İlgili değişkeni seçme",
+   "outcome": "FİZ.9.3.5",
+   "stem": "Bir malzeme atölyesinde X ve Y parçalarının dış hacimleri 100'er cm³, kütleleri sırasıyla 150 g ve 300 g'dır. Her ikisi de aynı homojen suda tamamen batmış ve iple sabit tutuluyor. Parçalar su almıyor, şekil değiştirmiyor ve kaba değmiyor. Kaldırma kuvvetleri nasıl karşılaştırılır?",
+   "options": [
+    "A) Y'ye etki eden kuvvet X'in iki katıdır.",
+    "B) İkisine etki eden kaldırma kuvveti eşittir.",
+    "C) X'e etki eden kuvvet Y'nin iki katıdır.",
+    "D) Kütleler farklı olduğu için karşılaştırma yapılamaz.",
+    "E) Parçalar sudan yoğun olduğu için kaldırma kuvveti sıfırdır."
+   ],
+   "answer": "B",
+   "explanation": "Aynı sıvı, aynı yer çekimi ve eşit batan hacim eşit kaldırma kuvveti verir. Parçaların ağırlıkları farklıdır; bu nedenle onları sabit tutan iplerin gerilmeleri farklı olabilir.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Cismin kütlesini kaldırma kuvvetinin doğrudan belirleyicisi sayma.",
+   "figure": {
+    "alt": "Aynı suda eşit dış hacimli X ve Y parçaları, farklı kütlelerine rağmen tamamen batmış durumda.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "X parçası",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 101,
+        "y1": 29,
+        "x2": 139,
+        "y2": 29,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 102,
+        "y1": 29,
+        "x2": 106,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 109,
+        "y1": 29,
+        "x2": 113,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 116,
+        "y1": 29,
+        "x2": 120,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 123,
+        "y1": 29,
+        "x2": 127,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 130,
+        "y1": 29,
+        "x2": 134,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 137,
+        "y1": 29,
+        "x2": 141,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 29,
+        "x2": 120,
+        "y2": 105,
+        "dash": false
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 105,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 109,
+        "x2": 135.0,
+        "y2": 109,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 114,
+        "y": 124,
+        "v": "X",
+        "size": 13,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 20,
+        "v": "Kütle: 150 g",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Dış hacim: 100 cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Y parçası",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 101,
+        "y1": 29,
+        "x2": 139,
+        "y2": 29,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 102,
+        "y1": 29,
+        "x2": 106,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 109,
+        "y1": 29,
+        "x2": 113,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 116,
+        "y1": 29,
+        "x2": 120,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 123,
+        "y1": 29,
+        "x2": 127,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 130,
+        "y1": 29,
+        "x2": 134,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 137,
+        "y1": 29,
+        "x2": 141,
+        "y2": 25,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 29,
+        "x2": 120,
+        "y2": 105,
+        "dash": false
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 105,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 109,
+        "x2": 135.0,
+        "y2": 109,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 114,
+        "y": 124,
+        "v": "Y",
+        "size": 13,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 20,
+        "v": "Kütle: 300 g",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Dış hacim: 100 cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S5",
+   "title": "Esnek balon neden farklı?",
+   "type": "Çoktan seçmeli",
+   "level": "Uygulama",
+   "skill": "Modelin sınırlarını tanıma",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Tamamen suya batırılmış kapalı, esnek bir balon daha derine indirilirken ölçülen hacmi 200 cm³ten 120 cm³e düşüyor. Su homojen, yer çekimi sabit ve balon kaba değmiyor. Yeni kaldırma kuvveti ilk değerin hangi oranındadır?",
+   "options": [
+    "A) 0,60",
+    "B) 1,00",
+    "C) 1,40",
+    "D) 1,67",
+    "E) 0,40"
+   ],
+   "answer": "A",
+   "explanation": "Batan hacim 120 / 200 = 0,60 katına düşmüştür. Sıvı yoğunluğu ve yer çekimi sabit olduğundan kaldırma kuvveti de ilk değerin 0,60 katıdır. Rijit küpte kullanılan 'hacim sabit' koşulu bu örnekte sağlanmaz.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Derinlikten bağımsızlığı hacmi değişen her cisme uygulama.",
+   "figure": {
+    "alt": "Tamamen batmış esnek balonun derine indikçe küçülen hacmi.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "İlk konum",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 94,
+        "rx": 21,
+        "ry": 17.849999999999998,
+        "fill": "paper"
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          117,
+          111.85
+         ],
+         [
+          123,
+          111.85
+         ],
+         [
+          120,
+          117.85
+         ]
+        ],
+        "fill": "paper"
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Hacim: 200 cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Daha derinde",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 119,
+        "rx": 18,
+        "ry": 15.299999999999999,
+        "fill": "paper"
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          117,
+          134.3
+         ],
+         [
+          123,
+          134.3
+         ],
+         [
+          120,
+          140.3
+         ]
+        ],
+        "fill": "paper"
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Hacim: 120 cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S6",
+   "title": "Dinamometre neyi gösteriyor?",
+   "type": "Çoktan seçmeli",
+   "level": "Başlangıç",
+   "skill": "Ölçümü yorumlama",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Bir teknisyen aynı metal parçayı şekildeki iki durumda dengede tutuyor. Dinamometre okumaları şekillerde verilmiştir. Parça su içinde tamamen batmıştır ve kaba değmez. Havanın kaldırma etkisi ihmal ediliyor. Parçanın gerçek ağırlığı ve sudaki kaldırma kuvveti hangisidir?",
+   "options": [
+    "A) Gerçek ağırlık 3 N; kaldırma kuvveti 2 N.",
+    "B) Gerçek ağırlık 5 N; kaldırma kuvveti 3 N.",
+    "C) Gerçek ağırlık 2 N; kaldırma kuvveti 3 N.",
+    "D) Gerçek ağırlık 5 N; kaldırma kuvveti 2 N.",
+    "E) Gerçek ağırlık 3 N; kaldırma kuvveti 5 N."
+   ],
+   "answer": "D",
+   "explanation": "Gerçek ağırlık 5 N olarak kalır. Suda yukarı yönlü kaldırma kuvveti de etkidiğinden dinamometre 3 N gösterir. Denge için kaldırma kuvveti 5 - 3 = 2 N'dur. Dinamometrenin suda gösterdiği değer gerçek ağırlıkla aynı değildir.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Dinamometredeki azalmayı cismin gerçek ağırlığının azalması sayma.",
+   "figure": {
+    "alt": "Dinamometre aynı cisim havadayken 5 N, cisim tamamen suya batırılınca 3 N gösteriyor.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Havada, dengede",
+      "items": [
+       {
+        "t": "line",
+        "x1": 97,
+        "y1": 8,
+        "x2": 143,
+        "y2": 8,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 99,
+        "y1": 8,
+        "x2": 103,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 106,
+        "y1": 8,
+        "x2": 110,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 113,
+        "y1": 8,
+        "x2": 117,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 124,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 127,
+        "y1": 8,
+        "x2": 131,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 134,
+        "y1": 8,
+        "x2": 138,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 120,
+        "y2": 14,
+        "dash": false
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 18,
+        "rx": 4,
+        "ry": 4,
+        "fill": "paper"
+       },
+       {
+        "t": "rect",
+        "x": 108,
+        "y": 22,
+        "w": 24,
+        "h": 42,
+        "fill": "paper",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 111,
+        "y": 26,
+        "w": 10,
+        "h": 32,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          116,
+          28
+         ],
+         [
+          116,
+          30
+         ],
+         [
+          113,
+          32
+         ],
+         [
+          119,
+          35
+         ],
+         [
+          113,
+          38
+         ],
+         [
+          119,
+          41
+         ],
+         [
+          113,
+          44
+         ],
+         [
+          119,
+          47
+         ],
+         [
+          116,
+          50
+         ],
+         [
+          116,
+          55
+         ]
+        ],
+        "fill": "none",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 29,
+        "x2": 129,
+        "y2": 29,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 34,
+        "x2": 129,
+        "y2": 34,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 39,
+        "x2": 129,
+        "y2": 39,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 44,
+        "x2": 129,
+        "y2": 44,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 49,
+        "x2": 129,
+        "y2": 49,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 54,
+        "x2": 129,
+        "y2": 54,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 64,
+        "x2": 120,
+        "y2": 105,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 132,
+        "y1": 41,
+        "x2": 142,
+        "y2": 41,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 146,
+        "y": 45,
+        "v": "5 N",
+        "size": 14,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 105,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 109,
+        "x2": 135.0,
+        "y2": 109,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Aynı metal parça",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Suda, dengede",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 75,
+        "w": 170,
+        "h": 80,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 97,
+        "y1": 8,
+        "x2": 143,
+        "y2": 8,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 99,
+        "y1": 8,
+        "x2": 103,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 106,
+        "y1": 8,
+        "x2": 110,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 113,
+        "y1": 8,
+        "x2": 117,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 124,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 127,
+        "y1": 8,
+        "x2": 131,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 134,
+        "y1": 8,
+        "x2": 138,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 120,
+        "y2": 14,
+        "dash": false
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 18,
+        "rx": 4,
+        "ry": 4,
+        "fill": "paper"
+       },
+       {
+        "t": "rect",
+        "x": 108,
+        "y": 22,
+        "w": 24,
+        "h": 42,
+        "fill": "paper",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 111,
+        "y": 26,
+        "w": 10,
+        "h": 32,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          116,
+          28
+         ],
+         [
+          116,
+          30
+         ],
+         [
+          113,
+          32
+         ],
+         [
+          119,
+          35
+         ],
+         [
+          113,
+          38
+         ],
+         [
+          119,
+          41
+         ],
+         [
+          113,
+          44
+         ],
+         [
+          119,
+          47
+         ],
+         [
+          116,
+          50
+         ],
+         [
+          116,
+          55
+         ]
+        ],
+        "fill": "none",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 29,
+        "x2": 129,
+        "y2": 29,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 34,
+        "x2": 129,
+        "y2": 34,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 39,
+        "x2": 129,
+        "y2": 39,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 44,
+        "x2": 129,
+        "y2": 44,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 49,
+        "x2": 129,
+        "y2": 49,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 54,
+        "x2": 129,
+        "y2": 54,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 64,
+        "x2": 120,
+        "y2": 105,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 132,
+        "y1": 41,
+        "x2": 142,
+        "y2": 41,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 146,
+        "y": 45,
+        "v": "3 N",
+        "size": 14,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 105,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 109,
+        "x2": 135.0,
+        "y2": 109,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Cisim kaba değmiyor",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S7",
+   "title": "Yüklenen servis teknesi",
+   "type": "Çoktan seçmeli",
+   "level": "Uygulama",
+   "skill": "Orantısal akıl yürütme",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Durgun suda serbestçe yüzen bir maket servis teknesinin toplam kütlesi, eklenen yükle 200 g'dan 250 g'a çıkıyor. Tekne su almıyor; yeni durumda da bir bölümü su dışında kalıyor. Suyun yoğunluğu ve yer çekimi değişmiyor. Yeni kaldırma kuvveti ve batan hacim nasıl değişir?",
+   "options": [
+    "A) İkisi de %25 artar.",
+    "B) Kaldırma kuvveti %25 artar; batan hacim değişmez.",
+    "C) Kaldırma kuvveti değişmez; batan hacim %25 artar.",
+    "D) İkisi de %20 azalır.",
+    "E) İkisi de %20 artar."
+   ],
+   "answer": "A",
+   "explanation": "Toplam ağırlık 250 / 200 = 1,25 katına çıkar. Yeni yüzme dengesinde kaldırma kuvveti de aynı oranda artar. Sıvı yoğunluğu ve yer çekimi sabit olduğundan batan hacim de %25 artar.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Yüzen cisme etki eden kaldırma kuvvetinin yük değişse de sabit kalacağını düşünme.",
+   "figure": {
+    "alt": "Başlangıçta yüzen tekneye yük ekleniyor; yeni denge durumunun batan hacmi soruluyor.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Yük eklenmeden önce",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 75,
+        "w": 170,
+        "h": 80,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          77,
+          59
+         ],
+         [
+          163,
+          59
+         ],
+         [
+          153,
+          86
+         ],
+         [
+          145,
+          94
+         ],
+         [
+          95,
+          94
+         ],
+         [
+          87,
+          86
+         ]
+        ],
+        "fill": "object"
+       },
+       {
+        "t": "rect",
+        "x": 104,
+        "y": 40,
+        "w": 32,
+        "h": 19,
+        "fill": "paper",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 110,
+        "y": 44,
+        "w": 7,
+        "h": 8,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 121,
+        "y": 44,
+        "w": 7,
+        "h": 8,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 83,
+        "y1": 67,
+        "x2": 157,
+        "y2": 67,
+        "dash": false,
+        "color": "paper",
+        "width": 1.5
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 82,
+        "y2": 75,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 158,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 177,
+        "v": "Toplam kütle: 200 g",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Yük eklendikten sonra",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 75,
+        "w": 170,
+        "h": 80,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 70,
+        "y": 110,
+        "v": "Yeni denge?",
+        "size": 15,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 49,
+        "y": 138,
+        "v": "Batan hacim: ?",
+        "size": 13,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 177,
+        "v": "Toplam kütle: 250 g",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S8",
+   "title": "Adil bir deney karşılaştırması",
+   "type": "Çoktan seçmeli",
+   "level": "Uygulama",
+   "skill": "Deney tasarımı",
+   "outcome": "FİZ.9.3.5",
+   "stem": "Öğrenciler, sıvı yoğunluğunun kaldırma kuvvetine etkisini araştırıyor. Bütün denemelerde yer çekimi aynı; cisimler kaba değmiyor. Yalnızca sıvı yoğunluğunun etkisini ayırabilmek için hangi iki karşılaştırma uygundur?",
+   "table": [
+    [
+     "Deneme",
+     "Sıvı yoğunluğu (g/cm³)",
+     "Batan hacim (cm³)"
+    ],
+    [
+     "A",
+     "1,00",
+     "80"
+    ],
+    [
+     "B",
+     "1,00",
+     "120"
+    ],
+    [
+     "C",
+     "1,20",
+     "80"
+    ],
+    [
+     "D",
+     "1,20",
+     "120"
+    ]
+   ],
+   "options": [
+    "A) A-B ve C-D",
+    "B) A-D ve B-C",
+    "C) A-C ve B-D",
+    "D) A-B ve A-D",
+    "E) A-C ve A-D"
+   ],
+   "answer": "C",
+   "explanation": "A-C karşılaştırmasında batan hacim 80 cm³, B-D karşılaştırmasında 120 cm³ olarak sabittir; değişen sıvı yoğunluğudur. A-B ve C-D hacim etkisini araştırır. A-D ve B-C'de iki değişken aynı anda değişir.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Birden çok değişkeni birlikte değiştirip sonucu tek nedene bağlama."
+  },
+  {
+   "id": "S9",
+   "title": "Su altı kamerasının gövdesi",
+   "type": "Çoktan seçmeli",
+   "level": "Uygulama",
+   "skill": "Veriye dayalı gerekçe",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Rijit ve sızdırmaz bir su altı kamerası, homojen suda tamamen batmış olarak iple tutuluyor. Derine indirilirken gövdesindeki basınç sensörünün değeri artıyor; dinamometre değeri aynı kalıyor. Bir öğrenci, 'Basınç artmışsa kaldırma kuvveti de mutlaka artmıştır' diyor. İki ölçümü birlikte kullanarak bu iddiayı değerlendiriniz. Cismin hacmi, kütlesi ve yer çekimi sabittir. Bu verilere göre hangi yorum doğrudur?",
+   "answer": "E",
+   "explanation": "Yerel sıvı basıncı derinlikle artar. Buna karşılık karşıt yüzeylerdeki kuvvetler birlikte arttığından bileşke kaldırma kuvveti sabit kalır. Gerçek ağırlık sabitken dinamometre değerinin de sabit olması bu sonuçla uyumludur. Basınç artışı gövde dayanımını ilgilendirir; tek başına net kaldırmanın arttığını göstermez.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Yerel basınç ile cisme etki eden net kuvveti eşitleme.",
+   "options": [
+    "A) Basınç arttığı için cismin gerçek ağırlığı artmıştır.",
+    "B) Dinamometre sabit olduğundan gövdedeki sıvı basıncı sabittir.",
+    "C) Kaldırma kuvveti artmış, cismin ağırlığı aynı miktarda azalmıştır.",
+    "D) Basınç sensörü ile dinamometre aynı fiziksel niceliği ölçer.",
+    "E) Yerel basınç artarken net kaldırma kuvveti sabit kalmıştır."
+   ],
+   "figure": {
+    "alt": "Tamamen batmış kamera iki derinlikte; dinamometre T sabit, yerel basınç ikinci durumda daha büyük.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Daha sığ",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 97,
+        "y1": 8,
+        "x2": 143,
+        "y2": 8,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 99,
+        "y1": 8,
+        "x2": 103,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 106,
+        "y1": 8,
+        "x2": 110,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 113,
+        "y1": 8,
+        "x2": 117,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 124,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 127,
+        "y1": 8,
+        "x2": 131,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 134,
+        "y1": 8,
+        "x2": 138,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 120,
+        "y2": 14,
+        "dash": false
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 18,
+        "rx": 4,
+        "ry": 4,
+        "fill": "paper"
+       },
+       {
+        "t": "rect",
+        "x": 108,
+        "y": 22,
+        "w": 24,
+        "h": 42,
+        "fill": "paper",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 111,
+        "y": 26,
+        "w": 10,
+        "h": 32,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          116,
+          28
+         ],
+         [
+          116,
+          30
+         ],
+         [
+          113,
+          32
+         ],
+         [
+          119,
+          35
+         ],
+         [
+          113,
+          38
+         ],
+         [
+          119,
+          41
+         ],
+         [
+          113,
+          44
+         ],
+         [
+          119,
+          47
+         ],
+         [
+          116,
+          50
+         ],
+         [
+          116,
+          55
+         ]
+        ],
+        "fill": "none",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 29,
+        "x2": 129,
+        "y2": 29,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 34,
+        "x2": 129,
+        "y2": 34,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 39,
+        "x2": 129,
+        "y2": 39,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 44,
+        "x2": 129,
+        "y2": 44,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 49,
+        "x2": 129,
+        "y2": 49,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 54,
+        "x2": 129,
+        "y2": 54,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 64,
+        "x2": 120,
+        "y2": 88,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 132,
+        "y1": 41,
+        "x2": 142,
+        "y2": 41,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 146,
+        "y": 45,
+        "v": "T",
+        "size": 14,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 88,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 92,
+        "x2": 135.0,
+        "y2": 92,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 102,
+        "rx": 8,
+        "ry": 8,
+        "fill": "paper"
+       },
+       {
+        "t": "text",
+        "x": 154,
+        "y": 106,
+        "v": "p₁",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Aynı kamera",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Daha derin",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 97,
+        "y1": 8,
+        "x2": 143,
+        "y2": 8,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 99,
+        "y1": 8,
+        "x2": 103,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 106,
+        "y1": 8,
+        "x2": 110,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 113,
+        "y1": 8,
+        "x2": 117,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 124,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 127,
+        "y1": 8,
+        "x2": 131,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 134,
+        "y1": 8,
+        "x2": 138,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 120,
+        "y2": 14,
+        "dash": false
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 18,
+        "rx": 4,
+        "ry": 4,
+        "fill": "paper"
+       },
+       {
+        "t": "rect",
+        "x": 108,
+        "y": 22,
+        "w": 24,
+        "h": 42,
+        "fill": "paper",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 111,
+        "y": 26,
+        "w": 10,
+        "h": 32,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          116,
+          28
+         ],
+         [
+          116,
+          30
+         ],
+         [
+          113,
+          32
+         ],
+         [
+          119,
+          35
+         ],
+         [
+          113,
+          38
+         ],
+         [
+          119,
+          41
+         ],
+         [
+          113,
+          44
+         ],
+         [
+          119,
+          47
+         ],
+         [
+          116,
+          50
+         ],
+         [
+          116,
+          55
+         ]
+        ],
+        "fill": "none",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 29,
+        "x2": 129,
+        "y2": 29,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 34,
+        "x2": 129,
+        "y2": 34,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 39,
+        "x2": 129,
+        "y2": 39,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 44,
+        "x2": 129,
+        "y2": 44,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 49,
+        "x2": 129,
+        "y2": 49,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 54,
+        "x2": 129,
+        "y2": 54,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 64,
+        "x2": 120,
+        "y2": 114,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 132,
+        "y1": 41,
+        "x2": 142,
+        "y2": 41,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 146,
+        "y": 45,
+        "v": "T",
+        "size": 14,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 114,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 118,
+        "x2": 135.0,
+        "y2": 118,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 128,
+        "rx": 8,
+        "ry": 8,
+        "fill": "paper"
+       },
+       {
+        "t": "text",
+        "x": 154,
+        "y": 132,
+        "v": "p₂ > p₁",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Aynı kamera",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S10",
+   "title": "İki kargo kapsülü",
+   "type": "Çoktan seçmeli",
+   "level": "Uygulama",
+   "skill": "Modeli yeni duruma uygulama",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Bir ekip, şekilde kütle ve dış hacimleri verilen rijit ve sızdırmaz K ve L kargo kapsüllerini aynı suda tamamen batmış hâlde tutup serbest bırakıyor. Su yoğunluğu 1 g/cm³, g = 10 N/kg. Kapsüller su almıyor, şekil değiştirmiyor ve kaba değmiyor. Serbest bırakılma anındaki kaldırma kuvvetleri ve ilk hareket eğilimleri hangisidir?",
+   "options": [
+    "A) K: 4 N, dengede; L: 4 N, dengede.",
+    "B) K: 6 N, aşağı; L: 2 N, yukarı.",
+    "C) K: 2 N, aşağı; L: 6 N, yukarı.",
+    "D) K: 6 N, yukarı; L: 2 N, aşağı.",
+    "E) K: 6 N, yukarı; L: 4 N, dengede."
+   ],
+   "answer": "D",
+   "explanation": "Tam batmış kapsüller sırasıyla 600 g ve 200 g suyun yerini değiştirir; kaldırma kuvvetleri 6 N ve 2 N olur. Her birinin ağırlığı 4 N olduğundan K yukarı, L aşağı hareket etme eğilimindedir. K daha sonra yüzme dengesine gelirse kaldırma kuvveti 4 N olur; soru ilk anı soruyor.",
+   "misconception": "Yüzme dengesindeki kuvvet eşitliğini tam batmış cismin her durumuna uygulama.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "figure": {
+    "alt": "K ve L kapsülleri tamamen su içinde serbest bırakılma anında; ikisi de 400 gram, dış hacimleri farklı. Hareket yönü verilmemiştir.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "K kapsülü",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "rect",
+        "x": 90.0,
+        "y": 95,
+        "w": 60,
+        "h": 36,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 94.0,
+        "y1": 99,
+        "x2": 146.0,
+        "y2": 99,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 114,
+        "y": 114,
+        "v": "K",
+        "size": 13,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 20,
+        "v": "Kütle: 400 g",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Dış hacim: 600 cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "L kapsülü",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "rect",
+        "x": 99.0,
+        "y": 95,
+        "w": 42,
+        "h": 25,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 103.0,
+        "y1": 99,
+        "x2": 137.0,
+        "y2": 99,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 114,
+        "y": 114,
+        "v": "L",
+        "size": 13,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 20,
+        "v": "Kütle: 400 g",
+        "size": 13,
+        "anchor": "middle",
+        "weight": 500
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Dış hacim: 200 cm³",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S11",
+   "title": "Taşan suyun söylediği",
+   "type": "Çoktan seçmeli",
+   "level": "Uygulama",
+   "skill": "İki ölçümden kanıt oluşturma",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Bir taşırma kabındaki su taşma seviyesine kadar doludur. İpe bağlı rijit cisim tamamen batırılıp dengede tutulduğunda 100 cm³ su taşar. Cisim kaba değmez. Dinamometre havada 4 N, suda 3 N gösterir. Suyun yoğunluğu 1 g/cm³, yer çekimi 10 N/kg'dır; havanın kaldırma etkisi ihmal edilir. Taşan suyun ağırlığı ve cisme etki eden kaldırma kuvveti sırasıyla kaç N olur?",
+   "answer": "B",
+   "explanation": "100 cm³ suyun kütlesi 100 g = 0,1 kg; ağırlığı 0,1 × 10 = 1 N'dur. Dinamometre farkı 4 - 3 = 1 N'dur. Bu iki bağımsız hesap aynı sonuca ulaşır: kaldırma kuvveti, yer değiştiren sıvının ağırlığına eşittir.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Yer değiştiren sıvının ağırlığı ile cismin kendi ağırlığını karıştırma.",
+   "options": [
+    "A) 0,1 ve 1",
+    "B) 1 ve 1",
+    "C) 1 ve 3",
+    "D) 3 ve 1",
+    "E) 4 ve 4"
+   ],
+   "figure": {
+    "alt": "Taşırma kabına batırılan cisim dinamometrede 3 N gösteriyor; ayrı kapta 100 santimetreküp taşan su toplanıyor. Havada okuma 4 N.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Havada",
+      "items": [
+       {
+        "t": "line",
+        "x1": 97,
+        "y1": 8,
+        "x2": 143,
+        "y2": 8,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 99,
+        "y1": 8,
+        "x2": 103,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 106,
+        "y1": 8,
+        "x2": 110,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 113,
+        "y1": 8,
+        "x2": 117,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 124,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 127,
+        "y1": 8,
+        "x2": 131,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 134,
+        "y1": 8,
+        "x2": 138,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 8,
+        "x2": 120,
+        "y2": 14,
+        "dash": false
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 18,
+        "rx": 4,
+        "ry": 4,
+        "fill": "paper"
+       },
+       {
+        "t": "rect",
+        "x": 108,
+        "y": 22,
+        "w": 24,
+        "h": 42,
+        "fill": "paper",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 111,
+        "y": 26,
+        "w": 10,
+        "h": 32,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          116,
+          28
+         ],
+         [
+          116,
+          30
+         ],
+         [
+          113,
+          32
+         ],
+         [
+          119,
+          35
+         ],
+         [
+          113,
+          38
+         ],
+         [
+          119,
+          41
+         ],
+         [
+          113,
+          44
+         ],
+         [
+          119,
+          47
+         ],
+         [
+          116,
+          50
+         ],
+         [
+          116,
+          55
+         ]
+        ],
+        "fill": "none",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 29,
+        "x2": 129,
+        "y2": 29,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 34,
+        "x2": 129,
+        "y2": 34,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 39,
+        "x2": 129,
+        "y2": 39,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 44,
+        "x2": 129,
+        "y2": 44,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 49,
+        "x2": 129,
+        "y2": 49,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 125,
+        "y1": 54,
+        "x2": 129,
+        "y2": 54,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 64,
+        "x2": 120,
+        "y2": 105,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 132,
+        "y1": 41,
+        "x2": 142,
+        "y2": 41,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 146,
+        "y": 45,
+        "v": "4 N",
+        "size": 14,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "rect",
+        "x": 101.0,
+        "y": 105,
+        "w": 38,
+        "h": 28,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 105.0,
+        "y1": 109,
+        "x2": 135.0,
+        "y2": 109,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Aynı rijit cisim",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Taşırma kabında",
+      "items": [
+       {
+        "t": "rect",
+        "x": 22,
+        "y": 78,
+        "w": 128,
+        "h": 77,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "line",
+        "x1": 22,
+        "y1": 47,
+        "x2": 22,
+        "y2": 155,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 22,
+        "y1": 155,
+        "x2": 150,
+        "y2": 155,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 150,
+        "y1": 155,
+        "x2": 150,
+        "y2": 84,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 22,
+        "y1": 78,
+        "x2": 150,
+        "y2": 78,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 150,
+        "y1": 78,
+        "x2": 177,
+        "y2": 90,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 150,
+        "y1": 84,
+        "x2": 173,
+        "y2": 96,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 176,
+        "y1": 96,
+        "x2": 176,
+        "y2": 115,
+        "dash": true
+       },
+       {
+        "t": "line",
+        "x1": 63,
+        "y1": 8,
+        "x2": 109,
+        "y2": 8,
+        "dash": false,
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 65,
+        "y1": 8,
+        "x2": 69,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 72,
+        "y1": 8,
+        "x2": 76,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 79,
+        "y1": 8,
+        "x2": 83,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 86,
+        "y1": 8,
+        "x2": 90,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 93,
+        "y1": 8,
+        "x2": 97,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 100,
+        "y1": 8,
+        "x2": 104,
+        "y2": 4,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 86,
+        "y1": 8,
+        "x2": 86,
+        "y2": 14,
+        "dash": false
+       },
+       {
+        "t": "ellipse",
+        "x": 86,
+        "y": 18,
+        "rx": 4,
+        "ry": 4,
+        "fill": "paper"
+       },
+       {
+        "t": "rect",
+        "x": 74,
+        "y": 22,
+        "w": 24,
+        "h": 42,
+        "fill": "paper",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 77,
+        "y": 26,
+        "w": 10,
+        "h": 32,
+        "fill": "instrument",
+        "radius": 2.5
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          82,
+          28
+         ],
+         [
+          82,
+          30
+         ],
+         [
+          79,
+          32
+         ],
+         [
+          85,
+          35
+         ],
+         [
+          79,
+          38
+         ],
+         [
+          85,
+          41
+         ],
+         [
+          79,
+          44
+         ],
+         [
+          85,
+          47
+         ],
+         [
+          82,
+          50
+         ],
+         [
+          82,
+          55
+         ]
+        ],
+        "fill": "none",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 91,
+        "y1": 29,
+        "x2": 95,
+        "y2": 29,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 91,
+        "y1": 34,
+        "x2": 95,
+        "y2": 34,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 91,
+        "y1": 39,
+        "x2": 95,
+        "y2": 39,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 91,
+        "y1": 44,
+        "x2": 95,
+        "y2": 44,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 91,
+        "y1": 49,
+        "x2": 95,
+        "y2": 49,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 91,
+        "y1": 54,
+        "x2": 95,
+        "y2": 54,
+        "dash": false,
+        "width": 0.7
+       },
+       {
+        "t": "line",
+        "x1": 86,
+        "y1": 64,
+        "x2": 86,
+        "y2": 106,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 98,
+        "y1": 41,
+        "x2": 108,
+        "y2": 41,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "text",
+        "x": 112,
+        "y": 45,
+        "v": "3 N",
+        "size": 14,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "rect",
+        "x": 69,
+        "y": 106,
+        "w": 34,
+        "h": 27,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "rect",
+        "x": 162,
+        "y": 128,
+        "w": 52,
+        "h": 27,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "line",
+        "x1": 162,
+        "y1": 113,
+        "x2": 162,
+        "y2": 155,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 162,
+        "y1": 155,
+        "x2": 214,
+        "y2": 155,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 214,
+        "y1": 113,
+        "x2": 214,
+        "y2": 155,
+        "dash": false
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 177,
+        "v": "100 cm³ su",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  },
+  {
+   "id": "S12",
+   "title": "Bir genellemenin sınırı",
+   "type": "Çoktan seçmeli",
+   "level": "Aktarım",
+   "skill": "Genellemenin sınırlarını belirleme",
+   "outcome": "FİZ.9.3.6",
+   "stem": "Bir su altı kulübü eğitim afişine “Cismi daha derine indirmek kaldırma kuvvetini değiştirmez” yazıyor. Homojen suda, tamamen batmış kapalı esnek bir balonun derine indikçe hacminin küçüldüğü gözleniyor. Yer çekimi sabit. Bu gözlemi dikkate alan en uygun düzeltme hangisidir?",
+   "answer": "D",
+   "explanation": "Rijit kutuda batan hacim sabit kaldığı için sonuç geçerlidir. Esnek balon küçülürse batan hacmi ve dolayısıyla kaldırma kuvveti azalır. Genel cümleye tam batma, değişmeyen hacim, sabit sıvı yoğunluğu ve yer çekimi koşulları eklenmelidir.",
+   "rubric": "Seçenek: 1 puan. İsteğe bağlı gerekçe: doğru ilişkiyi veriler ve koşullarla açıklama 2; eksik fakat tutarlı açıklama 1; ilişkisiz veya çelişkili açıklama 0.",
+   "misconception": "Bir modelin sonucunu geçerlilik koşullarından ayırma.",
+   "options": [
+    "A) Kaldırma kuvveti yalnız derinliğe bağlıdır.",
+    "B) Cisim tamamen batmışsa hacmindeki değişim önemsizdir.",
+    "C) Balona etki eden kaldırma kuvveti her derinlikte sıfırdır.",
+    "D) Genelleme, batan hacmi değişmeyen cisim koşuluyla sınırlandırılmalıdır.",
+    "E) Derinlik arttığında bütün cisimlerin batan hacmi azalır."
+   ],
+   "figure": {
+    "alt": "Tamamen batmış esnek balonun derine indikçe küçülen hacmi.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "İlk konum",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 94,
+        "rx": 21,
+        "ry": 17.849999999999998,
+        "fill": "paper"
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          117,
+          111.85
+         ],
+         [
+          123,
+          111.85
+         ],
+         [
+          120,
+          117.85
+         ]
+        ],
+        "fill": "paper"
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "İlk hacim",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Daha derinde",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 90,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "ellipse",
+        "x": 120,
+        "y": 119,
+        "rx": 18,
+        "ry": 15.299999999999999,
+        "fill": "paper"
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          117,
+          134.3
+         ],
+         [
+          123,
+          134.3
+         ],
+         [
+          120,
+          140.3
+         ]
+        ],
+        "fill": "paper"
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 178,
+        "v": "Daha küçük hacim",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Şematiktir; çizimden uzunluk veya kuvvet büyüklüğü ölçülmez."
+   }
+  }
+ ],
+ "sources": [
+  {
+   "title": "MEB Fizik Dersi Öğretim Programı (2026), s.25-30",
+   "url": "https://mufredat.meb.gov.tr/ProgramDetay.aspx?PID=2254"
+  },
+  {
+   "title": "MEB 9. Sınıf Fizik Ders Kitabı, s.169-184 ve 200-203",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/fizik-dersi-9-sinif-ders-kitabi.pdf"
+  },
+  {
+   "title": "TYMM Bağlam Temelli Çoktan Seçmeli Soru Yazım Kılavuzu, s.15-18",
+   "url": "https://tymm.meb.gov.tr/upload/kilavuz/coktan-secmeli-soru-yazim-kilavuzu.pdf"
+  }
+ ],
+ "author_note": "12 soru özgündür; sayısal veriler ideal modellerden türetilmiştir. Sorular beş seçeneklidir. Düzey etiketleri editoryal öneridir; madde güçlüğü ve ayırt ediciliği öğrenci pilotuyla henüz ölçülmemiştir. TYMM öğrenme çıktılarının seçili süreç bileşenlerine yöneliktir; FİZ.9.3.5 kapsamındaki deney yapma becerisinin tamamını ölçtüğü iddia edilmez. MEB/ÖSYM onayı veya gelecek YKS biçimine ilişkin garanti yoktur.",
+ "positioning": "TYMM öğrenme çıktıları temelinde hazırlanmış, YKS hazırlığında kullanılmak üzere tasarlanan özgün fizik soru ve föy demosu. Resmî ÖSYM soru örneği veya gelecekteki sınav biçimine ilişkin garanti değildir.",
+ "summary": [
+  {
+   "title": "Kaldırma kuvveti nedir?",
+   "body": "Sıvı ve gazların, içlerine kısmen veya tamamen batmış cisimlere uyguladığı yukarı yönlü kuvvettir. Durgun sıvıda basınç derinlikle artar; cismin yüzeylerine etki eden basınç kuvvetlerinin bileşkesi kaldırma kuvvetini oluşturur.",
+   "figure": {
+    "alt": "Cismin üst yüzeyinde aşağı, alt yüzeyinde daha büyük yukarı basınç kuvvetleri; yan kuvvetler birbirini dengeler. Sıvının net etkisi yukarı yönlü kaldırma kuvvetidir.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 205,
+      "title": "Basınç kuvvetleri",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 115,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          173
+         ],
+         [
+          35.5,
+          176
+         ],
+         [
+          37,
+          178.5
+         ],
+         [
+          40,
+          180
+         ],
+         [
+          200,
+          180
+         ],
+         [
+          203,
+          178.5
+         ],
+         [
+          204.5,
+          176
+         ],
+         [
+          205,
+          173
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "rect",
+        "x": 96.0,
+        "y": 101,
+        "w": 48,
+        "h": 34,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 100.0,
+        "y1": 105,
+        "x2": 140.0,
+        "y2": 105,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "line",
+        "x1": 107,
+        "y1": 78,
+        "x2": 107.0,
+        "y2": 96.0,
+        "dash": false,
+        "color": "top",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          107,
+          101
+         ],
+         [
+          110.0,
+          94.0
+         ],
+         [
+          104.0,
+          94.0
+         ]
+        ],
+        "fill": "top",
+        "color": "top"
+       },
+       {
+        "t": "line",
+        "x1": 107,
+        "y1": 168,
+        "x2": 107.0,
+        "y2": 140.0,
+        "dash": false,
+        "color": "bottom",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          107,
+          135
+         ],
+         [
+          104.0,
+          142.0
+         ],
+         [
+          110.0,
+          142.0
+         ]
+        ],
+        "fill": "bottom",
+        "color": "bottom"
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 78,
+        "x2": 120.0,
+        "y2": 96.0,
+        "dash": false,
+        "color": "top",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          120,
+          101
+         ],
+         [
+          123.0,
+          94.0
+         ],
+         [
+          117.0,
+          94.0
+         ]
+        ],
+        "fill": "top",
+        "color": "top"
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 168,
+        "x2": 120.0,
+        "y2": 140.0,
+        "dash": false,
+        "color": "bottom",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          120,
+          135
+         ],
+         [
+          117.0,
+          142.0
+         ],
+         [
+          123.0,
+          142.0
+         ]
+        ],
+        "fill": "bottom",
+        "color": "bottom"
+       },
+       {
+        "t": "line",
+        "x1": 133,
+        "y1": 78,
+        "x2": 133.0,
+        "y2": 96.0,
+        "dash": false,
+        "color": "top",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          133,
+          101
+         ],
+         [
+          136.0,
+          94.0
+         ],
+         [
+          130.0,
+          94.0
+         ]
+        ],
+        "fill": "top",
+        "color": "top"
+       },
+       {
+        "t": "line",
+        "x1": 133,
+        "y1": 168,
+        "x2": 133.0,
+        "y2": 140.0,
+        "dash": false,
+        "color": "bottom",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          133,
+          135
+         ],
+         [
+          130.0,
+          142.0
+         ],
+         [
+          136.0,
+          142.0
+         ]
+        ],
+        "fill": "bottom",
+        "color": "bottom"
+       },
+       {
+        "t": "line",
+        "x1": 73,
+        "y1": 113,
+        "x2": 91.0,
+        "y2": 113.0,
+        "dash": false,
+        "color": "side",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          96,
+          113
+         ],
+         [
+          89.0,
+          110.0
+         ],
+         [
+          89.0,
+          116.0
+         ]
+        ],
+        "fill": "side",
+        "color": "side"
+       },
+       {
+        "t": "line",
+        "x1": 167,
+        "y1": 113,
+        "x2": 149.0,
+        "y2": 113.0,
+        "dash": false,
+        "color": "side",
+        "width": 1.7
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          144,
+          113
+         ],
+         [
+          151.0,
+          116.0
+         ],
+         [
+          151.0,
+          110.0
+         ]
+        ],
+        "fill": "side",
+        "color": "side"
+       },
+       {
+        "t": "text",
+        "x": 151,
+        "y": 89,
+        "v": "F üst",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 151,
+        "y": 162,
+        "v": "F alt",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 196,
+        "v": "Alt yüzeydeki etki daha büyük",
+        "size": 11.5,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 205,
+      "title": "Kaldırma kuvveti",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 65,
+        "w": 170,
+        "h": 115,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          173
+         ],
+         [
+          35.5,
+          176
+         ],
+         [
+          37,
+          178.5
+         ],
+         [
+          40,
+          180
+         ],
+         [
+          200,
+          180
+         ],
+         [
+          203,
+          178.5
+         ],
+         [
+          204.5,
+          176
+         ],
+         [
+          205,
+          173
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 65,
+        "x2": 205,
+        "y2": 65,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 60,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "rect",
+        "x": 96.0,
+        "y": 101,
+        "w": 48,
+        "h": 34,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 100.0,
+        "y1": 105,
+        "x2": 140.0,
+        "y2": 105,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "line",
+        "x1": 120,
+        "y1": 118,
+        "x2": 120.0,
+        "y2": 77.0,
+        "dash": false,
+        "color": "net",
+        "width": 3
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          120,
+          72
+         ],
+         [
+          117.0,
+          79.0
+         ],
+         [
+          123.0,
+          79.0
+         ]
+        ],
+        "fill": "net",
+        "color": "net"
+       },
+       {
+        "t": "text",
+        "x": 142,
+        "y": 91,
+        "v": "F kaldırma",
+        "size": 12,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 196,
+        "v": "Basınç kuvvetlerinin bileşkesi",
+        "size": 11.5,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "Yalnız sıvının uyguladığı kuvvetler gösterilmiştir; ağırlık ayrı bir kuvvettir."
+   }
+  },
+  {
+   "title": "Batan hacim ve Arşimet ilkesi",
+   "body": "Batan hacim, cismin sıvı içinde kalan bölümünün hacmidir; her zaman cismin toplam hacmi değildir. Kaldırma kuvvetinin büyüklüğü, cismin yerini değiştirdiği sıvının ağırlığına eşittir.",
+   "figure": {
+    "alt": "Kısmen batan cisimde yalnız su içindeki bölüm; tamamen batan cisimde bütün hacim yer değiştiren sıvı hacmini belirler.",
+    "panels": [
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Kısmen batmış cisim",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 75,
+        "w": 170,
+        "h": 80,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "rect",
+        "x": 91.0,
+        "y": 49,
+        "w": 58,
+        "h": 46,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 95.0,
+        "y1": 53,
+        "x2": 145.0,
+        "y2": 53,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "rect",
+        "x": 92,
+        "y": 76,
+        "w": 56,
+        "h": 19,
+        "fill": "submerged",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 90,
+        "y1": 49,
+        "x2": 90,
+        "y2": 95,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 150,
+        "y1": 75,
+        "x2": 171,
+        "y2": 75,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 150,
+        "y1": 95,
+        "x2": 171,
+        "y2": 95,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 166,
+        "y1": 75,
+        "x2": 166,
+        "y2": 95,
+        "dash": false
+       },
+       {
+        "t": "text",
+        "x": 153,
+        "y": 67,
+        "v": "V batan",
+        "size": 11,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 180,
+        "v": "V batan < V toplam",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     },
+     {
+      "width": 240,
+      "height": 185,
+      "title": "Tamamen batmış cisim",
+      "items": [
+       {
+        "t": "rect",
+        "x": 35,
+        "y": 75,
+        "w": 170,
+        "h": 80,
+        "fill": "water",
+        "radius": 0
+       },
+       {
+        "t": "poly",
+        "points": [
+         [
+          35,
+          45
+         ],
+         [
+          35,
+          148
+         ],
+         [
+          35.5,
+          151
+         ],
+         [
+          37,
+          153.5
+         ],
+         [
+          40,
+          155
+         ],
+         [
+          200,
+          155
+         ],
+         [
+          203,
+          153.5
+         ],
+         [
+          204.5,
+          151
+         ],
+         [
+          205,
+          148
+         ],
+         [
+          205,
+          45
+         ]
+        ],
+        "fill": "none",
+        "width": 2
+       },
+       {
+        "t": "line",
+        "x1": 35,
+        "y1": 75,
+        "x2": 205,
+        "y2": 75,
+        "dash": false,
+        "color": "waterline",
+        "width": 1.3
+       },
+       {
+        "t": "line",
+        "x1": 40,
+        "y1": 48,
+        "x2": 40,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "line",
+        "x1": 200,
+        "y1": 48,
+        "x2": 200,
+        "y2": 70,
+        "dash": false,
+        "color": "glass",
+        "width": 0.8
+       },
+       {
+        "t": "rect",
+        "x": 91.0,
+        "y": 92,
+        "w": 58,
+        "h": 46,
+        "fill": "object",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 95.0,
+        "y1": 96,
+        "x2": 145.0,
+        "y2": 96,
+        "dash": false,
+        "color": "paper",
+        "width": 1
+       },
+       {
+        "t": "rect",
+        "x": 92,
+        "y": 93,
+        "w": 56,
+        "h": 45,
+        "fill": "submerged",
+        "radius": 2.5
+       },
+       {
+        "t": "line",
+        "x1": 90,
+        "y1": 92,
+        "x2": 90,
+        "y2": 138,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 150,
+        "y1": 92,
+        "x2": 171,
+        "y2": 92,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 150,
+        "y1": 138,
+        "x2": 171,
+        "y2": 138,
+        "dash": false
+       },
+       {
+        "t": "line",
+        "x1": 166,
+        "y1": 92,
+        "x2": 166,
+        "y2": 138,
+        "dash": false
+       },
+       {
+        "t": "text",
+        "x": 153,
+        "y": 84,
+        "v": "V batan",
+        "size": 11,
+        "anchor": "start",
+        "weight": 400
+       },
+       {
+        "t": "text",
+        "x": 120,
+        "y": 180,
+        "v": "V batan = V toplam",
+        "size": 12,
+        "anchor": "middle",
+        "weight": 500
+       }
+      ]
+     }
+    ],
+    "note": "V batan: cismin sıvı içinde kalan hacmi. Şekiller hacim tanımını gösterir."
+   }
+  },
+  {
+   "title": "Hangi nicelikler önemlidir?",
+   "body": "Diğer koşullar sabitken batan hacim veya sıvı yoğunluğu artarsa kaldırma kuvveti artar. Yer çekimi de etkilidir. Aynı homojen sıvıda, tamamen batmış ve hacmi değişmeyen bir cismin yalnız derinliğini değiştirmek kaldırma kuvvetini değiştirmez."
+  },
+  {
+   "title": "Yüzme, askıda kalma ve batma",
+   "body": "Başka düşey kuvvet yoksa serbestçe yüzen cisim dengededir: kaldırma kuvveti ağırlığa eşittir. Tamamen sıvı içinde askıda kalan cisim için de bu eşitlik geçerlidir. Tam batmış cisim durgun hâlden serbest bırakıldığında ağırlığı kaldırma kuvvetinden büyükse aşağı, küçükse yukarı hareket etmeye başlar. Tam batmış olmak, aşağı doğru batmakla aynı şey değildir."
+  },
+  {
+   "title": "Dinamometre ve görünür ağırlık",
+   "body": "Yukarıdan dinamometreyle asılan cisim suda dengedeyken, dinamometrenin gösterdiği ip gerilmesi ile kaldırma kuvvetinin toplamı cismin ağırlığına eşittir. Havanın kaldırma etkisi ihmal edilirse havadaki ve sudaki okumaların farkı, sudaki kaldırma kuvvetini verir; cismin gerçek ağırlığı değişmez."
+  },
+  {
+   "title": "Soruyu çözerken üç kontrol",
+   "body": "1. Cisim yüzüyor mu, tam batmış mı? 2. Batan hacim ve sıvı yoğunluğu değişiyor mu? 3. İp gibi başka bir kuvvet var mı; ilk hareket anı mı, denge hâli mi soruluyor?"
+  }
+ ]
+}
