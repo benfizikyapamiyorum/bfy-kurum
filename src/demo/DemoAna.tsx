@@ -86,9 +86,16 @@ export function DemoAna() {
           {marka.sosyalMedya && <>, {marka.sosyalMedya}</>}
           {marka.iletisimEposta && <>, {marka.iletisimEposta}</>}.
         </p>
-        <Link to="/giris" className="dugme">
-          Hesabım var, giriş yap
-        </Link>
+        <div className="secim-grubu">
+          <Link to="/tanitim" className="dugme ana">
+            Kurumunuzda neler olacak?
+          </Link>
+          {!ortam.tanitim && (
+            <Link to="/giris" className="dugme">
+              Hesabım var, giriş yap
+            </Link>
+          )}
+        </div>
       </section>
     </div>
   )

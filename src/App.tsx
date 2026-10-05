@@ -41,6 +41,7 @@ import { Icerikler } from './yonetim/Icerikler'
 import { TopluIceAktarim } from './yonetim/TopluIceAktarim'
 import { KonuEkrani } from './tahta/KonuEkrani'
 import { DemoAna } from './demo/DemoAna'
+import { Tanitim } from './sayfalar/Tanitim'
 import { DemoTest } from './demo/DemoTest'
 import { DemoRapor } from './demo/DemoRapor'
 import type { ReactNode } from 'react'
@@ -56,6 +57,7 @@ const yonlendirici = (ortam.tekDosya ? createHashRouter : createBrowserRouter)([
       { path: '/', element: <AnaSayfa /> },
       { path: '/giris', element: <Giris /> },
       { path: '/demo', element: <DemoAna /> },
+      { path: '/tanitim', element: <Tanitim /> },
       { path: '/demo/test', element: <DemoTest /> },
       { path: '/demo/rapor', element: <DemoRapor /> },
       { path: '/icerik/ice-aktar', element: <IceAktar /> },
