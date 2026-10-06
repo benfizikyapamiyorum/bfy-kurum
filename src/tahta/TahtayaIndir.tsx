@@ -95,8 +95,8 @@ export function TahtayaIndir() {
     setSecili(new Map())
     setMesaj(
       hatalar.length === 0
-        ? `${basarili} öğe tahtaya indirildi. İnternet kesilse de açılır.`
-        : `${basarili} öğe indirildi. İndirilemeyenler: ${hatalar.join(', ')}.`,
+        ? `${basarili} öğe tahtaya kaydedildi. İnternet kesilse de açılır.`
+        : `${basarili} öğe kaydedildi. Kaydedilemeyenler: ${hatalar.join(', ')}.`,
     )
     durum.yenile()
   }
@@ -108,13 +108,13 @@ export function TahtayaIndir() {
 
   return (
     <TahtaCercevesi
-      baslik="Tahtaya indir"
+      baslik="İnternetsiz kullanım için kaydet"
       altBaslik="Seçtiğiniz haftalar ve soru setleri bu cihaza kaydedilir."
       geri="/tahta"
       altCubuk={
         <>
           <span className="alt-bilgi-metni">
-            {calisiyor ? `İndiriliyor: ${calisiyor}.` : secili.size > 0 ? `${secili.size} öğe seçildi.` : 'İndirmek istediklerinizi seçin.'}
+            {calisiyor ? `Kaydediliyor: ${calisiyor}.` : secili.size > 0 ? `${secili.size} öğe seçildi.` : 'Kaydetmek istediklerinizi seçin.'}
           </span>
           <span className="bosluk" />
           <button
@@ -124,7 +124,7 @@ export function TahtayaIndir() {
             onClick={() => void indir()}
           >
             <Simge ad="indir" />
-            Seçilenleri tahtaya indir
+            Seçilenleri kaydet
           </button>
         </>
       }
@@ -147,13 +147,13 @@ export function TahtayaIndir() {
             <p className="soluk">
               Bu cihazda kullanılan alan: {boyutYazisi(alan.kullanilan)}.{' '}
               {alan.kalici
-                ? 'Tarayıcı indirilen içeriği kalıcı olarak saklıyor.'
-                : 'Tarayıcı yer darlığında indirilenleri silebilir; sık kullandığınız haftaları ara ara kontrol edin.'}
+                ? 'Tarayıcı kaydedilen içeriği kalıcı olarak saklıyor.'
+                : 'Tarayıcı yer darlığında kaydedilenleri silebilir; sık kullandığınız haftaları ara ara kontrol edin.'}
               {bekleyen > 0 && ` Gönderilmeyi bekleyen ${bekleyen} işlem var; internet gelince gönderilecek.`}
             </p>
           )}
 
-          {durum.veri.uniteler.length === 0 && <p className="soluk">İndirilecek içerik bulunamadı.</p>}
+          {durum.veri.uniteler.length === 0 && <p className="soluk">Kaydedilecek içerik bulunamadı.</p>}
 
           {durum.veri.uniteler.map(({ unite, kazanimIdleri, icerikler, soruSayisi }) => {
             const seviye = yardimci.katalog.seviyeler.find((s) => s.id === unite.seviye_id)
@@ -181,8 +181,8 @@ export function TahtayaIndir() {
                         }
                         durumYazisi={
                           indirilen
-                            ? `İndirildi, ${tarihYazisi(indirilen.indirilme)}, ${boyutYazisi(indirilen.boyut)}.`
-                            : 'İndirilmedi.'
+                            ? `Kaydedildi, ${tarihYazisi(indirilen.indirilme)}, ${boyutYazisi(indirilen.boyut)}.`
+                            : 'Kaydedilmedi.'
                         }
                         indirildi={!!indirilen}
                         onKaldir={async () => {
@@ -199,8 +199,8 @@ export function TahtayaIndir() {
                       baslik={<>Ünitenin soruları ({soruSayisi} soru)</>}
                       durumYazisi={
                         uniteIndirme
-                          ? `İndirildi, ${tarihYazisi(uniteIndirme.indirilme)}, ${uniteIndirme.soruSayisi} soru.`
-                          : 'İndirilmedi.'
+                          ? `Kaydedildi, ${tarihYazisi(uniteIndirme.indirilme)}, ${uniteIndirme.soruSayisi} soru.`
+                          : 'Kaydedilmedi.'
                       }
                       indirildi={!!uniteIndirme}
                       onKaldir={async () => {

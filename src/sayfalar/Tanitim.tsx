@@ -59,7 +59,7 @@ const KURUMDA: Bolum[] = [
     baslik: 'Tahta modu',
     maddeler: [
       'Bütün içerik akıllı tahtada büyük yazı ve şekillerle açılır.',
-      'Seçilen haftalar tahtaya indirilir; internet kesilse de ders sürer.',
+      'Seçilen haftalar tahtaya kaydedilir; internet kesilse de ders sürer.',
       'Hafta kitleri ve konu anlatımları, ders akışıyla birlikte gelir.',
     ],
   },

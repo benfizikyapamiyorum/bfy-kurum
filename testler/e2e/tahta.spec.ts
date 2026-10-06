@@ -203,8 +203,8 @@ test('tahtaya indirilen kit internet kesilince de açılır', async ({ page, con
   // İndir.
   await page.goto('/tahta/indir')
   await page.getByRole('checkbox').first().check()
-  await page.getByRole('button', { name: 'Seçilenleri tahtaya indir' }).tap()
-  await expect(page.getByText('tahtaya indirildi', { exact: false }).first()).toBeVisible()
+  await page.getByRole('button', { name: 'Seçilenleri kaydet' }).tap()
+  await expect(page.getByText('tahtaya kaydedildi', { exact: false }).first()).toBeVisible()
 
   // İnternet kesik: uygulama baştan açılır, kit ve sorular çalışır.
   await context.setOffline(true)

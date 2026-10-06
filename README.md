@@ -26,7 +26,7 @@ Uygulama, Supabase bilgileri girilmeden de açılır. Bu durumda **yerel deneme 
 5. **Yüksek kontrast** ve **tam ekran** düğmeleri de üst çubuktadır. Sayaç her soruda sıfırdan başlar.
 6. Kurum logosunu denemek için **Ayarlar** → **Kurum logosu** ile bir resim seçin. Logo tahtanın sağ üst köşesinde görünür.
 7. **Kit içe aktar** ekranından kendi tek dosyalık HTML kitlerinizi yükleyin, sınıf, ünite ve haftaya bağlayın. Tahtada ilgili ünitede açılır. 9. sınıf, Kuvvet ve Hareket ünitesinde örnek bir kit de var.
-8. **Tahtaya indir** ekranında haftaları ve soru setlerini seçip indirin. Ardından interneti kesin: indirilenler açılmaya devam eder. (Çevrimdışı çalışma yayınlanmış sürümde ya da `npm run build && npm run preview` ile denenir.)
+8. **İnternetsiz kullanım için kaydet** ekranında haftaları ve soru setlerini seçip indirin. Ardından interneti kesin: indirilenler açılmaya devam eder. (Çevrimdışı çalışma yayınlanmış sürümde ya da `npm run build && npm run preview` ile denenir.)
 
 ---
 

@@ -64,7 +64,7 @@ Bu repoda, tek şubeli yerel özel öğretim kurslarına (dershane / etüt merke
 ### 6.2 Çevrimdışı çalışma
 
 - İnternet olduğunda normal çalışır.
-- Öğretmen "Bu haftaları tahtaya indir" diyerek seçtiği içerikleri önbelleğe alabilir. İnternet kesilince tahta modu çalışmaya devam eder.
+- Öğretmen "İnternetsiz kullanım için kaydet" ekranında seçtiği içerikleri önbelleğe alabilir. İnternet kesilince tahta modu çalışmaya devam eder.
 - Çevrimdışıyken yapılan işlemler (varsa) internet gelince senkronize edilir.
 
 ### 6.3 Test ve Deneme Oluşturucu

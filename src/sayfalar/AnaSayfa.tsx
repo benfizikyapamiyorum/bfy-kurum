@@ -23,7 +23,7 @@ export function AnaSayfa() {
           </Link>
           <Link to="/tahta/indir" className="dugme buyuk">
             <Simge ad="indir" />
-            Tahtaya indir
+            İnternetsiz kullanım için kaydet
           </Link>
         </div>
       </section>
@@ -38,7 +38,7 @@ export function AnaSayfa() {
         </article>
         <article className="kart">
           <h2>İnternetsiz çalışma</h2>
-          <p className="soluk">Seçtiğiniz haftaları tahtaya indirirsiniz. İnternet kesilse de ders sürer.</p>
+          <p className="soluk">Seçtiğiniz haftaları tahtaya kaydedersiniz. İnternet kesilse de ders sürer.</p>
         </article>
         <article className="kart">
           <h2>Test ve deneme</h2>

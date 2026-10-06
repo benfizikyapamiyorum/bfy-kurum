@@ -46,7 +46,7 @@ export function IcerikListesi() {
       ) : (
         <div className="tahta-sayfa">
           {durum.veri.cevrimdisiKopya && (
-            <p className="bilgi-kutusu uyari">İnternet yok. Tahtaya indirilmiş kopya gösteriliyor.</p>
+            <p className="bilgi-kutusu uyari">İnternet yok. Tahtaya kaydedilmiş kopya gösteriliyor.</p>
           )}
 
           <section className="tahta-bolum">
@@ -70,7 +70,7 @@ export function IcerikListesi() {
                           <span className="durum-cipi">Bu tarayıcıda</span>
                         ) : indirildi ? (
                           <span className="durum-cipi tamam">
-                            <Simge ad="tamam" /> Tahtaya indirildi
+                            <Simge ad="tamam" /> İnternetsiz kullanılabilir
                           </span>
                         ) : ortam.tanitim ? (
                           <span className="durum-cipi tamam">
