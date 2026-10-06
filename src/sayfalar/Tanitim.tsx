@@ -94,8 +94,9 @@ const KURUMDA: Bolum[] = [
     maddeler: [
       'İçerik ve özellikler yıl boyunca düzenli olarak eklenir.',
       'Kaldırma kuvveti paketi ilk pakettir; diğer üniteler hazırlandıkça eklenir.',
-      'Güncellemeler bütün cihazlara kendiliğinden gelir; kurumun bir şey indirmesi ya da kurması gerekmez.',
+      'Güncellemeler kendiliğinden gelir; kurumun bir şey kurması gerekmez.',
       'Kurumlardan gelen öneriler geliştirmede önceliklidir.',
+      'Altyapı çok derse uygundur; istenirse başka dersler eklenebilir.',
     ],
   },
   {
