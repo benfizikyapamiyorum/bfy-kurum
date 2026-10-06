@@ -87,7 +87,23 @@ const KURUMDA: Bolum[] = [
       `Sorular, konu anlatımları ve hafta kitleri ${marka.sahipAdi} tarafından hazırlanır.`,
       'Her soru Türkiye Yüzyılı Maarif Modeli öğrenme çıktılarına göre etiketlidir.',
       'Her soru yayına girmeden önce bağımsız olarak çözülür ve denetlenir.',
-      'Yeni içerik merkezden eklenir; kurumların ayrıca bir şey yüklemesi gerekmez.',
+    ],
+  },
+  {
+    baslik: 'Sürekli gelişen sistem',
+    maddeler: [
+      'İçerik ve özellikler yıl boyunca düzenli olarak eklenir.',
+      'Kaldırma kuvveti paketi ilk pakettir; diğer üniteler hazırlandıkça eklenir.',
+      'Güncellemeler bütün cihazlara kendiliğinden gelir; kurumun bir şey indirmesi ya da kurması gerekmez.',
+      'Kurumlardan gelen öneriler geliştirmede önceliklidir.',
+    ],
+  },
+  {
+    baslik: 'Kurulum ve kullanım desteği',
+    maddeler: [
+      'Kurum hesabı, sınıflar ve öğrenci listeleri birlikte kurulur.',
+      'Öğretmenlere tahta modu, test oluşturma ve raporlar uygulamalı gösterilir.',
+      'Kullanımda takıldığınız her konuda doğrudan iletişim kurabilirsiniz.',
     ],
   },
   {
@@ -101,9 +117,9 @@ const KURUMDA: Bolum[] = [
 ]
 
 const BASLANGIC = [
-  'Kurumunuza lisans tanımlanır; kurum kodunuz ve yönetici hesabınız açılır.',
+  'Kurumunuz için kurum kodu ve yönetici hesabı açılır.',
   'Öğretmen ve öğrenci listenizi Excel ile yüklersiniz; giriş kartları hazır olur.',
-  'Öğretmenler aynı gün tahta modunu ve test oluşturucuyu kullanmaya başlar.',
+  'Kurulumu ve öğretmenlere kullanım gösterimini birlikte yaparız; öğretmenler aynı gün kullanmaya başlar.',
 ]
 
 function BolumListesi({ bolumler }: { bolumler: Bolum[] }) {
