@@ -13,7 +13,7 @@ import tahtaGorseli from './gorseller/tahta.jpg'
 import telefonGorseli from './gorseller/telefon.jpg'
 
 /** Canlı ekran hedefleri; adresler tanıtım paketine göre çalışma anında çözülür. */
-export type CanliHedef = 'tahtaSoru' | 'uniteSorulari' | 'konu' | 'ogrenciTest' | 'rapor' | 'kitapcik' | 'internetsiz' | 'demo'
+export type CanliHedef = 'tahtaSoru' | 'hareketli' | 'uniteSorulari' | 'konu' | 'ogrenciTest' | 'rapor' | 'kitapcik' | 'internetsiz' | 'demo'
 
 export interface Kart {
   simge: SimgeAdi
@@ -63,8 +63,12 @@ export const SLAYTLAR: Slayt[] = [
       'Soru akıllı tahtada büyük yazı ve şekille açılır.',
       'Cevap ve çözüm adımları dokunarak tek tek açılır; şekil çözümle birlikte adım adım değişir.',
       'Öğretmen kalemle sorunun üstüne yazar, süre tutar, yüksek kontrastlı görünüme geçer.',
+      'Hareket sorularında cisim, şekil üzerinde fizik kurallarına uygun olarak hareket eder.',
     ],
-    canli: [{ hedef: 'tahtaSoru', etiket: 'Tahtada bir soru aç' }],
+    canli: [
+      { hedef: 'tahtaSoru', etiket: 'Tahtada bir soru aç' },
+      { hedef: 'hareketli', etiket: 'Hareketli çözümü göster' },
+    ],
     gorsel: { kaynak: tahtaGorseli, cerceve: 'ekran', aciklama: 'Tahta modunda bir soru: çözümün iki adımı açılmış.' },
   },
   {
@@ -143,8 +147,8 @@ export const SLAYTLAR: Slayt[] = [
     baslik: 'Sistem sizin olur',
     kartlar: [
       { simge: 'tamam', baslik: 'Süresiz kullanım', metin: 'Kurum sistemi bir kez satın alır ve süre sınırı olmadan kullanır.' },
-      { simge: 'yenile', baslik: 'İlk yıl her şey dahil', metin: 'İlk yıl eklenen bütün içerik, güncellemeler ve destek satın almaya dahildir.' },
-      { simge: 'bulut', baslik: 'Sonrası isteğe bağlı', metin: 'Sonraki yıllarda yeni içerik, güncelleme ve destek isteğe bağlı yıllık paketle sürer. Paket alınmasa da sistem ve mevcut içerik kullanılmaya devam eder.' },
+      { simge: 'yenile', baslik: 'İlk iki yıl her şey dahil', metin: 'İlk iki yıl eklenen bütün içerik, güncellemeler ve destek satın almaya dahildir.' },
+      { simge: 'bulut', baslik: 'Sonrası isteğe bağlı', metin: 'Üçüncü yıldan itibaren yeni içerik, güncelleme ve destek isteğe bağlı yıllık paketle sürer. Paket alınmasa da sistem ve mevcut içerik kullanılmaya devam eder.' },
       { simge: 'ayarlar', baslik: 'Kuruma göre boyut', metin: 'Öğretmen ve öğrenci sayısı kurumun ihtiyacına göre belirlenir.' },
     ],
   },

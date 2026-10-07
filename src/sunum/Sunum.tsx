@@ -8,6 +8,8 @@ import { UrunIsareti } from '../bilesenler/UrunIsareti'
 import { useVeri } from '../kancalar'
 import { marka } from '../yapilandirma/marka'
 import { ortam } from '../yapilandirma/ortam'
+import { katalog } from '../veri/katalog'
+import { ornekSorular } from '../veri/ornekSorular'
 import { SLAYTLAR, type CanliHedef, type Slayt } from './slaytlar'
 import { sunumAdiminiKaydet } from './sunumDurumu'
 import '../stil/sunum.css'
@@ -17,9 +19,19 @@ interface Paket {
   sayilar: { deger: number; ad: string }[] | null
 }
 
+/** Hareketli çözümü olan örnek soru (yatay atış): şekildeki top, x = x0 + ϑt + ½at² ile hareket eder. */
+function hareketliSoruYolu(): string {
+  const soru = ornekSorular.find((s) => s.sekil_svg?.includes('data-ciz-tur="kinematik"') && s.govde.includes('yatay'))
+  const kazanim = soru && katalog.kazanimlar.find((k) => k.id === soru.kazanim_idleri[0])
+  const unite = kazanim && katalog.uniteler.find((u) => u.id === kazanim.unite_id)
+  const seviye = unite && katalog.seviyeler.find((s) => s.id === unite.seviye_id)
+  return soru && unite && seviye ? `/tahta/${seviye.kod}/${unite.id}/soru/${soru.id}` : '/tahta'
+}
+
 async function paketBilgisi(): Promise<Paket> {
   const genel: Record<CanliHedef, string> = {
     tahtaSoru: '/tahta',
+    hareketli: hareketliSoruYolu(),
     uniteSorulari: '/tahta',
     konu: '/tahta',
     ogrenciTest: '/demo/test',
