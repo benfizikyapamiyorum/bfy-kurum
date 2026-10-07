@@ -193,7 +193,7 @@ Herkese açık demo, ortak bir demo hesabı yerine salt okunur ekranlardan oluş
 ## 7. Çevrimdışı çalışma
 
 - **Uygulama kabuğu:** `vite-plugin-pwa` (Workbox) tüm JavaScript, CSS ve yazı tiplerini önbelleğe alır. İnternet yokken uygulama açılır.
-- **İçerik:** HTML kitler ve sorular uygulama kabuğuna girmez. Öğretmen "Tahtaya indir" ekranında haftaları seçer; seçilen içerik IndexedDB'ye yazılır. Veri katmanı önce ağı dener, ağ yoksa IndexedDB'deki kopyayı kullanır.
+- **İçerik:** HTML kitler ve sorular uygulama kabuğuna girmez. Öğretmen "İnternetsiz kullanım için kaydet" ekranında haftaları seçer; seçilen içerik IndexedDB'ye yazılır. Veri katmanı önce ağı dener, ağ yoksa IndexedDB'deki kopyayı kullanır.
 - **Senkronizasyon:** Çevrimdışıyken yapılan yazma işlemleri IndexedDB'deki bir kuyruğa eklenir ve internet gelince sırayla gönderilir. Her işlemin tekil kimliği vardır; sunucuda `upsert` ile yazıldığı için iki kez gönderilse de çift kayıt oluşmaz.
 
 ## 8. Tahta modu
@@ -205,7 +205,7 @@ Herkese açık demo, ortak bir demo hesabı yerine salt okunur ekranlardan oluş
 | `/tahta/:seviye/:unite` | Ünitenin kitleri ve kazanıma göre gruplanmış soruları. |
 | `/tahta/:seviye/:unite/soru/:soru` | Soru ekranı. |
 | `/tahta/kit/:icerik` | HTML kit, tam ekran iframe. |
-| `/tahta/indir` | "Tahtaya indir": çevrimdışı kullanım için içerik seçimi. |
+| `/tahta/indir` | "İnternetsiz kullanım için kaydet": çevrimdışı kullanım için içerik seçimi. |
 
 - **Ölçekleme:** Tahta modunun yazı boyutu ekran genişliğinin %1,6'sıdır (en az 17, en çok 52 piksel). Dokunma hedefleri en az 56 pikseldir ve genişlikle büyür. Böylece 1920×1080 ve 4K tahtada aynı düzen görünür.
 - **Hover yok:** Hiçbir bilgi ya da işlem fareyle üzerine gelmeye bağlı değildir. Her şey dokunarak açılır.
@@ -250,7 +250,7 @@ animasyonTuruKaydet('isin-kirilma', (oge, { sure, gecikme }) => [
 
 ### 8.3. Konu anlatımı (`/tahta/konu/:icerik`)
 
-HTML dosyası olmayan içerikler `icerik.veri` sütununda yapılandırılmış olarak durur: `{ bolumler: [{ baslik, metin, sekil_svg? }], planlar?: { "40": [...], "80": [...] } }`. Tahtada her bölüm tek ekranda büyük yazı ve şekille gösterilir. Ok tuşları ve sunum kumandası (PageUp/PageDown) ile geçilir. Ders akışı yalnızca öğretmenin açtığı panelde durur. Ünite listesi `html_yolu` varsa kiti, yoksa bu görünümü açar. "Tahtaya indir" konu anlatımını da çevrimdışı saklar (satır yeterlidir, ayrı dosya yoktur).
+HTML dosyası olmayan içerikler `icerik.veri` sütununda yapılandırılmış olarak durur: `{ bolumler: [{ baslik, metin, sekil_svg? }], planlar?: { "40": [...], "80": [...] } }`. Tahtada her bölüm tek ekranda büyük yazı ve şekille gösterilir. Ok tuşları ve sunum kumandası (PageUp/PageDown) ile geçilir. Ders akışı yalnızca öğretmenin açtığı panelde durur. Ünite listesi `html_yolu` varsa kiti, yoksa bu görünümü açar. "İnternetsiz kullanım için kaydet" ekranı konu anlatımını da çevrimdışı saklar (satır yeterlidir, ayrı dosya yoktur).
 
 ## 9. Marka ve yapılandırma
 

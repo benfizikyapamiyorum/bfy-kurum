@@ -62,7 +62,7 @@ export function DemoRapor() {
             </button>
             {telafi && (
               <p className="bilgi-kutusu" role="status">
-                Lisanslı kurumda bu düğme, zayıf çıktılardan ve bu sınıfa daha önce verilmemiş sorulardan 10 soruluk bir test hazırlar.
+                Kurumunuzda bu düğme, zayıf çıktılardan ve bu sınıfa daha önce verilmemiş sorulardan 10 soruluk bir test hazırlar.
                 Test düzenlemeniz için açılır; PDF olarak basılır ya da öğrencilere online atanır. Öğrenci gözünden bir test için{' '}
                 <Link to="/demo/test">örnek testi çözün</Link>.
               </p>
@@ -128,7 +128,7 @@ export function DemoRapor() {
                           </button>
                         </td>
                         <td>{trSayi(ortalama(netler))}</td>
-                        <td>{trSayi(netler.at(-1)!)}</td>
+                        <td>{trSayi(netler[netler.length - 1]!)}</td>
                         <td>{e ? EGILIM_ADI[e] : ''}</td>
                       </tr>
                     )

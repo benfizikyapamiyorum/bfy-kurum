@@ -33,7 +33,7 @@ export function SinifSecimi() {
           <div className="tahta-alt-baglantilar">
             <Link to="/tahta/indir" className="dugme">
               <Simge ad="indir" />
-              Tahtaya indir
+              İnternetsiz kullanım için kaydet
             </Link>
             <Link to="/icerik/ice-aktar" className="dugme">
               <Simge ad="yukle" />

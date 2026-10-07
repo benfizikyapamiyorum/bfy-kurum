@@ -56,16 +56,18 @@ d('toplu içe aktarım', () => {
                 (select array_agg(k.kod) from public.soru_kazanim sk join public.kazanim k on k.id = sk.kazanim_id where sk.soru_id = s.id) as kodlar
          from public.soru s where dis_kimlik = 'fizik-atolye/kaldirma-kuvveti/S6'`,
       )
-      expect(s6.rows[0]).toEqual({ dogru_cevap: 'D', yayinda: true, beceri: 'Ölçümü yorumlama', adim: 3, kodlar: ['FİZ.9.3.6'] })
+      expect(s6.rows[0]).toEqual({ dogru_cevap: 'C', yayinda: true, beceri: 'Ölçümü yorumlama', adim: 3, kodlar: ['FİZ.9.3.6'] })
       const u = await c.query(`select un.ad from public.unite un join public.seviye sv on sv.id = un.seviye_id where sv.kod = '9' and un.no = 3`)
       expect(u.rows[0].ad).toBe('Akışkanlar')
     }))
 
-  it('açık hakem bulgusu olan sorular öğretmene görünmez', async () => {
-    await olarak(SUPER, (c) => c.query('select public.toplu_ice_aktar($1)', [paket]).then(() => c.query('commit')))
+  it('yayında olmayan soru öğretmene görünmez', async () => {
+    // Denetimi bitmemiş bir soru yayında olmadan aktarılır.
+    const kapali = { ...paket, sorular: paket.sorular.map((x: { dis_kimlik: string }) => (x.dis_kimlik.endsWith('/S5') ? { ...x, yayinda: false } : x)) }
+    await olarak(SUPER, (c) => c.query('select public.toplu_ice_aktar($1)', [kapali]).then(() => c.query('commit')))
     await olarak(OGT, async (c) => {
       const n = await c.query(`select dis_kimlik from public.soru where dis_kimlik like 'fizik-atolye/%' order by 1`)
-      expect(n.rows).toHaveLength(9)
+      expect(n.rows).toHaveLength(11)
       expect(n.rows.map((r) => r.dis_kimlik)).not.toContain('fizik-atolye/kaldirma-kuvveti/S5')
     })
   })

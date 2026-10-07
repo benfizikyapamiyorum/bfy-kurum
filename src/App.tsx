@@ -1,4 +1,5 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
+import { ortam } from './yapilandirma/ortam'
 import { Duzen } from './bilesenler/Duzen'
 import { KatalogSaglayici } from './katalogBaglami'
 import { AnaSayfa } from './sayfalar/AnaSayfa'
@@ -40,20 +41,26 @@ import { Icerikler } from './yonetim/Icerikler'
 import { TopluIceAktarim } from './yonetim/TopluIceAktarim'
 import { KonuEkrani } from './tahta/KonuEkrani'
 import { DemoAna } from './demo/DemoAna'
+import { Tanitim } from './sayfalar/Tanitim'
 import { DemoTest } from './demo/DemoTest'
 import { DemoRapor } from './demo/DemoRapor'
+import { DemoYazdir } from './demo/DemoYazdir'
+import { Sunum } from './sunum/Sunum'
+import { SunumDonusu } from './sunum/SunumDonusu'
 import type { ReactNode } from 'react'
 
 const PERSONEL: Rol[] = ['ogretmen', 'kurum_yonetici']
 const korumali = (roller: Rol[], oge: ReactNode) => <RolGerekli roller={roller}>{oge}</RolGerekli>
 
-const yonlendirici = createBrowserRouter([
+// Tek dosya (file://) sürümünde adres yolu yok; sayfalar # ile ayrılır.
+const yonlendirici = (ortam.tekDosya ? createHashRouter : createBrowserRouter)([
   {
     element: <Duzen />,
     children: [
       { path: '/', element: <AnaSayfa /> },
       { path: '/giris', element: <Giris /> },
       { path: '/demo', element: <DemoAna /> },
+      { path: '/tanitim', element: <Tanitim /> },
       { path: '/demo/test', element: <DemoTest /> },
       { path: '/demo/rapor', element: <DemoRapor /> },
       { path: '/icerik/ice-aktar', element: <IceAktar /> },
@@ -94,6 +101,9 @@ const yonlendirici = createBrowserRouter([
     ],
   },
   // Yazdırma sayfası: yalnızca kâğıt.
+  { path: '/demo/yazdir/:surum', element: <DemoYazdir /> },
+  // Kurum görüşmesi sunumu: kendi tam ekran düzeni.
+  { path: '/sunum', element: <Sunum /> },
   { path: '/testler/:id/yazdir/:surum', element: korumali(PERSONEL, <TestYazdir />) },
   // Tahta modu kendi tam ekran düzenini kullanır.
   { path: '/tahta/test/:test/:no', element: korumali(PERSONEL, <TestTahta />) },
@@ -112,6 +122,7 @@ export function App() {
       <OturumSaglayici>
         <KatalogSaglayici>
           <RouterProvider router={yonlendirici} />
+          <SunumDonusu />
         </KatalogSaglayici>
       </OturumSaglayici>
     </TemaSaglayici>

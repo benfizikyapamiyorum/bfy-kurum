@@ -13,6 +13,8 @@ Tek şubeli özel öğretim kursları için fizik eğitim platformu: akıllı ta
 
 Uygulama, Supabase bilgileri girilmeden de açılır. Bu durumda **yerel deneme modunda** çalışır: örnek sorular ve bu tarayıcıya yüklediğiniz HTML kitler kullanılır. Tahta modunu denemek için yeterlidir. Giriş, kurum, test ve rapor özellikleri Supabase bağlandıktan sonra çalışır.
 
+**Tanıtım dosyası (flash bellek için).** `npm run build:tanitim` komutu `dist-tanitim/index.html` adında tek bir dosya üretir. Dosya çift tıklayınca tarayıcıda açılır; internet, sunucu ve kurulum gerekmez, adres çubuğunda site adı görünmez. İçinde demo ekranları ve kaldırma kuvveti soru paketi vardır.
+
 **Demo (satış için).** Ana sayfadaki **Demoyu dene** düğmesi (`/demo`) kurs sahibine kayıt olmadan üç şeyi gösterir: tahta modu, öğrenci gözünden örnek test (net hesabı ve çözümlerle) ve kurs yöneticisi gözünden örnek sınıf raporu. Demo sunucuya hiçbir şey yazmaz, ortak bir demo şifresi yoktur. Bu yüzden kötüye kullanılamaz ve Supabase bağlı olsun olmasın aynı çalışır.
 
 ### Tahta modunu deneme listesi
@@ -24,7 +26,7 @@ Uygulama, Supabase bilgileri girilmeden de açılır. Bu durumda **yerel deneme 
 5. **Yüksek kontrast** ve **tam ekran** düğmeleri de üst çubuktadır. Sayaç her soruda sıfırdan başlar.
 6. Kurum logosunu denemek için **Ayarlar** → **Kurum logosu** ile bir resim seçin. Logo tahtanın sağ üst köşesinde görünür.
 7. **Kit içe aktar** ekranından kendi tek dosyalık HTML kitlerinizi yükleyin, sınıf, ünite ve haftaya bağlayın. Tahtada ilgili ünitede açılır. 9. sınıf, Kuvvet ve Hareket ünitesinde örnek bir kit de var.
-8. **Tahtaya indir** ekranında haftaları ve soru setlerini seçip indirin. Ardından interneti kesin: indirilenler açılmaya devam eder. (Çevrimdışı çalışma yayınlanmış sürümde ya da `npm run build && npm run preview` ile denenir.)
+8. **İnternetsiz kullanım için kaydet** ekranında haftaları ve soru setlerini seçip indirin. Ardından interneti kesin: indirilenler açılmaya devam eder. (Çevrimdışı çalışma yayınlanmış sürümde ya da `npm run build && npm run preview` ile denenir.)
 
 ---
 

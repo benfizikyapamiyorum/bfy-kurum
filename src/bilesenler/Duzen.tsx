@@ -63,7 +63,7 @@ export function Duzen() {
               <span className="dar-gizle">Yönetim</span>
             </NavLink>
           )}
-          {!profil && (
+          {!profil && !ortam.tanitim && (
             <NavLink to="/icerik/ice-aktar" className="dugme sade">
               <Simge ad="yukle" />
               <span className="dar-gizle">Kit içe aktar</span>
@@ -75,7 +75,7 @@ export function Duzen() {
           <KullaniciMenusu />
         </nav>
       </header>
-      {!ortam.supabaseVar && (
+      {!ortam.supabaseVar && !ortam.tanitim && (
         <div className="mod-seridi" role="status">
           Yerel deneme modu: sunucu bağlantısı tanımlı değil, örnek veriler kullanılıyor.
         </div>
@@ -92,7 +92,7 @@ export function AltBilgi() {
   return (
     <footer className="alt-bilgi">
       <span>
-        {marka.sahipAdi}, {marka.web}, {marka.sosyalMedya}
+        İçerik: {marka.sahipAdi}, {marka.web}, {marka.sosyalMedya}
       </span>
       <span>{marka.programIbaresi}</span>
       <Link to="/aydinlatma-metni">Aydınlatma metni</Link>

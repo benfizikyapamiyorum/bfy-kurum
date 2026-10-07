@@ -15,7 +15,7 @@ import { yerelDb, type IndirilenKit, type YerelKit } from './yerelVeritabani'
 export const YEREL_KIT_ON_EKI = 'yerel:'
 
 export class CevrimdisiHatasi extends Error {
-  constructor(mesaj = 'Bu içerik çevrimdışı kullanılamıyor. İnternet varken "Tahtaya indir" ekranından indirin.') {
+  constructor(mesaj = 'Bu içerik çevrimdışı kullanılamıyor. İnternet varken "İnternetsiz kullanım için kaydet" ekranından kaydedin.') {
     super(mesaj)
     this.name = 'CevrimdisiHatasi'
   }

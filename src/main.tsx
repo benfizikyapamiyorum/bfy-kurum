@@ -8,6 +8,12 @@ import './stil/tahta.css'
 import { senkronuBaslat } from './depo/senkronKuyrugu'
 // Öğrenci cevaplarının kuyruk işleyicisini kaydeder.
 import './depo/ogrenciDeposu'
+import { ortam } from './yapilandirma/ortam'
+
+// Tek dosya sürümünün adında "sunum" geçiyorsa (Fizik-Kurs-Sistemi-SUNUM.html) dosya doğrudan sunumla açılır.
+if (ortam.tekDosya && !window.location.hash && /sunum/i.test(decodeURIComponent(window.location.pathname))) {
+  window.location.hash = '#/sunum'
+}
 
 createRoot(document.getElementById('kok')!).render(
   <StrictMode>

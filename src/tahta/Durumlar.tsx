@@ -22,7 +22,7 @@ export function HataGoster({ hata, yenile }: { hata: Error; yenile?: () => void 
         )}
         {cevrimdisi && (
           <Link to="/tahta/indir" className="dugme">
-            Tahtaya indir ekranı
+            İnternetsiz kullanım ekranı
           </Link>
         )}
       </div>
