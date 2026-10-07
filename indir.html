@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fizik Kurs Sistemi: dosyaları indir</title>
+<style>
+  :root { --bg: #f4f6fa; --fg: #18202b; --soluk: #5a6676; --ana: #1f5fae; --vurgu: #ff9f4a; --kart: #fff; --cizgi: #d5dbe4; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0f1724; --fg: #e8edf5; --soluk: #a3b0c2; --ana: #7fb0f2; --kart: #162133; --cizgi: #2a3648; color-scheme: dark; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; padding: 32px 16px; }
+  main { max-width: 640px; margin: 0 auto; display: grid; gap: 16px; }
+  h1 { margin: 0; font-size: 1.6rem; }
+  .kart { background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; padding: 18px 20px; display: grid; gap: 10px; }
+  .kart h2 { margin: 0; font-size: 1.1rem; }
+  .kart p, ol { margin: 0; color: var(--soluk); }
+  .dugme { justify-self: start; display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 700; text-decoration: none; background: var(--vurgu); color: #0d1a2d; }
+  .dugme.ikinci { background: var(--ana); color: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fizik Kurs Sistemi</h1>
+  <div class="kart">
+    <h2>Sunum dosyası</h2>
+    <p>Bilgisayarda düğmeye bas. Dosya "İndirilenler" klasörüne iner. Masaüstüne sürükle, adını değiştirme, çift tıkla. İnternet gerekmez.</p>
+    <a class="dugme" href="Fizik-Kurs-Sistemi-SUNUM.html" download="Fizik-Kurs-Sistemi-SUNUM.html">Sunum dosyasını indir</a>
+    <p>İnternet varsa indirmeden de açabilirsin: <a href="Fizik-Kurs-Sistemi-SUNUM.html">sunumu tarayıcıda aç</a>.</p>
+  </div>
+  <div class="kart">
+    <h2>Tanıtım belgesi</h2>
+    <p>Kurum yöneticilerine verilecek iki sayfalık belge.</p>
+    <a class="dugme ikinci" href="Fizik-Kurs-Sistemi-Tanitim-Belgesi.pdf" download="Fizik-Kurs-Sistemi-Tanitim-Belgesi.pdf">Tanıtım belgesini indir</a>
+  </div>
+  <div class="kart">
+    <h2>Tanıtım dosyası (demo)</h2>
+    <p>Flash belleğe koymak ya da internetsiz göstermek için.</p>
+    <a class="dugme ikinci" href="Fizik-Kurs-Sistemi-Tanitim.html" download="Fizik-Kurs-Sistemi-Tanitim.html">Demo dosyasını indir</a>
+  </div>
+</main>
+</body>
+</html>
