@@ -21,6 +21,10 @@ html = html.slice(0, bas) + html.slice(kapanis + '</script>'.length)
 const kod = hamKod.replaceAll('import.meta.resolve', 'void 0').replaceAll('import.meta.url', 'document.baseURI')
 if (kod.includes('import.meta')) throw new Error('Kodda çevrilemeyen import.meta kaldı.')
 
+// Sekme simgesi: tek dosyada /simge.svg yoktur; simge sayfanın içine gömülür.
+const simge = readFileSync(new URL('../public/simge.svg', import.meta.url), 'utf8')
+html = html.replace(/<link rel="icon"[^>]*>/, `<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,${encodeURIComponent(simge)}" />`)
+
 const yedek = `<div style="max-width:640px;margin:48px auto;padding:0 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#18202b;line-height:1.55">
 <h1 style="font-size:22px;margin:0 0 12px">Fizik Kurs Sistemi</h1>
 <p id="yukleniyor-yazisi">Platform açılıyor.</p>

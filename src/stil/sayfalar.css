@@ -849,10 +849,15 @@
   display: grid;
   gap: 14px;
 }
+/* Izgara öğeleri içeriğe göre genişlemesin; geniş tablo telefonda sayfayı taşırmasın. */
+.coz-sayfasi > * {
+  min-width: 0;
+}
 .coz-ust {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
 }
 .coz-ust h1 {
@@ -875,6 +880,23 @@
 .coz-govde {
   font-size: 1.15rem;
   line-height: 1.6;
+  overflow-wrap: break-word;
+}
+/* Çok sütunlu veri tablosu dar ekranda kendi içinde kayar. */
+.coz-govde table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+@media (max-width: 560px) {
+  .coz-govde table {
+    font-size: 0.72em;
+    line-height: 1.35;
+  }
+  .coz-govde th,
+  .coz-govde td {
+    padding: 0.25em 0.35em;
+  }
 }
 .coz-sekil {
   background: #fff;

@@ -65,6 +65,14 @@ export function DemoAna() {
           </p>
           <span className="dugme ana">Testi çöz</span>
         </Link>
+        <Link to="/demo/yazdir/ogrenci" className="kart demo-karti">
+          <Simge ad="belge" boyut={36} />
+          <h2>Basılı deneme ve optik form</h2>
+          <p className="soluk">
+            Öğrenci kitapçığı, cevaplı öğretmen kitapçığı ve optik form. Soru ile şekli hiçbir zaman iki sayfaya bölünmez.
+          </p>
+          <span className="dugme ana">Kitapçığı gör</span>
+        </Link>
         <Link to="/demo/rapor" className="kart demo-karti">
           <Simge ad="belge" boyut={36} />
           <h2>Kurs yöneticisi: sınıf raporu</h2>

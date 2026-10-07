@@ -80,7 +80,7 @@ function Ust({ test, kurumAdi, logo, ek }: { test: Test; kurumAdi: string; logo:
   )
 }
 
-function Kitapcik({
+export function Kitapcik({
   test,
   sorular,
   ogretmen,
@@ -184,7 +184,7 @@ function YazdirSekli({ svg, cozumlu }: { svg: string; cozumlu: boolean }) {
   return <div className="y-sekil" dangerouslySetInnerHTML={{ __html: html }} />
 }
 
-function OptikForm({
+export function OptikForm({
   test,
   soruSayisi,
   kurumAdi,

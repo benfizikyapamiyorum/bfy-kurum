@@ -44,6 +44,9 @@ import { DemoAna } from './demo/DemoAna'
 import { Tanitim } from './sayfalar/Tanitim'
 import { DemoTest } from './demo/DemoTest'
 import { DemoRapor } from './demo/DemoRapor'
+import { DemoYazdir } from './demo/DemoYazdir'
+import { Sunum } from './sunum/Sunum'
+import { SunumDonusu } from './sunum/SunumDonusu'
 import type { ReactNode } from 'react'
 
 const PERSONEL: Rol[] = ['ogretmen', 'kurum_yonetici']
@@ -98,6 +101,9 @@ const yonlendirici = (ortam.tekDosya ? createHashRouter : createBrowserRouter)([
     ],
   },
   // Yazdırma sayfası: yalnızca kâğıt.
+  { path: '/demo/yazdir/:surum', element: <DemoYazdir /> },
+  // Kurum görüşmesi sunumu: kendi tam ekran düzeni.
+  { path: '/sunum', element: <Sunum /> },
   { path: '/testler/:id/yazdir/:surum', element: korumali(PERSONEL, <TestYazdir />) },
   // Tahta modu kendi tam ekran düzenini kullanır.
   { path: '/tahta/test/:test/:no', element: korumali(PERSONEL, <TestTahta />) },
@@ -116,6 +122,7 @@ export function App() {
       <OturumSaglayici>
         <KatalogSaglayici>
           <RouterProvider router={yonlendirici} />
+          <SunumDonusu />
         </KatalogSaglayici>
       </OturumSaglayici>
     </TemaSaglayici>

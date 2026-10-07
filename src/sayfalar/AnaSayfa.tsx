@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Simge } from '../bilesenler/Simge'
 import { marka } from '../yapilandirma/marka'
+import { ortam } from '../yapilandirma/ortam'
 
 export function AnaSayfa() {
   return (
@@ -13,7 +14,13 @@ export function AnaSayfa() {
           Hepsi tek yerde.
         </p>
         <div className="giris-dugmeleri">
-          <Link to="/demo" className="dugme ana buyuk">
+          {ortam.tanitim && (
+            <Link to="/sunum" className="dugme ana buyuk">
+              <Simge ad="tahta" />
+              Sunumu başlat
+            </Link>
+          )}
+          <Link to="/demo" className={`dugme buyuk ${ortam.tanitim ? '' : 'ana'}`}>
             <Simge ad="oynat" />
             Demoyu dene
           </Link>
