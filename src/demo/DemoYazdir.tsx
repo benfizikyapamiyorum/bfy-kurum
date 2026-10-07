@@ -68,7 +68,7 @@ export function DemoYazdir() {
           Yazdır ya da PDF olarak kaydet
         </button>
         <span className="soluk">
-          Lisanslı kurumda kitapçığın üstünde kurumun adı ve logosu yer alır. Öğretmen soruları seçer, çıktı tek tıkla hazırlanır.
+          Kurumunuzda kitapçığın üstünde kurumun adı ve logosu yer alır. Öğretmen soruları seçer, çıktı tek tıkla hazırlanır.
         </span>
       </div>
       {surum === 'optik' ? (

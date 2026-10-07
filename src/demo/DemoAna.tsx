@@ -86,11 +86,11 @@ export function DemoAna() {
       <section className="kart demo-alt">
         <h2>Kurumunuzda kullanmak için</h2>
         <p>
-          Lisanslı kurumlarda öğretmen ve öğrenci hesaplarını kurs yöneticisi açar. Testler kazanıma göre hazırlanır, PDF olarak basılır
+          Kurumunuzda öğretmen ve öğrenci hesaplarını kurs yöneticisi açar. Testler kazanıma göre hazırlanır, PDF olarak basılır
           ya da online atanır. Sonuçlar raporlara kendiliğinden düşer.
         </p>
         <p>
-          Bilgi ve lisans için: <strong>{marka.web}</strong>
+          Bilgi için: <strong>{marka.web}</strong>
           {marka.sosyalMedya && <>, {marka.sosyalMedya}</>}
           {marka.iletisimEposta && <>, {marka.iletisimEposta}</>}.
         </p>

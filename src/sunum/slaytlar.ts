@@ -139,13 +139,13 @@ export const SLAYTLAR: Slayt[] = [
   },
   {
     tur: 'kartlar',
-    ust: 'Kullanım süresi',
-    baslik: 'Lisans nasıl işler?',
+    ust: 'Satın alma',
+    baslik: 'Sistem sizin olur',
     kartlar: [
-      { simge: 'sayac', baslik: 'Belirli bir dönem', metin: 'Lisans başlangıç ve bitiş tarihiyle tanımlanır; dönem kurumla birlikte belirlenir.' },
-      { simge: 'goz', baslik: 'Kalan süre görünür', metin: 'Kurum panelinde lisans tarihleri ve kalan gün sayısı her zaman görünür.' },
+      { simge: 'tamam', baslik: 'Süresiz kullanım', metin: 'Kurum sistemi bir kez satın alır ve süre sınırı olmadan kullanır.' },
+      { simge: 'yenile', baslik: 'İlk yıl her şey dahil', metin: 'İlk yıl eklenen bütün içerik, güncellemeler ve destek satın almaya dahildir.' },
+      { simge: 'bulut', baslik: 'Sonrası isteğe bağlı', metin: 'Sonraki yıllarda yeni içerik, güncelleme ve destek isteğe bağlı yıllık paketle sürer. Paket alınmasa da sistem ve mevcut içerik kullanılmaya devam eder.' },
       { simge: 'ayarlar', baslik: 'Kuruma göre boyut', metin: 'Öğretmen ve öğrenci sayısı kurumun ihtiyacına göre belirlenir.' },
-      { simge: 'yenile', baslik: 'Güncellemeler dahil', metin: 'Lisans süresince eklenen bütün içerik ve yenilikler kuruma kendiliğinden gelir.' },
     ],
   },
   {

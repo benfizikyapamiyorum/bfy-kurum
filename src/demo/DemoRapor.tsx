@@ -62,7 +62,7 @@ export function DemoRapor() {
             </button>
             {telafi && (
               <p className="bilgi-kutusu" role="status">
-                Lisanslı kurumda bu düğme, zayıf çıktılardan ve bu sınıfa daha önce verilmemiş sorulardan 10 soruluk bir test hazırlar.
+                Kurumunuzda bu düğme, zayıf çıktılardan ve bu sınıfa daha önce verilmemiş sorulardan 10 soruluk bir test hazırlar.
                 Test düzenlemeniz için açılır; PDF olarak basılır ya da öğrencilere online atanır. Öğrenci gözünden bir test için{' '}
                 <Link to="/demo/test">örnek testi çözün</Link>.
               </p>

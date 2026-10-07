@@ -1,4 +1,4 @@
-// Kurum yöneticilerine verilecek tanıtım metni: tanıtımda gösterilenler ve lisanslı kurumda olacaklar.
+// Kurum yöneticilerine verilecek tanıtım metni: tanıtımda gösterilenler ve kurumda olacaklar.
 // Aynı sayfa hem uygulamada (/tanitim) açılır hem de A4 PDF olarak yazdırılır (yazdırma stili aşağıda).
 // Yalnızca platformda gerçekten bulunan özellikler yazılır.
 
@@ -100,11 +100,11 @@ const KURUMDA: Bolum[] = [
     ],
   },
   {
-    baslik: 'Kurulum ve kullanım desteği',
+    baslik: 'Satın alma ve destek',
     maddeler: [
-      'Kurum hesabı, sınıflar ve öğrenci listeleri birlikte kurulur.',
-      'Öğretmenlere tahta modu, test oluşturma ve raporlar uygulamalı gösterilir.',
-      'Kullanımda takıldığınız her konuda doğrudan iletişim kurabilirsiniz.',
+      'Kurum sistemi bir kez satın alır ve süre sınırı olmadan kullanır.',
+      'İlk yıl içerik, güncellemeler ve destek dahildir; sonrası isteğe bağlı yıllık paketle sürer.',
+      'Kurulum ve öğretmenlere uygulamalı gösterim birlikte yapılır; takıldığınız her konuda doğrudan ulaşırsınız.',
     ],
   },
   {
@@ -154,7 +154,7 @@ export function Tanitim() {
       <h2>Bu tanıtımda gördükleriniz</h2>
       <BolumListesi bolumler={GOSTERILENLER} />
 
-      <h2 className="sayfa-kir">Lisanslı kurumunuzda neler olacak?</h2>
+      <h2 className="sayfa-kir">Kurumunuzda neler olacak?</h2>
       <BolumListesi bolumler={KURUMDA} />
 
       <h2>Nasıl başlanır?</h2>
