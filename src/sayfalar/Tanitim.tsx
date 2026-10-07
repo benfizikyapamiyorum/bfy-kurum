@@ -103,7 +103,7 @@ const KURUMDA: Bolum[] = [
     baslik: 'Satın alma ve destek',
     maddeler: [
       'Kurum sistemi bir kez satın alır ve süre sınırı olmadan kullanır.',
-      'İlk iki yıl içerik, güncellemeler ve destek dahildir; sonrası isteğe bağlı yıllık paketle sürer.',
+      'İlk iki yıl içerik, güncelleme ve destek dahil; sonrası isteğe bağlı yıllık paket.',
       'Kurulum ve öğretmenlere uygulamalı gösterim birlikte yapılır; takıldığınız her konuda doğrudan ulaşırsınız.',
     ],
   },
