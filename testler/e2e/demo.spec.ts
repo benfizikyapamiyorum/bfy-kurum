@@ -33,7 +33,7 @@ test('demo raporu: zayıf çıktılar simge ve yazıyla işaretli, sayfa telefon
   await expect(page.getByText('örnek veridir')).toBeVisible()
   await expect(page.locator('.zayif-rozet')).toHaveCount(2)
   await page.getByRole('button', { name: 'Telafi testi oluştur' }).click()
-  await expect(page.getByText('Lisanslı kurumda bu düğme')).toBeVisible()
+  await expect(page.getByText('Kurumunuzda bu düğme')).toBeVisible()
   await page.getByRole('button', { name: 'Mert Kaya' }).click()
   await expect(page.getByRole('region', { name: 'Mert Kaya raporu' })).toBeVisible()
   const genislik = await page.evaluate(() => document.documentElement.scrollWidth)
